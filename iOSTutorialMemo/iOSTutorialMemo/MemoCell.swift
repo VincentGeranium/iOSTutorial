@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListTableViewCell: UITableViewCell {
+class MemoCell: UITableViewCell {
     
     static let reuseIdentifier: String = "ListTableViewCell"
     
@@ -21,7 +21,7 @@ class ListTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+        self.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         setUpTitleLabel()
     }
     

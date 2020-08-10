@@ -12,7 +12,8 @@ class ViewController: UIViewController {
     
     private let listTableView: UITableView = {
         var listTableView: UITableView = UITableView()
-        listTableView.register(ListTableViewCell.self, forCellReuseIdentifier: ListTableViewCell.reuseIdentifier)
+        listTableView.register(MemoCell.self, forCellReuseIdentifier: MemoCell.reuseIdentifier)
+        listTableView.register(MemoWithImageCell.self, forCellReuseIdentifier: MemoWithImageCell.reuseIdentifier)
         return listTableView
     }()
 
@@ -21,7 +22,6 @@ class ViewController: UIViewController {
         self.view.backgroundColor = UIColor.white
         
         navigationController?.delegate = self
-        self.listTableView.rowHeight = 80
         self.title = "목록"
         
         listTableView.delegate = self
@@ -54,16 +54,32 @@ class ViewController: UIViewController {
 
 
 extension ViewController:  UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.reuseIdentifier, for: indexPath) as? ListTableViewCell else {
-            return UITableViewCell()
+        if indexPath.row == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: MemoCell.reuseIdentifier, for: indexPath) as? MemoCell else {
+                return UITableViewCell()
+            }
+            return cell
+        } else if indexPath.row == 1 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: MemoWithImageCell.reuseIdentifier, for: indexPath) as? MemoWithImageCell else {
+                return UITableViewCell()
+            }
+            return cell
         }
-        return cell
+        return UITableViewCell()
     }
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+
 }
