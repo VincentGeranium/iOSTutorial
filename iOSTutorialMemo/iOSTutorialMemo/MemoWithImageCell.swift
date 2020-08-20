@@ -13,25 +13,34 @@ class MemoWithImageCell: UITableViewCell {
     static let reuseIdentifier: String = "MemoWithImageCell"
     
     lazy var titleImageView: UIImageView = {
-        var titleImageView: UIImageView = UIImageView()
+        let titleImageView: UIImageView = UIImageView()
         titleImageView.backgroundColor = .black
         return titleImageView
     }()
     
     lazy var titleLabel: UILabel = {
-        var titleLabel: UILabel = UILabel()
+        let titleLabel: UILabel = UILabel()
         titleLabel.font = UIFont.boldSystemFont(ofSize: 14.0)
         titleLabel.backgroundColor = UIColor.systemBlue
         return titleLabel
     }()
     
     lazy var contentsLabel: UILabel = {
-        var contentsLabel: UILabel = UILabel()
+        let contentsLabel: UILabel = UILabel()
         contentsLabel.font = UIFont.systemFont(ofSize: 12.0)
         contentsLabel.lineBreakMode = NSLineBreakMode.byTruncatingTail
         contentsLabel.numberOfLines = 2
         contentsLabel.backgroundColor = UIColor.systemRed
         return contentsLabel
+    }()
+    
+    lazy var dateAndTimeLabel: UILabel = {
+        let dateAndTimeLabel: UILabel = UILabel()
+        dateAndTimeLabel.font = UIFont.systemFont(ofSize: 11.0)
+        dateAndTimeLabel.textAlignment = .right
+        dateAndTimeLabel.numberOfLines = 2
+        dateAndTimeLabel.lineBreakMode = .byWordWrapping
+        return dateAndTimeLabel
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
