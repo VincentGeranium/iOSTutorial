@@ -40,6 +40,7 @@ class MemoWithImageCell: UITableViewCell {
         dateAndTimeLabel.textAlignment = .right
         dateAndTimeLabel.numberOfLines = 2
         dateAndTimeLabel.lineBreakMode = .byWordWrapping
+        dateAndTimeLabel.backgroundColor = .systemGray
         return dateAndTimeLabel
     }()
     
@@ -69,6 +70,7 @@ class MemoWithImageCell: UITableViewCell {
         setUpTitleImageView()
         setUpTitleLabel()
         setUpContentsLabel()
+        setUpDateAndTimeLabel()
     }
     
     private func setUpTitleImageView() {
@@ -86,13 +88,14 @@ class MemoWithImageCell: UITableViewCell {
     
     private func setUpTitleLabel() {
         let guide = self.contentView.safeAreaLayoutGuide
+        
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 5),
             titleLabel.leadingAnchor.constraint(equalTo: titleImageView.trailingAnchor, constant: 5),
-            titleLabel.widthAnchor.constraint(equalToConstant: (contentView.frame.width) * 2/3),
+            titleLabel.widthAnchor.constraint(equalToConstant: (contentView.frame.width) * 0.5),
             titleLabel.heightAnchor.constraint(equalToConstant: 35)
         ])
     }
@@ -105,9 +108,22 @@ class MemoWithImageCell: UITableViewCell {
         NSLayoutConstraint.activate([
             contentsLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
             contentsLabel.leadingAnchor.constraint(equalTo: titleImageView.trailingAnchor, constant: 5),
+            contentsLabel.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -5),
             contentsLabel.widthAnchor.constraint(equalTo: titleLabel.widthAnchor),
-            contentsLabel.heightAnchor.constraint(equalTo: titleLabel.heightAnchor),
+//            contentsLabel.heightAnchor.constraint(equalTo: titleLabel.heightAnchor),
         ])
     }
     
+    private func setUpDateAndTimeLabel() {
+        let guide = self.contentView.safeAreaLayoutGuide
+        dateAndTimeLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.contentView.addSubview(dateAndTimeLabel)
+        
+        NSLayoutConstraint.activate([
+            dateAndTimeLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 5),
+            dateAndTimeLabel.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 5),
+            dateAndTimeLabel.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -5),
+            dateAndTimeLabel.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -5),
+        ])
+    }
 }

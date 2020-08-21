@@ -14,24 +14,18 @@ class ViewController: UIViewController {
         var listTableView: UITableView = UITableView()
         listTableView.register(MemoCell.self, forCellReuseIdentifier: MemoCell.reuseIdentifier)
         listTableView.register(MemoWithImageCell.self, forCellReuseIdentifier: MemoWithImageCell.reuseIdentifier)
-        // 테이블 뷰 하단에 추가 할 빈 뷰.
-        let emptyFooterView: UIView = {
-            let emptyFooterView: UIView = UIView()
-            // 식별을 위해 임의로 색상을 넣어 표시함.
-            emptyFooterView.backgroundColor = .systemGray
-            return emptyFooterView
-        }()
         // 테이블 뷰 하단에 빈 뷰를 하나 추가.(목록이 없을 때 빈 셀들이 반복해서 나열되는 것을 방지함.)
-        listTableView.tableFooterView = emptyFooterView
-        // listTableView.tableFooterView = UIView() 이렇게도 가능함.
+        listTableView.tableFooterView = UIView()
         return listTableView
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.view.backgroundColor = UIColor.white
         
         navigationController?.delegate = self
+        
         self.title = "목록"
         
         listTableView.delegate = self

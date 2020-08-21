@@ -34,6 +34,7 @@ class MemoCell: UITableViewCell {
         dateAndTimeLabel.textAlignment = .right
         dateAndTimeLabel.numberOfLines = 2
         dateAndTimeLabel.lineBreakMode = .byWordWrapping
+        dateAndTimeLabel.backgroundColor = .systemGray
         return dateAndTimeLabel
     }()
     
@@ -62,6 +63,7 @@ class MemoCell: UITableViewCell {
     private func setUpAndAddSubviews() {
         setUpTitleLabel()
         setUpContentsLabel()
+        setUpDateAndTimeLabel()
     }
     
     private func setUpTitleLabel() {
@@ -72,7 +74,7 @@ class MemoCell: UITableViewCell {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 5),
             titleLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 5),
-            titleLabel.heightAnchor.constraint(equalToConstant: 35),
+            titleLabel.heightAnchor.constraint(equalToConstant: 30),
             titleLabel.widthAnchor.constraint(equalToConstant: (contentView.frame.width) * 2/3),
         ])
     }
@@ -85,9 +87,22 @@ class MemoCell: UITableViewCell {
         NSLayoutConstraint.activate([
             contentsLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
             contentsLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 5),
-            contentsLabel.heightAnchor.constraint(equalTo: titleLabel.heightAnchor),
+            contentsLabel.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -5),
             contentsLabel.widthAnchor.constraint(equalTo: titleLabel.widthAnchor),
             
+        ])
+    }
+    
+    private func setUpDateAndTimeLabel() {
+        let guide = self.contentView.safeAreaLayoutGuide
+        dateAndTimeLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.contentView.addSubview(dateAndTimeLabel)
+        
+        NSLayoutConstraint.activate([
+            dateAndTimeLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 5),
+            dateAndTimeLabel.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 5),
+            dateAndTimeLabel.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -5),
+            dateAndTimeLabel.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -5),
         ])
     }
     
