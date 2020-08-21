@@ -14,7 +14,8 @@ class MemoWithImageCell: UITableViewCell {
     
     lazy var titleImageView: UIImageView = {
         let titleImageView: UIImageView = UIImageView()
-        titleImageView.backgroundColor = .black
+        titleImageView.image = UIImage.init(named: "keg")
+//        titleImageView.backgroundColor = .black
         return titleImageView
     }()
     
@@ -68,9 +69,9 @@ class MemoWithImageCell: UITableViewCell {
     // All SetUp Functions
     private func setUpAndAddSubviews() {
         setUpTitleImageView()
-        setUpTitleLabel()
-        setUpContentsLabel()
-        setUpDateAndTimeLabel()
+//        setUpTitleLabel()
+//        setUpContentsLabel()
+//        setUpDateAndTimeLabel()
     }
     
     private func setUpTitleImageView() {
@@ -79,10 +80,11 @@ class MemoWithImageCell: UITableViewCell {
         self.contentView.addSubview(titleImageView)
         
         NSLayoutConstraint.activate([
-            titleImageView.topAnchor.constraint(equalTo: guide.topAnchor, constant: 5),
-            titleImageView.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 5),
-            titleImageView.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -5),
-            titleImageView.widthAnchor.constraint(equalToConstant: contentView.frame.width / 5),
+            titleImageView.topAnchor.constraint(equalTo: guide.topAnchor),
+            titleImageView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
+            titleImageView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
+            // aspect ratio code
+            titleImageView.heightAnchor.constraint(equalTo: self.titleImageView.widthAnchor, multiplier: 1.0/2.0)
         ])
     }
     

@@ -40,6 +40,7 @@ class MemoCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
         self.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         setUpAndAddSubviews()
         
@@ -61,9 +62,13 @@ class MemoCell: UITableViewCell {
     }
     
     private func setUpAndAddSubviews() {
-        setUpTitleLabel()
-        setUpContentsLabel()
         setUpDateAndTimeLabel()
+        
+        setUpContentsLabel()
+    
+        setUpTitleLabel()
+        
+        
     }
     
     private func setUpTitleLabel() {
@@ -72,10 +77,11 @@ class MemoCell: UITableViewCell {
         self.contentView.addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 5),
-            titleLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 5),
-            titleLabel.heightAnchor.constraint(equalToConstant: 30),
-            titleLabel.widthAnchor.constraint(equalToConstant: (contentView.frame.width) * 2/3),
+            titleLabel.topAnchor.constraint(equalTo: guide.topAnchor),
+            titleLabel.bottomAnchor.constraint(equalTo: contentsLabel.topAnchor, constant: -5),
+            titleLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 10),
+            titleLabel.trailingAnchor.constraint(equalTo: dateAndTimeLabel.leadingAnchor, constant: -10),
+            titleLabel.heightAnchor.constraint(equalToConstant: 21),
         ])
     }
     
@@ -85,11 +91,9 @@ class MemoCell: UITableViewCell {
         self.contentView.addSubview(contentsLabel)
         
         NSLayoutConstraint.activate([
-            contentsLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
-            contentsLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 5),
-            contentsLabel.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -5),
-            contentsLabel.widthAnchor.constraint(equalTo: titleLabel.widthAnchor),
-            
+            contentsLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 10),
+            contentsLabel.trailingAnchor.constraint(equalTo: dateAndTimeLabel.leadingAnchor, constant: -10),
+            contentsLabel.heightAnchor.constraint(equalToConstant: 30),
         ])
     }
     
@@ -99,10 +103,10 @@ class MemoCell: UITableViewCell {
         self.contentView.addSubview(dateAndTimeLabel)
         
         NSLayoutConstraint.activate([
-            dateAndTimeLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 5),
-            dateAndTimeLabel.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 5),
-            dateAndTimeLabel.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -5),
-            dateAndTimeLabel.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -5),
+            dateAndTimeLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 10),
+            dateAndTimeLabel.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
+            dateAndTimeLabel.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -10),
+            dateAndTimeLabel.widthAnchor.constraint(equalToConstant: 65),
         ])
     }
     

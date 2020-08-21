@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private let listTableView: UITableView = {
+    let listTableView: UITableView = {
         var listTableView: UITableView = UITableView()
         listTableView.register(MemoCell.self, forCellReuseIdentifier: MemoCell.reuseIdentifier)
         listTableView.register(MemoWithImageCell.self, forCellReuseIdentifier: MemoWithImageCell.reuseIdentifier)
