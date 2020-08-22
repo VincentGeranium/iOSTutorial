@@ -65,7 +65,7 @@ class ListViewController: UIViewController {
     @objc fileprivate func addButtonAction(_ sender: UIBarButtonItem) {
         let writeMemoVC = WriteMemoViewController()
         
-        present(writeMemoVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(writeMemoVC, animated: true)
         
         print("add Button Action")
     }
