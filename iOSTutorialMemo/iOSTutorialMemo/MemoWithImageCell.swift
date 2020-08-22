@@ -14,8 +14,7 @@ class MemoWithImageCell: UITableViewCell {
     
     lazy var titleImageView: UIImageView = {
         let titleImageView: UIImageView = UIImageView()
-        titleImageView.image = UIImage.init(named: "keg")
-//        titleImageView.backgroundColor = .black
+        titleImageView.backgroundColor = .black
         return titleImageView
     }()
     
@@ -69,9 +68,9 @@ class MemoWithImageCell: UITableViewCell {
     // All SetUp Functions
     private func setUpAndAddSubviews() {
         setUpTitleImageView()
-//        setUpTitleLabel()
-//        setUpContentsLabel()
-//        setUpDateAndTimeLabel()
+        setUpDateAndTimeLabel()
+        setUpTitleLabel()
+        setUpContentsLabel()
     }
     
     private func setUpTitleImageView() {
@@ -84,7 +83,7 @@ class MemoWithImageCell: UITableViewCell {
             titleImageView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
             titleImageView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
             // aspect ratio code
-            titleImageView.heightAnchor.constraint(equalTo: self.titleImageView.widthAnchor, multiplier: 1.0/2.0)
+            titleImageView.heightAnchor.constraint(equalTo: self.titleImageView.widthAnchor, multiplier: 1)
         ])
     }
     
@@ -95,10 +94,10 @@ class MemoWithImageCell: UITableViewCell {
         self.contentView.addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 5),
-            titleLabel.leadingAnchor.constraint(equalTo: titleImageView.trailingAnchor, constant: 5),
-            titleLabel.widthAnchor.constraint(equalToConstant: (contentView.frame.width) * 0.5),
-            titleLabel.heightAnchor.constraint(equalToConstant: 35)
+            titleLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 0),
+            titleLabel.leadingAnchor.constraint(equalTo: titleImageView.trailingAnchor, constant: 10),
+            titleLabel.trailingAnchor.constraint(equalTo: dateAndTimeLabel.leadingAnchor, constant: -10),
+            titleLabel.heightAnchor.constraint(equalToConstant: 21),
         ])
     }
     
@@ -109,10 +108,9 @@ class MemoWithImageCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             contentsLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
-            contentsLabel.leadingAnchor.constraint(equalTo: titleImageView.trailingAnchor, constant: 5),
-            contentsLabel.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -5),
-            contentsLabel.widthAnchor.constraint(equalTo: titleLabel.widthAnchor),
-//            contentsLabel.heightAnchor.constraint(equalTo: titleLabel.heightAnchor),
+            contentsLabel.leadingAnchor.constraint(equalTo: titleImageView.trailingAnchor, constant: 10),
+            contentsLabel.trailingAnchor.constraint(equalTo: dateAndTimeLabel.leadingAnchor, constant: -10),
+            contentsLabel.heightAnchor.constraint(equalToConstant: 30),
         ])
     }
     
@@ -122,10 +120,10 @@ class MemoWithImageCell: UITableViewCell {
         self.contentView.addSubview(dateAndTimeLabel)
         
         NSLayoutConstraint.activate([
-            dateAndTimeLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 5),
-            dateAndTimeLabel.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 5),
-            dateAndTimeLabel.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -5),
-            dateAndTimeLabel.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -5),
+            dateAndTimeLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 10),
+            dateAndTimeLabel.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
+            dateAndTimeLabel.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -10),
+            dateAndTimeLabel.widthAnchor.constraint(equalToConstant: 65),
         ])
     }
 }
