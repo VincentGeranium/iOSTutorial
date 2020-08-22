@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		202C0E9C24F163D800238DB3 /* WriteMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C0E9B24F163D800238DB3 /* WriteMemoViewController.swift */; };
 		20387D8324E0461A009F09B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20387D8224E0461A009F09B5 /* AppDelegate.swift */; };
 		20387D8524E0461A009F09B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20387D8424E0461A009F09B5 /* SceneDelegate.swift */; };
-		20387D8724E0461A009F09B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20387D8624E0461A009F09B5 /* ViewController.swift */; };
+		20387D8724E0461A009F09B5 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20387D8624E0461A009F09B5 /* ListViewController.swift */; };
 		20387D8D24E0461A009F09B5 /* iOSTutorialMemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 20387D8B24E0461A009F09B5 /* iOSTutorialMemo.xcdatamodeld */; };
 		20387D8F24E0461B009F09B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20387D8E24E0461B009F09B5 /* Assets.xcassets */; };
 		20387D9224E0461B009F09B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20387D9024E0461B009F09B5 /* LaunchScreen.storyboard */; };
@@ -19,10 +20,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		202C0E9B24F163D800238DB3 /* WriteMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteMemoViewController.swift; sourceTree = "<group>"; };
 		20387D7F24E0461A009F09B5 /* iOSTutorialMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTutorialMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20387D8224E0461A009F09B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20387D8424E0461A009F09B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		20387D8624E0461A009F09B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		20387D8624E0461A009F09B5 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		20387D8C24E0461A009F09B5 /* iOSTutorialMemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOSTutorialMemo.xcdatamodel; sourceTree = "<group>"; };
 		20387D8E24E0461B009F09B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20387D9124E0461B009F09B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -70,7 +72,8 @@
 				20387D9324E0461B009F09B5 /* Info.plist */,
 				20387D8224E0461A009F09B5 /* AppDelegate.swift */,
 				20387D8424E0461A009F09B5 /* SceneDelegate.swift */,
-				20387D8624E0461A009F09B5 /* ViewController.swift */,
+				20387D8624E0461A009F09B5 /* ListViewController.swift */,
+				202C0E9B24F163D800238DB3 /* WriteMemoViewController.swift */,
 				20FE98A324E1AC480094C0CD /* MemoCell.swift */,
 				205DCE7324E1CAA800027563 /* MemoWithImageCell.swift */,
 				20387D8E24E0461B009F09B5 /* Assets.xcassets */,
@@ -211,9 +214,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20387D8724E0461A009F09B5 /* ViewController.swift in Sources */,
+				20387D8724E0461A009F09B5 /* ListViewController.swift in Sources */,
 				205DCE7424E1CAA800027563 /* MemoWithImageCell.swift in Sources */,
 				20387D8D24E0461A009F09B5 /* iOSTutorialMemo.xcdatamodeld in Sources */,
+				202C0E9C24F163D800238DB3 /* WriteMemoViewController.swift in Sources */,
 				20387D8324E0461A009F09B5 /* AppDelegate.swift in Sources */,
 				20387D8524E0461A009F09B5 /* SceneDelegate.swift in Sources */,
 				20FE98A424E1AC480094C0CD /* MemoCell.swift in Sources */,

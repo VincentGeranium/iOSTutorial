@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ListViewController: UIViewController {
     
     let listTableView: UITableView = {
         var listTableView: UITableView = UITableView()
@@ -23,19 +23,28 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.white
-        
-        navigationController?.delegate = self
-        
-        self.title = "목록"
-        
-        listTableView.delegate = self
-        listTableView.dataSource = self
+
+        delegates()
         
         setUpAndAddViews()
     }
     
+    
+    private func delegates() {
+        navigationController?.delegate = self
+        listTableView.delegate = self
+        listTableView.dataSource = self
+    }
+    
     private func setUpAndAddViews() {
+        navigationBarSetUp()
         setUpListTableView()
+    }
+    
+    private func navigationBarSetUp() {
+        self.navigationController?.navigationBar.topItem?.title = "목록"
+        self.navigationController?.navigationBar.barTintColor = .red
+        self.navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addButtonAction(_:)))
     }
     
     private func setUpListTableView() {
@@ -52,12 +61,18 @@ class ViewController: UIViewController {
             listTableView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
         ])
     }
-
-
+    
+    @objc fileprivate func addButtonAction(_ sender: UIBarButtonItem) {
+        let writeMemoVC = WriteMemoViewController()
+        
+        present(writeMemoVC, animated: true, completion: nil)
+        
+        print("add Button Action")
+    }
 }
 
 
-extension ViewController:  UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate {
+extension ListViewController:  UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UINavigationBarDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

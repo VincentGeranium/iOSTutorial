@@ -17,9 +17,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let rootView = ViewController()
+        let rootView = ListViewController()
         
         let navigationController = UINavigationController.init(rootViewController: rootView)
+//        navigationController.navigationBar.topItem?.title = "목록"
+//        navigationController.navigationBar.barTintColor = .red
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
