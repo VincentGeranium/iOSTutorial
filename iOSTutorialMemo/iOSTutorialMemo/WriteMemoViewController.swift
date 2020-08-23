@@ -9,22 +9,22 @@
 import UIKit
 
 class WriteMemoViewController: UIViewController {
+    
+    private lazy var textView: UITextView = {
+        let textView: UITextView = UITextView()
+        return textView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.view.backgroundColor = .systemGray
+        setUpNavigationItem()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setUpNavigationItem() {
+         self.navigationItem.title = "메모 작성"
+        
     }
-    */
 
 }

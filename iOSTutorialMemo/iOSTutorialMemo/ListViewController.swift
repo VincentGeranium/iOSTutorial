@@ -37,14 +37,13 @@ class ListViewController: UIViewController {
     }
     
     private func setUpAndAddViews() {
-        navigationBarSetUp()
+        setUpNavigationItem()
         setUpListTableView()
     }
     
-    private func navigationBarSetUp() {
-        self.navigationController?.navigationBar.topItem?.title = "목록"
-        self.navigationController?.navigationBar.barTintColor = .red
-        self.navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addButtonAction(_:)))
+    private func setUpNavigationItem() {
+        self.navigationItem.title = "목록"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addButtonAction(_:)))
     }
     
     private func setUpListTableView() {
@@ -66,8 +65,6 @@ class ListViewController: UIViewController {
         let writeMemoVC = WriteMemoViewController()
         
         self.navigationController?.pushViewController(writeMemoVC, animated: true)
-        
-        print("add Button Action")
     }
 }
 
