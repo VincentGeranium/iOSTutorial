@@ -1,14 +1,14 @@
 # iOSTutorial
 
 - - -
-## explanation
+## explanation.
 
 - 꼼꼼한 재은 씨의 스위프트 실전편의 실습 프로젝트들 입니다.
 - 각각의 프로젝트를 통해 iOS와 Swift의 문법에 대해 학습합니다.
 - 책에 나오는 프로젝트의 개발 방식인 스토리보드 기반 개발 방식과 달리 이 레포의 모든 프로젝트들은 개발 방식을 프로그래밍 방식(모두 코드로만 개발)으로 합니다.
 
 - - -
-## Purpose
+## Project list and Purpose.
 
 ### 1. 메모장 앱 제작
   - 1. 뷰 컨트롤러와 탭 바 컨트롤러, 내비게이션 컨트롤러를 학습.
@@ -18,5 +18,10 @@
   - 5. 아웃렛 변수와 액션 메소드 학습.
   - 6. 델리케이트 패턴 학습.
   - 7. 오토 레이아웃 학습.
+  
+### 2. [MVC Pattern Tutorial](https://github.com/VincentGeranium/iOSTutorial/tree/master/MVCTutorial/MVCTutorial)
+  - 실습 프로젝트에는 없는 내용이지만, iOS MVC Pattern 학습을 위하여 스스로 만들어 본 예제입니다.
+  - 1. MVC Pattern 학습.
+  - 2. Value Object 학습.
   
 - - -
