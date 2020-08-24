@@ -15,6 +15,7 @@
 		20387D8F24E0461B009F09B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20387D8E24E0461B009F09B5 /* Assets.xcassets */; };
 		20387D9224E0461B009F09B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20387D9024E0461B009F09B5 /* LaunchScreen.storyboard */; };
 		205DCE7424E1CAA800027563 /* MemoWithImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DCE7324E1CAA800027563 /* MemoWithImageCell.swift */; };
+		20A0A18A24F3A83B003560E7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A0A18924F3A83B003560E7 /* DetailViewController.swift */; };
 		20FE98A424E1AC480094C0CD /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FE98A324E1AC480094C0CD /* MemoCell.swift */; };
 		5CF4F19513C488A25C9BFAC9 /* Pods_iOSTutorialMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506EAD723BA28449A318B480 /* Pods_iOSTutorialMemo.framework */; };
 /* End PBXBuildFile section */
@@ -30,6 +31,7 @@
 		20387D9124E0461B009F09B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20387D9324E0461B009F09B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		205DCE7324E1CAA800027563 /* MemoWithImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoWithImageCell.swift; sourceTree = "<group>"; };
+		20A0A18924F3A83B003560E7 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		20FE98A324E1AC480094C0CD /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 		506EAD723BA28449A318B480 /* Pods_iOSTutorialMemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSTutorialMemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95040D6B736574E0710B4B1E /* Pods-iOSTutorialMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSTutorialMemo.debug.xcconfig"; path = "Target Support Files/Pods-iOSTutorialMemo/Pods-iOSTutorialMemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				20387D8424E0461A009F09B5 /* SceneDelegate.swift */,
 				20387D8624E0461A009F09B5 /* ListViewController.swift */,
 				202C0E9B24F163D800238DB3 /* WriteMemoViewController.swift */,
+				20A0A18924F3A83B003560E7 /* DetailViewController.swift */,
 				20FE98A324E1AC480094C0CD /* MemoCell.swift */,
 				205DCE7324E1CAA800027563 /* MemoWithImageCell.swift */,
 				20387D8E24E0461B009F09B5 /* Assets.xcassets */,
@@ -221,6 +224,7 @@
 				20387D8324E0461A009F09B5 /* AppDelegate.swift in Sources */,
 				20387D8524E0461A009F09B5 /* SceneDelegate.swift in Sources */,
 				20FE98A424E1AC480094C0CD /* MemoCell.swift in Sources */,
+				20A0A18A24F3A83B003560E7 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
