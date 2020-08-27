@@ -10,28 +10,30 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    private lazy var titleLabel: UILabel = {
-        let titleLabel: UILabel = UILabel()
-        titleLabel.backgroundColor = .systemRed
-        return titleLabel
-    }()
+    let detailView: DetailView = DetailView()
     
-    private lazy var contentsLabel: UILabel = {
-        let contentsLabel: UILabel = UILabel()
-        contentsLabel.backgroundColor = .systemBlue
-        return contentsLabel
-    }()
-    
-    private lazy var imageView: UIImageView = {
-        let imageView: UIImageView = UIImageView()
-        imageView.backgroundColor = .systemPink
-        return imageView
-    }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        
+        self.view.backgroundColor = .white
+        
+        setUpDetailView()
+    }
+    
+    private func setUpDetailView() {
+        let guide = self.view.safeAreaLayoutGuide
+
+        detailView.translatesAutoresizingMaskIntoConstraints = false
+
+        self.view.addSubview(detailView)
+
+        NSLayoutConstraint.activate([
+            detailView.topAnchor.constraint(equalTo: guide.topAnchor),
+            detailView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
+            detailView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
+            detailView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
+        ])
     }
     
     

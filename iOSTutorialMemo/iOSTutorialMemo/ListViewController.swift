@@ -80,6 +80,8 @@ extension ListViewController:  UITableViewDelegate, UITableViewDataSource, UINav
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
         if indexPath.row == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: MemoCell.reuseIdentifier, for: indexPath) as? MemoCell else {
                 return UITableViewCell()
@@ -96,6 +98,16 @@ extension ListViewController:  UITableViewDelegate, UITableViewDataSource, UINav
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailVC = DetailViewController()
+        
+        if indexPath.row == 0 {
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        } else if indexPath.row == 1 {
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        }
     }
 
 }
