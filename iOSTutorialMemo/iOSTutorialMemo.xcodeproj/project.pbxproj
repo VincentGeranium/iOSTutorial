@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		201FF44324F801FF0030E84C /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201FF44224F801FF0030E84C /* DetailView.swift */; };
+		201FF44324F801FF0030E84C /* MemoReadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201FF44224F801FF0030E84C /* MemoReadView.swift */; };
 		202C0E9C24F163D800238DB3 /* MemoFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C0E9B24F163D800238DB3 /* MemoFormVC.swift */; };
 		20387D8324E0461A009F09B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20387D8224E0461A009F09B5 /* AppDelegate.swift */; };
 		20387D8524E0461A009F09B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20387D8424E0461A009F09B5 /* SceneDelegate.swift */; };
@@ -22,7 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		201FF44224F801FF0030E84C /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		201FF44224F801FF0030E84C /* MemoReadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoReadView.swift; sourceTree = "<group>"; };
 		202C0E9B24F163D800238DB3 /* MemoFormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoFormVC.swift; sourceTree = "<group>"; };
 		20387D7F24E0461A009F09B5 /* iOSTutorialMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTutorialMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20387D8224E0461A009F09B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 				20387D8E24E0461B009F09B5 /* Assets.xcassets */,
 				20FE98A324E1AC480094C0CD /* MemoCell.swift */,
 				205DCE7324E1CAA800027563 /* MemoWithImageCell.swift */,
-				201FF44224F801FF0030E84C /* DetailView.swift */,
+				201FF44224F801FF0030E84C /* MemoReadView.swift */,
 				20A0A18924F3A83B003560E7 /* MemoReadVC.swift */,
 				202C0E9B24F163D800238DB3 /* MemoFormVC.swift */,
 				20387D8624E0461A009F09B5 /* MemoListVC.swift */,
@@ -237,7 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20387D8724E0461A009F09B5 /* MemoListVC.swift in Sources */,
-				201FF44324F801FF0030E84C /* DetailView.swift in Sources */,
+				201FF44324F801FF0030E84C /* MemoReadView.swift in Sources */,
 				205DCE7424E1CAA800027563 /* MemoWithImageCell.swift in Sources */,
 				20387D8D24E0461A009F09B5 /* iOSTutorialMemo.xcdatamodeld in Sources */,
 				202C0E9C24F163D800238DB3 /* MemoFormVC.swift in Sources */,

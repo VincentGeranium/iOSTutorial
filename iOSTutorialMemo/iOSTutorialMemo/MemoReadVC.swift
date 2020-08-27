@@ -10,8 +10,8 @@ import UIKit
 
 class MemoReadVC: UIViewController {
     
-    private lazy var detailView: DetailView = {
-        let detailView: DetailView = DetailView()
+    private lazy var detailView: MemoReadView = {
+        let detailView: MemoReadView = MemoReadView()
         return detailView
     }()
     
