@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let rootView = ListViewController()
+        let rootView = MemoListVC()
         
         let navigationController = UINavigationController.init(rootViewController: rootView)
 //        navigationController.navigationBar.topItem?.title = "목록"

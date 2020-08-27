@@ -8,9 +8,12 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class MemoReadVC: UIViewController {
     
-    let detailView: DetailView = DetailView()
+    private lazy var detailView: DetailView = {
+        let detailView: DetailView = DetailView()
+        return detailView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,16 +21,21 @@ class DetailViewController: UIViewController {
         
         self.view.backgroundColor = .white
         
+        setUpNavigationItem()
         setUpDetailView()
+    }
+    
+    private func setUpNavigationItem() {
+        self.navigationItem.title = "Detail View"
     }
     
     private func setUpDetailView() {
         let guide = self.view.safeAreaLayoutGuide
-
+        
         detailView.translatesAutoresizingMaskIntoConstraints = false
-
+        
         self.view.addSubview(detailView)
-
+        
         NSLayoutConstraint.activate([
             detailView.topAnchor.constraint(equalTo: guide.topAnchor),
             detailView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
@@ -37,5 +45,5 @@ class DetailViewController: UIViewController {
     }
     
     
-
+    
 }

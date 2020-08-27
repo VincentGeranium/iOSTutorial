@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListViewController: UIViewController {
+class MemoListVC: UIViewController {
     
     let listTableView: UITableView = {
         var listTableView: UITableView = UITableView()
@@ -62,14 +62,14 @@ class ListViewController: UIViewController {
     }
     
     @objc fileprivate func addButtonAction(_ sender: UIBarButtonItem) {
-        let writeMemoVC = WriteMemoViewController()
+        let writeMemoVC = MemoFormVC()
         
         self.navigationController?.pushViewController(writeMemoVC, animated: true)
     }
 }
 
 
-extension ListViewController:  UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UINavigationBarDelegate {
+extension MemoListVC:  UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UINavigationBarDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -101,7 +101,7 @@ extension ListViewController:  UITableViewDelegate, UITableViewDataSource, UINav
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailVC = DetailViewController()
+        let detailVC = MemoReadVC()
         
         if indexPath.row == 0 {
             self.navigationController?.pushViewController(detailVC, animated: true)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WriteMemoViewController: UIViewController {
+class MemoFormVC: UIViewController {
     
     private lazy var memoTextView: UITextView = {
         let memoTextView: UITextView = UITextView()
