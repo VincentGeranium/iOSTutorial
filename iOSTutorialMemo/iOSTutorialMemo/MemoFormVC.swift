@@ -10,6 +10,8 @@ import UIKit
 
 class MemoFormVC: UIViewController {
     
+    var subject: String?
+    
     private lazy var memoTextView: UITextView = {
         let memoTextView: UITextView = UITextView()
         memoTextView.backgroundColor = .systemPink
@@ -37,6 +39,8 @@ class MemoFormVC: UIViewController {
         super.viewDidLoad()
 
         self.view.backgroundColor = .white
+        
+        self.memoTextView.delegate = self
         
         setUpAndAddViews()
       
@@ -93,8 +97,35 @@ class MemoFormVC: UIViewController {
     }
     
     @objc private func cameraButtonAction(_ sender: UIBarButtonItem) {
+        /*
+         이미지 피커 컨트롤러에 대한 내용을 차례로 구현.
+         1. 이미지 피커 컨트롤러 인스턴스를 생성.
+         2. 이미지 피커 컨트롤러 인스턴스의 델리게이트 속성을 현재의 뷰 컨트롤러 인스턴스로 설정.
+         3. 이미지 피커 컨트롤러의 이미지 편집을 허용.
+         4. 이미지 피커 컨트롤러를 화면에 표시.
+         */
+        
+        // 이미지 피커 인스턴스 생성.
+        let picker: UIImagePickerController = UIImagePickerController()
+        
+        picker.delegate = self
+        picker.allowsEditing = true
+        
+        // 이미지 피커 화면을 표시.
+        self.present(picker, animated: false, completion: nil)
+        
         print("카메라 버튼")
     }
+}
 
-
+extension MemoFormVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
+    // 이미지 선택을 완료했을 때 호출되는 메소드.
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // 선택된 이미지를 미리보기에 표시.
+        self.memoImageView.image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+        
+        // 이미지 피커 컨트롤러를 닫는다.
+        picker.dismiss(animated: false, completion: nil)
+    }
+    
 }
