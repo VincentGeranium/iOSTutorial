@@ -75,7 +75,9 @@ class MemoWithImageCell: UITableViewCell {
     
     private func setUpTitleImageView() {
         let guide = self.contentView.safeAreaLayoutGuide
+        
         titleImageView.translatesAutoresizingMaskIntoConstraints = false
+        
         self.contentView.addSubview(titleImageView)
         
         NSLayoutConstraint.activate([
@@ -91,6 +93,7 @@ class MemoWithImageCell: UITableViewCell {
         let guide = self.contentView.safeAreaLayoutGuide
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         self.contentView.addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
@@ -102,8 +105,9 @@ class MemoWithImageCell: UITableViewCell {
     }
     
     private func setUpContentsLabel() {
-        let guide = self.contentView.safeAreaLayoutGuide
+        
         contentsLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         self.contentView.addSubview(contentsLabel)
         
         NSLayoutConstraint.activate([
@@ -116,7 +120,9 @@ class MemoWithImageCell: UITableViewCell {
     
     private func setUpDateAndTimeLabel() {
         let guide = self.contentView.safeAreaLayoutGuide
+        
         dateAndTimeLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         self.contentView.addSubview(dateAndTimeLabel)
         
         NSLayoutConstraint.activate([
