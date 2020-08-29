@@ -7,3 +7,16 @@
 //
 
 import Foundation
+import UIKit
+
+struct User {
+    let age: Int
+    let name: String
+    let backgroundColor: UIColor
+    
+    init(age: Int, name: String, backgroundColor: UIColor) {
+        self.age = age
+        self.name = name
+        self.backgroundColor = backgroundColor
+    }
+}
