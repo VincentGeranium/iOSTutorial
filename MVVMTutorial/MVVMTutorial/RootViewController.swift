@@ -10,6 +10,13 @@ import UIKit
 
 class RootViewController: UIViewController {
     
+    var viewModel: RootViewModel! {
+        didSet {
+            self.view.backgroundColor = viewModel.user.backgroundColor
+            navigationItem.title = "\(viewModel.user.name), \(viewModel.user.age)"
+        }
+    }
+    
     lazy var label: UILabel = {
         let label = UILabel()
         label.text = "Tap 'Fetch' to retreive the message"
@@ -24,14 +31,17 @@ class RootViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
+        
         
         setUpNavigation()
         setUpViews()
+        
+        let user = User(age: 30, name: "Jun", backgroundColor: .systemPink)
+        viewModel = RootViewModel(user: user)
     }
     
     fileprivate func setUpNavigation() {
-        self.navigationItem.title = "Jun, 30"
+//        self.navigationItem.title = "Jun, 30"
         
         let resetBarButton = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(resetBarButtonTapped))
         let fetchBarButton = UIBarButtonItem(title: "Fetch", style: .done, target: self, action: #selector(fetchBarButtonTapped))
