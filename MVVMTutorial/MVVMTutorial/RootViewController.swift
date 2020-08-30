@@ -20,7 +20,6 @@ class RootViewController: UIViewController {
     lazy var label: UILabel = {
         let label = UILabel()
         label.text = "Tap 'Fetch' to retreive the message"
-        label.backgroundColor = .systemPink
         return label
     }()
     
@@ -36,7 +35,7 @@ class RootViewController: UIViewController {
         setUpNavigation()
         setUpViews()
         
-        let user = User(age: 30, name: "Jun", backgroundColor: .systemPink)
+        let user = User(age: 30, name: "Jun", backgroundColor: .white)
         viewModel = RootViewModel(user: user)
     }
     
@@ -54,6 +53,12 @@ class RootViewController: UIViewController {
     }
     
     @objc fileprivate func fetchBarButtonTapped() {
+        DispatchQueueHelper.delay(bySeconds: 3.0, dispatchLevel: .background) {
+            let message: String = "Hello there"
+            DispatchQueueHelper.delay(bySeconds: 0.0) {
+                self.label.text = message
+            }
+        }
         
     }
     
