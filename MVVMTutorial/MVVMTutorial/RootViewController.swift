@@ -41,7 +41,6 @@ class RootViewController: UIViewController {
     }
     
     fileprivate func setUpNavigation() {
-//        self.navigationItem.title = "Jun, 30"
         
         let resetBarButton = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(resetBarButtonTapped))
         let fetchBarButton = UIBarButtonItem(title: "Fetch", style: .done, target: self, action: #selector(fetchBarButtonTapped))
