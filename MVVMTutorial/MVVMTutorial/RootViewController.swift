@@ -31,12 +31,10 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         setUpNavigation()
         setUpViews()
         
-        let user = User(age: 30, name: "Jun", backgroundColor: .white)
-        viewModel = RootViewModel(user: user)
+        viewModel.rootViewModelDelegate = self
     }
     
     fileprivate func setUpNavigation() {
@@ -53,13 +51,7 @@ class RootViewController: UIViewController {
     }
     
     @objc fileprivate func fetchBarButtonTapped() {
-        DispatchQueueHelper.delay(bySeconds: 3.0, dispatchLevel: .background) {
-            let message: String = "Hello there"
-            DispatchQueueHelper.delay(bySeconds: 0.0) {
-                self.label.text = message
-            }
-        }
-        
+        viewModel.fetchMessage()
     }
     
     private func setUpViews() {
@@ -93,6 +85,19 @@ class RootViewController: UIViewController {
             activityIndicatorView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 12),
             activityIndicatorView.centerXAnchor.constraint(equalTo: guide.centerXAnchor)
         ])
+    }
+}
+
+extension RootViewController: RootViewModelDelegate {
+    
+    func didStartFetchingMessage(_ message: String?) {
+        self.label.text = message
+        activityIndicatorView.startAnimating()
+    }
+    
+    func didFinishFetchingMessage(_ message: String?) {
+        self.label.text = message
+        activityIndicatorView.stopAnimating()
     }
     
     

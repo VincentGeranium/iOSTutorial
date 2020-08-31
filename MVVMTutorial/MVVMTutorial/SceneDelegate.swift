@@ -19,6 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let rootVC = RootViewController()
         let naviVC = UINavigationController.init(rootViewController: rootVC)
+        let user = User(age: 30, name: "Jun", backgroundColor: .white)
+        let rootViewModel = RootViewModel(user: user)
+        rootVC.viewModel = rootViewModel
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
