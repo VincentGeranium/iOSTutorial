@@ -17,6 +17,10 @@ class MainTabBarController: UITabBarController {
         super.viewDidLoad()
 
         viewControllers = [firstNavi,secondNavi]
+        
+        
+        firstNavi.tabBarItem = UITabBarItem(title: "f", image: UIImage.init(named: "list"), tag: 0)
+        secondNavi.tabBarItem = UITabBarItem(title: "s", image: UIImage.init(named: "search"), tag: 1)
     }
 
  

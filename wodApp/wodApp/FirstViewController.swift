@@ -9,16 +9,11 @@
 import UIKit
 
 class FirstViewController: UIViewController {
-    
-    let naviBar: UINavigationBar = {
-        let naviBar: UINavigationBar = UINavigationBar()
-        naviBar.topItem?.title = "f"
-        return naviBar
-    }()
-
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "f"
+//        self.title = "f"
+        self.navigationController?.navigationBar.topItem?.title = "first"
         self.view.backgroundColor = .gray
     }
 
