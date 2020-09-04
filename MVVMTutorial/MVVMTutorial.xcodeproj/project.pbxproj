@@ -64,16 +64,40 @@
 			children = (
 				20011ADE24FA679400D148B8 /* AppDelegate.swift */,
 				20011AE024FA679400D148B8 /* SceneDelegate.swift */,
-				20011AE224FA679400D148B8 /* RootViewController.swift */,
-				20AC7AA924FC012C00980A49 /* DispatchQueueHelper.swift */,
-				20011AF424FAAC9C00D148B8 /* RootViewModel.swift */,
-				20011AF224FA6B8E00D148B8 /* User.swift */,
 				20011AE424FA679400D148B8 /* Main.storyboard */,
 				20011AE724FA679500D148B8 /* Assets.xcassets */,
 				20011AE924FA679500D148B8 /* LaunchScreen.storyboard */,
 				20011AEC24FA679500D148B8 /* Info.plist */,
+				2007982F2502C33F00F344A7 /* View */,
+				2007982E2502C30400F344A7 /* ViewModel */,
+				2007982D2502C2E100F344A7 /* Model */,
 			);
 			path = MVVMTutorial;
+			sourceTree = "<group>";
+		};
+		2007982D2502C2E100F344A7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				20011AF224FA6B8E00D148B8 /* User.swift */,
+				20AC7AA924FC012C00980A49 /* DispatchQueueHelper.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2007982E2502C30400F344A7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				20011AF424FAAC9C00D148B8 /* RootViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2007982F2502C33F00F344A7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20011AE224FA679400D148B8 /* RootViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
