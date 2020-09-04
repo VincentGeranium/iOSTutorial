@@ -12,10 +12,12 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    let settingsVC = SettingsViewController()
+    
     lazy var settingBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .done, target: self, action: #selector(settingBarButtonTapped))
     
     @objc fileprivate func settingBarButtonTapped() {
-        let settingsVC = SettingsViewController()
+        
         navigationController?.pushViewController(settingsVC, animated: true)
     }
     
@@ -43,6 +45,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
+        settingsVC.delegate = self
         
         setupNavigation()
         setupView()
@@ -95,7 +98,13 @@ class ProfileViewController: UIViewController {
         nameLabel.text = profile.name
         infoLabel.text = profile.info
     }
+}
 
-
+extension ProfileViewController: SettingsViewControllerDelegate {
+    func didChange(_ profile: Profile) {
+        apply(profile)
+    }
+    
+    
 }
 

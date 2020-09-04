@@ -10,11 +10,14 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
+    var delegate: SettingsViewControllerDelegate?
+    
     lazy var saveBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "checkmark"), style: .done, target: self, action: #selector(saveBarButtonItemTapped))
     
     @objc fileprivate func saveBarButtonItemTapped() {
         let profile = Profile(icon: "icon\(UserDefaults.standard.integer(forKey: kIconButton))", accentColor: colors[UserDefaults.standard.integer(forKey: kColorButton)], name: nameTextField.text ?? "", info: infoTextField.text ?? "")
         print(profile)
+        delegate?.didChange(profile)
         navigationController?.popViewController(animated: true)
     }
     

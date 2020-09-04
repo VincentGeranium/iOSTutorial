@@ -16,6 +16,7 @@
 		20A0C8ED2501544C008AD091 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A0C8EC2501544C008AD091 /* Profile.swift */; };
 		20A0C8EF250154E8008AD091 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A0C8EE250154E8008AD091 /* Key.swift */; };
 		20A0C8F125015947008AD091 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A0C8F025015947008AD091 /* Colors.swift */; };
+		20EB3BCF250250D900C6F276 /* SettingsViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EB3BCE250250D900C6F276 /* SettingsViewControllerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		20A0C8EC2501544C008AD091 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		20A0C8EE250154E8008AD091 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		20A0C8F025015947008AD091 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		20EB3BCE250250D900C6F276 /* SettingsViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewControllerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				20A0C8DA25013137008AD091 /* ProfileViewController.swift */,
 				20A0C8EA2501483A008AD091 /* SettingsViewController.swift */,
 				20A0C8EC2501544C008AD091 /* Profile.swift */,
+				20EB3BCE250250D900C6F276 /* SettingsViewControllerDelegate.swift */,
 				20A0C8EE250154E8008AD091 /* Key.swift */,
 				20A0C8F025015947008AD091 /* Colors.swift */,
 				20A0C8DF25013138008AD091 /* Assets.xcassets */,
@@ -148,6 +151,7 @@
 			files = (
 				20A0C8DB25013137008AD091 /* ProfileViewController.swift in Sources */,
 				20A0C8ED2501544C008AD091 /* Profile.swift in Sources */,
+				20EB3BCF250250D900C6F276 /* SettingsViewControllerDelegate.swift in Sources */,
 				20A0C8D725013137008AD091 /* AppDelegate.swift in Sources */,
 				20A0C8F125015947008AD091 /* Colors.swift in Sources */,
 				20A0C8D925013137008AD091 /* SceneDelegate.swift in Sources */,
