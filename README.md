@@ -20,15 +20,22 @@
   - 7. 오토 레이아웃 학습.
   
 ### 2. [MVC Design Pattern Tutorial](https://github.com/VincentGeranium/iOSTutorial/tree/master/MVCTutorial)
-  - 본 프로젝트는 [iOS Academy](https://www.youtube.com/watch?v=azFmaTZUy7k&t=785s) 유튜브 영상을 보고 만든 프로젝트 입니다
+  - 본 프로젝트는 [iOS Academy](https://www.youtube.com/watch?v=azFmaTZUy7k&t=785s) 유튜브 영상을 보고 만든 프로젝트 입니다.
   - MVC design pattern 학습을 위해 만든 프로젝트 입니다.
   - 1. MVC Pattern 학습.
   - 2. Value Object 학습.
   
 ### 3. [MVVM Design Pattern Tutorial](https://github.com/VincentGeranium/iOSTutorial/tree/master/MVVMTutorial)
-  - 본 프로젝트는 [Rebeloper - Rebel Developer](https://www.youtube.com/watch?v=7HKi96v4X2A) 유튜브 영상을 보고 만든 프로젝트 입니다
+  - 본 프로젝트는 [Rebeloper - Rebel Developer](https://www.youtube.com/watch?v=7HKi96v4X2A) 유튜브 영상을 보고 만든 프로젝트 입니다.
   - MVVM design pattern 학습을 위해 만든 프로젝트 입니다.
   - 1. MVVM Pattern 학습.
   - 2. Delegate Pattern 학습.
+
+### 4. [Protocol Delegate Pattern Tutorial](https://github.com/VincentGeranium/iOS_Projects/tree/master/ProtocolDelegatePattern)
+  - 본 프로젝트는 [Rebeloper - Rebel Developer](https://www.youtube.com/watch?v=UQnSdXFDAQQ) 유튜브 영상을 보고 만든 프로젝트 입니다.
+  - Protocol Delegate Pattern 학습을 위해 만든 프로젝트 입니다.
+  - Protocol과 Delegate Pattern을 이용하여 iOS Communication pattern에 대하여 학습.
+  - 1. Protocol 학습.
+  - 2. Delegate 학습.
   
 - - -
