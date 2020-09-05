@@ -9,19 +9,23 @@
 /* Begin PBXBuildFile section */
 		2007981A2502C13900F344A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200798192502C13900F344A7 /* AppDelegate.swift */; };
 		2007981C2502C13900F344A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2007981B2502C13900F344A7 /* SceneDelegate.swift */; };
-		2007981E2502C13900F344A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2007981D2502C13900F344A7 /* ViewController.swift */; };
+		2007981E2502C13900F344A7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2007981D2502C13900F344A7 /* MainViewController.swift */; };
 		200798232502C13A00F344A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 200798222502C13A00F344A7 /* Assets.xcassets */; };
 		200798262502C13A00F344A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 200798242502C13A00F344A7 /* LaunchScreen.storyboard */; };
+		203156282503D07300828AAE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203156272503D07300828AAE /* MainView.swift */; };
+		2031562A2503D8A200828AAE /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203156292503D8A200828AAE /* QuestionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		200798162502C13900F344A7 /* NetflexTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetflexTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		200798192502C13900F344A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2007981B2502C13900F344A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2007981D2502C13900F344A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2007981D2502C13900F344A7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		200798222502C13A00F344A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		200798252502C13A00F344A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		200798272502C13A00F344A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		203156272503D07300828AAE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		203156292503D8A200828AAE /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +60,9 @@
 			children = (
 				200798192502C13900F344A7 /* AppDelegate.swift */,
 				2007981B2502C13900F344A7 /* SceneDelegate.swift */,
-				2007981D2502C13900F344A7 /* ViewController.swift */,
+				2007981D2502C13900F344A7 /* MainViewController.swift */,
+				203156272503D07300828AAE /* MainView.swift */,
+				203156292503D8A200828AAE /* QuestionViewController.swift */,
 				200798222502C13A00F344A7 /* Assets.xcassets */,
 				200798242502C13A00F344A7 /* LaunchScreen.storyboard */,
 				200798272502C13A00F344A7 /* Info.plist */,
@@ -134,7 +140,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2007981E2502C13900F344A7 /* ViewController.swift in Sources */,
+				2007981E2502C13900F344A7 /* MainViewController.swift in Sources */,
+				2031562A2503D8A200828AAE /* QuestionViewController.swift in Sources */,
+				203156282503D07300828AAE /* MainView.swift in Sources */,
 				2007981A2502C13900F344A7 /* AppDelegate.swift in Sources */,
 				2007981C2502C13900F344A7 /* SceneDelegate.swift in Sources */,
 			);
