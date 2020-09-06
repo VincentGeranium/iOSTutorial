@@ -21,6 +21,10 @@ class BaseScreen: UIViewController {
         var nameLabel: UILabel = UILabel()
         nameLabel.text = ""
         nameLabel.backgroundColor = .clear
+        nameLabel.textAlignment = .center
+        nameLabel.font = UIFont.init(name: "Avenir Next", size: 26)
+        nameLabel.font = UIFont.systemFont(ofSize: 26, weight: .heavy)
+        nameLabel.textColor = .white
         return nameLabel
     }()
     
@@ -28,7 +32,8 @@ class BaseScreen: UIViewController {
         let chooseButton: UIButton = UIButton()
         chooseButton.setTitle("Choose a Side", for: .normal)
         chooseButton.setTitleColor(.black, for: .normal)
-        chooseButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        chooseButton.titleLabel?.font = UIFont.init(name: "Avenir Next", size: 20)
+        chooseButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .heavy)
         chooseButton.backgroundColor = .white
         chooseButton.layer.borderWidth = 1
         chooseButton.layer.borderColor = UIColor.white.cgColor
