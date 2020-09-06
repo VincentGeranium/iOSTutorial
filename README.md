@@ -31,8 +31,15 @@
   - 1. MVVM Pattern 학습.
   - 2. Delegate Pattern 학습.
 
-### 4. [Protocol Delegate Pattern Tutorial](https://github.com/VincentGeranium/iOS_Projects/tree/master/ProtocolDelegatePattern)
+### 4. [Delegate Protocol Pattern Tutorial](https://github.com/VincentGeranium/iOS_Projects/tree/master/ProtocolDelegatePattern)
   - 본 프로젝트는 [Rebeloper - Rebel Developer](https://www.youtube.com/watch?v=UQnSdXFDAQQ) 유튜브 영상을 보고 만든 프로젝트 입니다.
+  - Protocol Delegate Pattern 학습을 위해 만든 프로젝트 입니다.
+  - Protocol과 Delegate Pattern을 이용하여 iOS Communication pattern에 대하여 학습.
+  - 1. Protocol 학습.
+  - 2. Delegate 학습.
+  
+### 5. [Delegate Protocol Pattern - Choose Your Side](https://github.com/VincentGeranium/iOS_Projects/tree/master/ProtocolDelegatePatternUsedStarWars)
+  - 본 프로젝트는 [Sean Allen](https://www.youtube.com/watch?v=DBWu6TnhLeY) 유튜브 영상을 보고 만든 프로젝트 입니다.
   - Protocol Delegate Pattern 학습을 위해 만든 프로젝트 입니다.
   - Protocol과 Delegate Pattern을 이용하여 iOS Communication pattern에 대하여 학습.
   - 1. Protocol 학습.
