@@ -7,8 +7,10 @@
 //
 
 import UIKit
-
+// 데이터를 넘겨주는 Boss와 같은 역활을 하는 VC
 class SelectionScreen: UIViewController {
+    
+    var sideSelectionDelegate: SideSelectionDelegate?
     
     lazy var titleLabel: UILabel = {
         let titleLabel: UILabel = UILabel()
@@ -78,8 +80,12 @@ class SelectionScreen: UIViewController {
         
         imperialButton.addTarget(self, action: #selector(didTappedImperialButton(_:)), for: .touchUpInside)
     }
+
     
     @objc private func didTappedImperialButton(_ sender: UIButton) {
+        guard let image = UIImage(named: "vader") else { return }
+        // 넘겨야 하는 데이터를 버튼의 이벤트가 작동되면 delegate를 사용하여 delegate를 받는 뷰에 데이터를 넘겨준다.
+        sideSelectionDelegate?.didTapChoice(image: image, name: "Darth vader", color: .red)
         dismiss(animated: true, completion: nil)
     }
     
@@ -101,6 +107,9 @@ class SelectionScreen: UIViewController {
     }
     
     @objc private func didTappedRebelButton(_ sender: UIButton) {
+        guard let image = UIImage(named: "luke") else { return }
+        // 넘겨야 하는 데이터를 버튼의 이벤트가 작동되면 delegate를 사용하여 delegate를 받는 뷰에 데이터를 넘겨준다.
+        sideSelectionDelegate?.didTapChoice(image: image, name: "Luke Skywalker", color: .cyan)
         dismiss(animated: true, completion: nil)
     }
 

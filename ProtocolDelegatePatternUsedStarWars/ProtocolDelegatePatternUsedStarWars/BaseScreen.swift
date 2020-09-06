@@ -7,13 +7,12 @@
 //
 
 import UIKit
-
+// Boss의 Delegate(위임)을 통해 데이터를 받아 표현하는 Intern과 같은 VC
 class BaseScreen: UIViewController {
     
     lazy var mainImageView: UIImageView = {
         var mainImageView: UIImageView = UIImageView()
         mainImageView.backgroundColor = .clear
-//        mainImageView.image = UIImage.init(named: "logo")
         return mainImageView
     }()
     
@@ -68,6 +67,7 @@ class BaseScreen: UIViewController {
             mainImageView.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -25),
             mainImageView.centerYAnchor.constraint(equalTo: guide.centerYAnchor, constant: -120),
             // Set aspect ratio Programmatically Creating Constraints
+            mainImageView.widthAnchor.constraint(equalToConstant: 325),
             mainImageView.widthAnchor.constraint(equalTo: mainImageView.heightAnchor, multiplier: 16/9),
         ])
     }
@@ -106,7 +106,20 @@ class BaseScreen: UIViewController {
     
     @objc func didTappedChooseButton(_ sender: UIButton) {
         let selectionScreenVC = SelectionScreen()
+        // selectionScreenVC의 delegate를 받음.
+        selectionScreenVC.sideSelectionDelegate = self
         present(selectionScreenVC, animated: true, completion: nil)
+    }
+}
+
+extension BaseScreen: SideSelectionDelegate {
+    // SelectionScreen에서 Delegate를 이용하여 각 버튼(imperialButton, rebelButton)의 이벤트에 따라 넘겨주는 데이터가 다르다.
+    
+    // 따로 didTapChoice를 사용할 필요 없음, delegate를 주었으므로 각 버튼(imperialButton, rebelButton)의 이벤트가 발생하면 각각의 데이터를 넘겨줌.
+    func didTapChoice(image: UIImage, name: String, color: UIColor) {
+        mainImageView.image = image
+        nameLabel.text = name
+        self.view.backgroundColor = color
     }
     
     

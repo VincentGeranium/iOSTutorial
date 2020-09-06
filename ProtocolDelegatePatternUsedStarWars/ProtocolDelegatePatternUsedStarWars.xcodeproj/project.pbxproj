@@ -13,6 +13,7 @@
 		2046BE84250535800035A574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2046BE83250535800035A574 /* Assets.xcassets */; };
 		2046BE87250535800035A574 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2046BE85250535800035A574 /* LaunchScreen.storyboard */; };
 		2046BE8F2505362F0035A574 /* SelectionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2046BE8E2505362F0035A574 /* SelectionScreen.swift */; };
+		2046BE91250575040035A574 /* SideSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2046BE90250575040035A574 /* SideSelectionDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		2046BE86250535800035A574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2046BE88250535800035A574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2046BE8E2505362F0035A574 /* SelectionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionScreen.swift; sourceTree = "<group>"; };
+		2046BE90250575040035A574 /* SideSelectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideSelectionDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				2046BE7C2505357F0035A574 /* SceneDelegate.swift */,
 				2046BE7E2505357F0035A574 /* BaseScreen.swift */,
 				2046BE8E2505362F0035A574 /* SelectionScreen.swift */,
+				2046BE90250575040035A574 /* SideSelectionDelegate.swift */,
 				2046BE83250535800035A574 /* Assets.xcassets */,
 				2046BE85250535800035A574 /* LaunchScreen.storyboard */,
 				2046BE88250535800035A574 /* Info.plist */,
@@ -141,6 +144,7 @@
 				2046BE7B2505357F0035A574 /* AppDelegate.swift in Sources */,
 				2046BE8F2505362F0035A574 /* SelectionScreen.swift in Sources */,
 				2046BE7D2505357F0035A574 /* SceneDelegate.swift in Sources */,
+				2046BE91250575040035A574 /* SideSelectionDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
