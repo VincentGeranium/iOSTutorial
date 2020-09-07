@@ -14,6 +14,10 @@
 		200798262502C13A00F344A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 200798242502C13A00F344A7 /* LaunchScreen.storyboard */; };
 		203156282503D07300828AAE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203156272503D07300828AAE /* MainView.swift */; };
 		2031562A2503D8A200828AAE /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203156292503D8A200828AAE /* QuestionViewController.swift */; };
+		2041F7E32506810D004783F7 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2041F7E22506810D004783F7 /* UserInfoViewController.swift */; };
+		2041F7E525068132004783F7 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2041F7E425068132004783F7 /* UserInfoView.swift */; };
+		2041F7E725069BC5004783F7 /* UserInfoViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2041F7E625069BC5004783F7 /* UserInfoViewControllerDelegate.swift */; };
+		2041F7E925069C01004783F7 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2041F7E825069C01004783F7 /* UserInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		200798272502C13A00F344A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		203156272503D07300828AAE /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		203156292503D8A200828AAE /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		2041F7E22506810D004783F7 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		2041F7E425068132004783F7 /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
+		2041F7E625069BC5004783F7 /* UserInfoViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewControllerDelegate.swift; sourceTree = "<group>"; };
+		2041F7E825069C01004783F7 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,10 @@
 				2007981B2502C13900F344A7 /* SceneDelegate.swift */,
 				2007981D2502C13900F344A7 /* MainViewController.swift */,
 				203156272503D07300828AAE /* MainView.swift */,
+				2041F7E22506810D004783F7 /* UserInfoViewController.swift */,
+				2041F7E625069BC5004783F7 /* UserInfoViewControllerDelegate.swift */,
+				2041F7E825069C01004783F7 /* UserInfo.swift */,
+				2041F7E425068132004783F7 /* UserInfoView.swift */,
 				203156292503D8A200828AAE /* QuestionViewController.swift */,
 				200798222502C13A00F344A7 /* Assets.xcassets */,
 				200798242502C13A00F344A7 /* LaunchScreen.storyboard */,
@@ -141,9 +153,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2007981E2502C13900F344A7 /* MainViewController.swift in Sources */,
+				2041F7E525068132004783F7 /* UserInfoView.swift in Sources */,
+				2041F7E32506810D004783F7 /* UserInfoViewController.swift in Sources */,
+				2041F7E725069BC5004783F7 /* UserInfoViewControllerDelegate.swift in Sources */,
 				2031562A2503D8A200828AAE /* QuestionViewController.swift in Sources */,
 				203156282503D07300828AAE /* MainView.swift in Sources */,
 				2007981A2502C13900F344A7 /* AppDelegate.swift in Sources */,
+				2041F7E925069C01004783F7 /* UserInfo.swift in Sources */,
 				2007981C2502C13900F344A7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

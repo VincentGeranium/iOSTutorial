@@ -1,41 +1,36 @@
 //
-//  ViewController.swift
+//  UserInfoViewController.swift
 //  NetflexTestApp
 //
-//  Created by 김광준 on 2020/09/05.
+//  Created by 김광준 on 2020/09/07.
 //  Copyright © 2020 VincentGeranium. All rights reserved.
 //
 
 import UIKit
 
-class MainViewController: UIViewController {
-   
-    lazy var mainView: MainView = {
-        let mainView: MainView = MainView()
-        
+class UserInfoViewController: UIViewController {
+    
+    lazy var mainView: UserInfoView = {
+        var mainView: UserInfoView = UserInfoView()
         return mainView
     }()
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.isHidden = true
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
         self.view.backgroundColor = .black
         
-     
+        self.navigationController?.navigationBar.isHidden = false
+        
         addViews()
-        setupButtonsAction()
     }
     
     private func addViews() {
-        setupMainView()
+        setupUserInfoView()
         
     }
     
-    private func setupMainView() {
+    private func setupUserInfoView() {
         let guide = self.view.safeAreaLayoutGuide
         
         mainView.translatesAutoresizingMaskIntoConstraints = false
@@ -49,16 +44,5 @@ class MainViewController: UIViewController {
             mainView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
         ])
     }
-    
-    private func setupButtonsAction() {
-        mainView.startButton.addTarget(self, action: #selector(didTappedStartButton(_:)), for: .touchUpInside)
-        
-    }
-    
-    @objc func didTappedStartButton(_ sender: UIButton) {
-        let userInfoVC = UserInfoViewController()
-        
-        self.navigationController?.pushViewController(userInfoVC, animated: true)
-    }
-}
 
+}
