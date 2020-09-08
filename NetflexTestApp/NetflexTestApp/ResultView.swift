@@ -20,8 +20,10 @@ class ResultView: UIView {
         return resultCollectionView
     }()
     
+    
     override init(frame: CGRect) {
         super .init(frame: frame)
+        
         resultCollectionView.backgroundColor = .white
         resultCollectionView.delegate = self
         resultCollectionView.dataSource = self
