@@ -11,6 +11,6 @@ import UIKit
 
 struct UserInfo {
     let name: String
-    let color: UIColor
-    let small: String
+    let number: Int
+    let food: String
 }

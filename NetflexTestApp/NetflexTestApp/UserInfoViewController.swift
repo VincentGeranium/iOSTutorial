@@ -11,7 +11,7 @@ import UIKit
 class UserInfoViewController: UIViewController {
     
     lazy var mainView: UserInfoView = {
-        var mainView: UserInfoView = UserInfoView()
+        let mainView: UserInfoView = UserInfoView()
         return mainView
     }()
 
