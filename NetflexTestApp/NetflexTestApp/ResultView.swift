@@ -10,15 +10,11 @@ import Foundation
 import UIKit
 
 class ResultView: UIView {
-    private let resultCollectionViewflowLayout: UICollectionViewFlowLayout = {
-        let resultCollectionViewflowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        
-        return resultCollectionViewflowLayout
-    }()
     
     private let resultCollectionView: UICollectionView = {
-        let resultCollectionView: UICollectionView = UICollectionView()
-        resultCollectionView.frame = .zero
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let resultCollectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         resultCollectionView.backgroundColor = .white
         resultCollectionView.register(ResultCollectionViewCell.self, forCellWithReuseIdentifier: ResultCollectionViewCell.reuseIdentifier)
         return resultCollectionView
@@ -26,18 +22,21 @@ class ResultView: UIView {
     
     override init(frame: CGRect) {
         super .init(frame: frame)
+        resultCollectionView.backgroundColor = .white
         resultCollectionView.delegate = self
         resultCollectionView.dataSource = self
+        addViews()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
+    private func addViews() {
+        setupResultCollectionView()
+    }
     
     private func setupResultCollectionView() {
-        resultCollectionView.collectionViewLayout = resultCollectionViewflowLayout
         
         let guide = self.safeAreaLayoutGuide
         
@@ -46,14 +45,12 @@ class ResultView: UIView {
         self.addSubview(resultCollectionView)
         
         NSLayoutConstraint.activate([
-            resultCollectionView.topAnchor.constraint(equalTo: guide.topAnchor, constant: 40),
-            resultCollectionView.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 40),
-            resultCollectionView.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -40),
-            resultCollectionView.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -40),
+            resultCollectionView.topAnchor.constraint(equalTo: guide.topAnchor),
+            resultCollectionView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
+            resultCollectionView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
+            resultCollectionView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
         ])
-
     }
-    
 }
 
 extension ResultView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
