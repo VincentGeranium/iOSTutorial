@@ -11,6 +11,6 @@ import UIKit
 
 struct UserInfo {
     let name: String
-    let number: Int
+    let number: String
     let food: String
 }

@@ -10,8 +10,6 @@ import UIKit
 
 class UserInfoView: UIView {
     
-    var userInfoDelegate: UserInfoViewControllerDelegate?
-    
     lazy var titleLabel: UILabel = {
         let titleLabel: UILabel = UILabel()
         titleLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold)
@@ -78,7 +76,7 @@ class UserInfoView: UIView {
     
     override init(frame: CGRect) {
         super .init(frame: frame)
-        
+        addDelegates()
         addViews()
     }
     
@@ -86,10 +84,17 @@ class UserInfoView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private func addDelegates() {
+        nameTextField.delegate = self
+        foodTextField.delegate = self
+        numberTextField.delegate = self
+    }
+    
     private func addViews() {
         setupTitleLabel()
         setupNameTextField()
-        setupColorTextField()
+        setupFoodTextField()
+        setupNumberTextField()
         setupConfirmButton()
     }
     
@@ -124,7 +129,7 @@ class UserInfoView: UIView {
         ])
     }
     
-    private func setupColorTextField() {
+    private func setupFoodTextField() {
         let guide = self.safeAreaLayoutGuide
         
         foodTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -137,6 +142,22 @@ class UserInfoView: UIView {
             foodTextField.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 20),
             foodTextField.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -20),
             foodTextField.heightAnchor.constraint(equalToConstant: 35),
+        ])
+    }
+    
+    private func setupNumberTextField() {
+        let guide = self.safeAreaLayoutGuide
+        
+        numberTextField.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.addSubview(numberTextField)
+        
+        NSLayoutConstraint.activate([
+            numberTextField.centerXAnchor.constraint(equalTo: guide.centerXAnchor),
+            numberTextField.topAnchor.constraint(equalTo: foodTextField.bottomAnchor, constant: 50),
+            numberTextField.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 20),
+            numberTextField.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -20),
+            numberTextField.heightAnchor.constraint(equalToConstant: 35),
         ])
     }
     
@@ -153,12 +174,9 @@ class UserInfoView: UIView {
             confirmButton.heightAnchor.constraint(equalToConstant: 50),
             confirmButton.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -67)
         ])
-        
-        
     }
-    
-    @objc private func didTappedConfirmButton(_ sender: UIButton) {
-        
-    }
+}
+
+extension UserInfoView: UITextFieldDelegate {
     
 }

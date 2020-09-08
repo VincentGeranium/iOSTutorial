@@ -10,8 +10,11 @@ import UIKit
 
 class UserInfoViewController: UIViewController {
     
+    var userInfoDelegate: UserInfoViewControllerDelegate?
+    
     lazy var mainView: UserInfoView = {
         let mainView: UserInfoView = UserInfoView()
+        mainView.confirmButton.addTarget(self, action: #selector(didTappedConfirmButton(_:)), for: .touchUpInside)
         return mainView
     }()
 
@@ -43,6 +46,22 @@ class UserInfoViewController: UIViewController {
             mainView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
             mainView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
         ])
+    }
+    
+    @objc private func didTappedConfirmButton(_ sender: UIButton) {
+        guard let name = mainView.nameTextField.text else { return }
+        guard let number = mainView.numberTextField.text else { return }
+        guard let food = mainView.foodTextField.text else { return }
+        
+        let userInfo: UserInfo = UserInfo(name: name, number: number, food: food)
+        
+        print("\(userInfo.name), \(userInfo.number), \(userInfo.food)")
+        
+        userInfoDelegate?.userInfo(userInfo)
+        
+        let questionVC = QuestionViewController()
+        
+        self.navigationController?.pushViewController(questionVC, animated: true)
     }
 
 }
