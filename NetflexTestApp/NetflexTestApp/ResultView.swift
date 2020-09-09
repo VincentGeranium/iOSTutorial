@@ -11,18 +11,25 @@ import UIKit
 
 class ResultView: UIView {
     
-    private let resultCollectionView: UICollectionView = {
+    private let layout: UICollectionViewFlowLayout = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = .zero
+        layout.minimumLineSpacing = 10
+//        layout.minimumInteritemSpacing = 0
         layout.scrollDirection = .horizontal
+        return layout
+    }()
+    
+    private lazy var resultCollectionView: UICollectionView = {
         let resultCollectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         resultCollectionView.backgroundColor = .white
         resultCollectionView.register(ResultCollectionViewCell.self, forCellWithReuseIdentifier: ResultCollectionViewCell.reuseIdentifier)
         return resultCollectionView
     }()
     
-    
     override init(frame: CGRect) {
         super .init(frame: frame)
+        
         
         resultCollectionView.backgroundColor = .white
         resultCollectionView.delegate = self
@@ -56,11 +63,28 @@ class ResultView: UIView {
 }
 
 extension ResultView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+//     지정된 섹션의 셀 사이의 최소간격을 반환하는 메서드.
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//        return 50
+//    }
+    
+    // 지정된 섹션의 헤더뷰의 크기를 반환하는 메서드. 크기를 지정하지 않으면 화면에 보이지 않습니다.
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+//        return CGSize(width: resultCollectionView.frame.width / 11, height: resultCollectionView.frame.width / 2)
+//    }
+    
+    // 지정된 섹션의 푸터뷰의 크기를 반환하는 메서드. 크기를 지정하지 않으면 화면에 보이지 않습니다.
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+//        return CGSize(width: resultCollectionView.frame.width / 11, height: resultCollectionView.frame.width / 2)
+//    }
+    
+    // 지정된 셀의 크기를 반환하는 메서드.
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: resultCollectionView.frame.width / 2.5, height: resultCollectionView.frame.width / 2)
+        return CGSize(width: resultCollectionView.frame.width / 2, height: resultCollectionView.frame.width / 2)
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
