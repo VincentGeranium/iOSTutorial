@@ -24,6 +24,7 @@ class UserInfoView: UIView {
         let nameTextField: UITextField = UITextField()
         // placeholder 의 color 바꾸기.
         nameTextField.attributedPlaceholder = NSAttributedString.init(string: " 이름을 입력해 주세요.", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        nameTextField.becomeFirstResponder()
         nameTextField.backgroundColor = .white
         nameTextField.layer.borderWidth = 1
         nameTextField.layer.borderColor = UIColor.white.cgColor
@@ -178,5 +179,23 @@ class UserInfoView: UIView {
 }
 
 extension UserInfoView: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == nameTextField {
+            foodTextField.becomeFirstResponder()
+            return true
+        } else if textField == foodTextField {
+            numberTextField.becomeFirstResponder()
+            return true
+        } else if textField == numberTextField {
+            self.endEditing(true)
+            return true
+        }
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.endEditing(true)
+    }
     
 }
