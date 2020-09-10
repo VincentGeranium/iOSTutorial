@@ -12,7 +12,7 @@ class ResultCollectionViewCell: UICollectionViewCell {
     
     static let reuseIdentifier: String = "ResultCollectionViewCell"
     
-    private let videoImageView: UIImageView = {
+    lazy var videoImageView: UIImageView = {
         let videoImageView = UIImageView()
         videoImageView.contentMode = .scaleAspectFill
         videoImageView.backgroundColor = .red
@@ -21,9 +21,21 @@ class ResultCollectionViewCell: UICollectionViewCell {
         return videoImageView
     }()
     
+    lazy var videoTitleLabel: UILabel = {
+        let videoTitleLabel: UILabel = UILabel()
+        videoTitleLabel.backgroundColor = .blue
+        videoTitleLabel.layer.cornerRadius = 12
+        videoTitleLabel.layer.borderWidth = 1
+        videoTitleLabel.layer.borderColor = UIColor.clear.cgColor
+        videoTitleLabel.textAlignment = .center
+        videoTitleLabel.clipsToBounds = true
+        return videoTitleLabel
+    }()
+    
+    
     override init(frame: CGRect) {
         super .init(frame: frame)
-    
+        self.backgroundColor = .green
         addCells()
     }
     
@@ -33,6 +45,7 @@ class ResultCollectionViewCell: UICollectionViewCell {
     
     private func addCells() {
         setupVideoImageView()
+        setupVideoTitleLabel()
     }
     
     private func setupVideoImageView() {
@@ -47,6 +60,21 @@ class ResultCollectionViewCell: UICollectionViewCell {
             videoImageView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
             videoImageView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
             videoImageView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
+        ])
+    }
+    
+    private func setupVideoTitleLabel() {
+        let guide = self.contentView.safeAreaLayoutGuide
+        
+        videoTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.videoImageView.addSubview(videoTitleLabel)
+        
+        NSLayoutConstraint.activate([
+            videoTitleLabel.heightAnchor.constraint(equalToConstant: 30),
+            videoTitleLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
+            videoTitleLabel.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
+            videoTitleLabel.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
         ])
     }
     

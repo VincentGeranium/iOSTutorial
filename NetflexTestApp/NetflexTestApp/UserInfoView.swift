@@ -49,7 +49,7 @@ class UserInfoView: UIView {
     lazy var numberTextField: UITextField = {
         let numberTextField: UITextField = UITextField()
         // placeholder 의 color 바꾸기.
-        numberTextField.attributedPlaceholder = NSAttributedString.init(string: " 좋아하는 숫자를 입력해 주세요.", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        numberTextField.attributedPlaceholder = NSAttributedString.init(string: " 0 ~ 100 중 좋아하는 숫자를 입력해 주세요.", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         numberTextField.backgroundColor = .white
         numberTextField.layer.borderWidth = 1
         numberTextField.layer.borderColor = UIColor.white.cgColor

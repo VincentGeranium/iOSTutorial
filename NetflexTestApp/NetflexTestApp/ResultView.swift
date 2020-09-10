@@ -15,14 +15,14 @@ class ResultView: UIView {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = .zero
         layout.minimumLineSpacing = 10
-//        layout.minimumInteritemSpacing = 0
+        layout.minimumInteritemSpacing = 0
         layout.scrollDirection = .horizontal
         return layout
     }()
     
     private lazy var resultCollectionView: UICollectionView = {
         let resultCollectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        resultCollectionView.backgroundColor = .white
+        resultCollectionView.backgroundColor = .yellow
         resultCollectionView.register(ResultCollectionViewCell.self, forCellWithReuseIdentifier: ResultCollectionViewCell.reuseIdentifier)
         return resultCollectionView
     }()
@@ -80,11 +80,11 @@ extension ResultView: UICollectionViewDataSource, UICollectionViewDelegateFlowLa
     
     // 지정된 셀의 크기를 반환하는 메서드.
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: resultCollectionView.frame.width / 2, height: resultCollectionView.frame.width / 2)
+        return CGSize(width: resultCollectionView.frame.width / 2.5, height: resultCollectionView.frame.width / 2.5)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
