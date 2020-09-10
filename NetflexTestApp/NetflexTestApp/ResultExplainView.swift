@@ -27,8 +27,6 @@ class ResultExplainView: UIView {
         return explainTextView
     }()
     
-//    lazy var celebrityLabel
-    
     override init(frame: CGRect) {
         super .init(frame: frame)
         addViews()
@@ -53,7 +51,7 @@ class ResultExplainView: UIView {
             explainTextView.topAnchor.constraint(equalTo: guide.topAnchor, constant: 10),
             explainTextView.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 20),
             explainTextView.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -20),
-            explainTextView.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: 0),
+            explainTextView.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -10),
         ])
     }
     

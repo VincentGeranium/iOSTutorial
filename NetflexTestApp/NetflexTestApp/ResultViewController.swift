@@ -27,6 +27,12 @@ class ResultViewController: UIViewController {
         return resultExplainView
     }()
     
+    fileprivate let celebrityView: CelebrityView = {
+        let celebrityView: CelebrityView = CelebrityView()
+        celebrityView.backgroundColor = .systemPink
+        return celebrityView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,12 +47,13 @@ class ResultViewController: UIViewController {
     }
     
     private func addViews() {
-        setupDummyView()
+        setupTypeView()
         setupCollectionView()
         setupResultExplainView()
+        setupCelebrityView()
     }
     
-    private func setupDummyView() {
+    private func setupTypeView() {
         let guide = self.view.safeAreaLayoutGuide
         
         typeView.translatesAutoresizingMaskIntoConstraints = false
@@ -88,6 +95,21 @@ class ResultViewController: UIViewController {
             resultExplainView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
             resultExplainView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
             resultExplainView.bottomAnchor.constraint(equalTo: collectionView.topAnchor, constant: -120),
+        ])
+    }
+    
+    private func setupCelebrityView() {
+        let guide = self.view.safeAreaLayoutGuide
+        
+        celebrityView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.view.addSubview(celebrityView)
+        
+        NSLayoutConstraint.activate([
+            celebrityView.topAnchor.constraint(equalTo: resultExplainView.bottomAnchor),
+            celebrityView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
+            celebrityView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
+            celebrityView.bottomAnchor.constraint(equalTo: collectionView.topAnchor, constant: 0),
         ])
     }
 }
