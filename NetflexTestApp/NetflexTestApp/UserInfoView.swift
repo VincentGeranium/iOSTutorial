@@ -9,7 +9,6 @@
 import UIKit
 
 class UserInfoView: UIView {
-    let userInfoVC: UserInfoViewController = UserInfoViewController()
     
     lazy var titleLabel: UILabel = {
         let titleLabel: UILabel = UILabel()
@@ -92,7 +91,7 @@ class UserInfoView: UIView {
     
     override init(frame: CGRect) {
         super .init(frame: frame)
-        addDelegates()
+//        addDelegates()
         addViews()
     }
     
@@ -196,30 +195,30 @@ class UserInfoView: UIView {
 extension UserInfoView: UITextFieldDelegate {
     
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        if nameTextField.text?.isEmpty == true {
-            
-        }
-        return true
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == nameTextField {
-            foodTextField.becomeFirstResponder()
-            return true
-        } else if textField == foodTextField {
-            numberTextField.becomeFirstResponder()
-            return true
-        } else if textField == numberTextField {
-            self.endEditing(true)
-            return true
-        }
-        return true
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.endEditing(true)
-    }
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        
+//        if nameTextField.text?.isEmpty == true {
+//            
+//        }
+//        return true
+//    }
+//    
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        if textField == nameTextField {
+//            foodTextField.becomeFirstResponder()
+//            return true
+//        } else if textField == foodTextField {
+//            numberTextField.becomeFirstResponder()
+//            return true
+//        } else if textField == numberTextField {
+//            self.endEditing(true)
+//            return true
+//        }
+//        return true
+//    }
+//    
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        self.endEditing(true)
+//    }
     
 }

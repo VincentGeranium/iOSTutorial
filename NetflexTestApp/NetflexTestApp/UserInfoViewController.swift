@@ -25,7 +25,14 @@ class UserInfoViewController: UIViewController {
         
         self.navigationController?.navigationBar.isHidden = false
         
+        addDelegates()
         addViews()
+    }
+    
+    private func addDelegates() {
+        mainView.nameTextField.delegate = self
+        mainView.numberTextField.delegate = self
+        mainView.foodTextField.delegate = self
     }
     
     private func addViews() {
@@ -65,5 +72,30 @@ class UserInfoViewController: UIViewController {
         
         self.navigationController?.pushViewController(resultVC, animated: true)
     }
+}
 
+extension UserInfoViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    
+        return true
+    }
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == mainView.nameTextField {
+            mainView.foodTextField.becomeFirstResponder()
+            return true
+        } else if textField == mainView.foodTextField {
+            mainView.numberTextField.becomeFirstResponder()
+            return true
+        } else if textField == mainView.numberTextField {
+            self.mainView.endEditing(true)
+            return true
+        }
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.mainView.endEditing(true)
+    }
 }
