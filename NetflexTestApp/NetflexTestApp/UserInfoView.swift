@@ -9,6 +9,7 @@
 import UIKit
 
 class UserInfoView: UIView {
+    let userInfoVC: UserInfoViewController = UserInfoViewController()
     
     lazy var titleLabel: UILabel = {
         let titleLabel: UILabel = UILabel()
@@ -24,7 +25,7 @@ class UserInfoView: UIView {
         let nameTextField: UITextField = UITextField()
         // placeholder 의 color 바꾸기.
         nameTextField.attributedPlaceholder = NSAttributedString.init(string: " 이름을 입력해 주세요.", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-        nameTextField.becomeFirstResponder()
+//        nameTextField.becomeFirstResponder()
         nameTextField.backgroundColor = .white
         nameTextField.layer.borderWidth = 1
         nameTextField.layer.borderColor = UIColor.white.cgColor
@@ -74,6 +75,20 @@ class UserInfoView: UIView {
         confirmButton.backgroundColor = .clear
         return confirmButton
     }()
+    
+    lazy var numberAlertController: UIAlertController = {
+        let okAction: UIAlertAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+        let numberAlertController: UIAlertController = UIAlertController(title: "숫자만 입력해 주세요.", message: "다시 확인 후 숫자만 입력해 주세요.", preferredStyle: .alert)
+        numberAlertController.addAction(okAction)
+        return numberAlertController
+    }()
+    
+    lazy var emptyAlertController: UIAlertController = {
+         let okAction: UIAlertAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+         let emptyAlertController: UIAlertController = UIAlertController(title: "비어있는 곳을 확인해 주세요.", message: "모든 곳이 채워져있는지 확인 후 다시 시도해 주세요.", preferredStyle: .alert)
+         emptyAlertController.addAction(okAction)
+         return emptyAlertController
+     }()
     
     override init(frame: CGRect) {
         super .init(frame: frame)
@@ -179,6 +194,15 @@ class UserInfoView: UIView {
 }
 
 extension UserInfoView: UITextFieldDelegate {
+    
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if nameTextField.text?.isEmpty == true {
+            
+        }
+        return true
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == nameTextField {
