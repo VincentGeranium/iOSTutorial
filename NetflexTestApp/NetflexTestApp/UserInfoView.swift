@@ -66,21 +66,30 @@ class UserInfoView: UIView {
     
     lazy var confirmButton: UIButton = {
         let confirmButton: UIButton = UIButton(type: .custom)
+        confirmButton.setTitle("확 인", for: .normal)
+        confirmButton.setTitle("확 인", for: .disabled)
+        confirmButton.setTitleColor(.white, for: .normal)
+        confirmButton.setTitleColor(.systemGray, for: .disabled)
+        confirmButton.titleLabel?.font = UIFont.init(name: "Avenir Next", size: 20)
+        confirmButton.backgroundColor = .clear
+        confirmButton.layer.borderColor = UIColor.white.cgColor
+        confirmButton.layer.borderWidth = 3
+        confirmButton.layer.cornerRadius = 8
         // disabled
-        confirmButton.setupButton(
-            button: confirmButton,
-            title: "확 인",
-            buttonState: .disabled,
-            titleColor: UIColor.systemGray,
-            fontName: "Avenir Next",
-            fontSize: 20,
-            fontWeight: .heavy,
-            borderWidth: 3,
-            borderColor: UIColor.gray.cgColor,
-            cornerRadius: 8,
-            backgroundColor: .black,
-            isEnabled: false
-        )
+//        confirmButton.setupButton(
+//            button: confirmButton,
+//            title: "확 인",
+//            buttonState: .normal,
+//            titleColor: UIColor.systemGray,
+//            fontName: "Avenir Next",
+//            fontSize: 20,
+//            fontWeight: .heavy,
+//            borderWidth: 3,
+//            borderColor: UIColor.gray.cgColor,
+//            cornerRadius: 8,
+//            backgroundColor: .black,
+//            isEnabled: false
+//        )
         // normal
 //        confirmButton.setupButton(
 //                   button: confirmButton,
@@ -115,10 +124,9 @@ class UserInfoView: UIView {
     
     @objc fileprivate func beginEditing(_ sender: UITextField) {
         print("editing")
-        //        confirmButton.isEnabled = true
         
         if sender.text?.isEmpty == false {
-            
+            confirmButton.isEnabled = true
         } else if sender.text?.isEmpty == true {
             confirmButton.isEnabled = false
             

@@ -17,6 +17,11 @@ class UserInfoViewController: UIViewController {
         mainView.confirmButton.addTarget(self, action: #selector(didTappedConfirmButton(_:)), for: .touchUpInside)
         return mainView
     }()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        mainView.confirmButton.isEnabled = false
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
