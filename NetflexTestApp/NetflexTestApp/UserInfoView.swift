@@ -63,17 +63,24 @@ class UserInfoView: UIView {
     
     lazy var confirmButton: UIButton = {
         let confirmButton: UIButton = UIButton()
-        confirmButton.setTitle("확 인", for: .normal)
-        confirmButton.setTitleColor(UIColor.white, for: .normal)
-        confirmButton.titleLabel?.textAlignment = .center
-        confirmButton.titleLabel?.font = UIFont.init(name: "Avenir Next", size: 20)
-        confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .heavy)
-        confirmButton.layer.borderWidth = 1
-        confirmButton.layer.borderColor = UIColor.white.cgColor
-        confirmButton.layer.cornerRadius = 8
-        confirmButton.backgroundColor = .clear
+        confirmButton.setupButton(
+            button: confirmButton,
+            title: "확 인",
+            buttonState: .disabled,
+            titleColor: UIColor.systemGray,
+            fontName: "Avenir Next",
+            fontSize: 20,
+            fontWeight: .heavy,
+            borderWidth: 3,
+            borderColor: UIColor.gray.cgColor,
+            cornerRadius: 8,
+            backgroundColor: .black,
+            isEnabled: false
+        )
         return confirmButton
     }()
+    
+    
     
     lazy var numberAlertController: UIAlertController = {
         let okAction: UIAlertAction = UIAlertAction(title: "확인", style: .default, handler: nil)
@@ -91,7 +98,7 @@ class UserInfoView: UIView {
     
     override init(frame: CGRect) {
         super .init(frame: frame)
-//        addDelegates()
+        addDelegates()
         addViews()
     }
     
@@ -195,30 +202,30 @@ class UserInfoView: UIView {
 extension UserInfoView: UITextFieldDelegate {
     
     
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//        
-//        if nameTextField.text?.isEmpty == true {
-//            
-//        }
-//        return true
-//    }
-//    
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        if textField == nameTextField {
-//            foodTextField.becomeFirstResponder()
-//            return true
-//        } else if textField == foodTextField {
-//            numberTextField.becomeFirstResponder()
-//            return true
-//        } else if textField == numberTextField {
-//            self.endEditing(true)
-//            return true
-//        }
-//        return true
-//    }
-//    
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        self.endEditing(true)
-//    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if nameTextField.text?.isEmpty == true {
+            
+        }
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == nameTextField {
+            foodTextField.becomeFirstResponder()
+            return true
+        } else if textField == foodTextField {
+            numberTextField.becomeFirstResponder()
+            return true
+        } else if textField == numberTextField {
+            self.endEditing(true)
+            return true
+        }
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.endEditing(true)
+    }
     
 }
