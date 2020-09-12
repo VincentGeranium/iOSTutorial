@@ -31,6 +31,7 @@ class UserInfoView: UIView {
         nameTextField.layer.cornerRadius = 8
         nameTextField.textColor = UIColor.white
         nameTextField.backgroundColor = .clear
+        nameTextField.addTarget(self, action: #selector(beginEditing(_:)), for: .allEditingEvents)
         return nameTextField
     }()
     
@@ -44,6 +45,7 @@ class UserInfoView: UIView {
         foodTextField.layer.cornerRadius = 8
         foodTextField.textColor = UIColor.white
         foodTextField.backgroundColor = .clear
+        foodTextField.addTarget(self, action: #selector(beginEditing(_:)), for: .allEditingEvents)
         return foodTextField
     }()
     
@@ -57,12 +59,14 @@ class UserInfoView: UIView {
         numberTextField.layer.cornerRadius = 8
         numberTextField.textColor = UIColor.white
         numberTextField.backgroundColor = .clear
+        numberTextField.addTarget(self, action: #selector(beginEditing(_:)), for: .allEditingEvents)
         return numberTextField
     }()
 
     
     lazy var confirmButton: UIButton = {
-        let confirmButton: UIButton = UIButton()
+        let confirmButton: UIButton = UIButton(type: .custom)
+        // disabled
         confirmButton.setupButton(
             button: confirmButton,
             title: "확 인",
@@ -77,10 +81,23 @@ class UserInfoView: UIView {
             backgroundColor: .black,
             isEnabled: false
         )
+        // normal
+//        confirmButton.setupButton(
+//                   button: confirmButton,
+//                   title: "확 인",
+//                   buttonState: .normal,
+//                   titleColor: .white,
+//                   fontName: "Avenir Next",
+//                   fontSize: 20,
+//                   fontWeight: .heavy,
+//                   borderWidth: 3,
+//                   borderColor: UIColor.white.cgColor,
+//                   cornerRadius: 8,
+//                   backgroundColor: .clear,
+//                   isEnabled: true
+//               )
         return confirmButton
     }()
-    
-    
     
     lazy var numberAlertController: UIAlertController = {
         let okAction: UIAlertAction = UIAlertAction(title: "확인", style: .default, handler: nil)
@@ -95,6 +112,19 @@ class UserInfoView: UIView {
          emptyAlertController.addAction(okAction)
          return emptyAlertController
      }()
+    
+    @objc fileprivate func beginEditing(_ sender: UITextField) {
+        print("editing")
+        //        confirmButton.isEnabled = true
+        
+        if sender.text?.isEmpty == false {
+            
+        } else if sender.text?.isEmpty == true {
+            confirmButton.isEnabled = false
+            
+        
+        }
+    }
     
     override init(frame: CGRect) {
         super .init(frame: frame)
@@ -204,9 +234,11 @@ extension UserInfoView: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        if nameTextField.text?.isEmpty == true {
-            
+        guard string.isEmpty == false else {
+           
+            return true
         }
+        
         return true
     }
     
@@ -219,6 +251,7 @@ extension UserInfoView: UITextFieldDelegate {
             return true
         } else if textField == numberTextField {
             self.endEditing(true)
+            
             return true
         }
         return true
@@ -229,3 +262,26 @@ extension UserInfoView: UITextFieldDelegate {
     }
     
 }
+
+//guard let name = nameTextField.text,
+//               let number = numberTextField.text,
+//               let food = foodTextField.text else {
+//                   return false
+//           }
+//
+//           if name.isEmpty == false && food.isEmpty == false && number.isEmpty == false {
+//               confirmButton.setupButton(
+//                   button: confirmButton,
+//                   title: "확 인",
+//                   buttonState: .normal,
+//                   titleColor: .white,
+//                   fontName: "Avenir Next",
+//                   fontSize: 20,
+//                   fontWeight: .heavy,
+//                   borderWidth: 3,
+//                   borderColor: UIColor.white.cgColor,
+//                   cornerRadius: 8,
+//                   backgroundColor: .clear,
+//                   isEnabled: true
+//               )
+//           }
