@@ -23,7 +23,7 @@ class UserInfoView: UIView {
     lazy var nameTextField: UITextField = {
         let nameTextField: UITextField = UITextField()
         // placeholder 의 color 바꾸기.
-        nameTextField.attributedPlaceholder = NSAttributedString.init(string: " 이름을 입력해 주세요.", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        nameTextField.attributedPlaceholder = NSAttributedString.init(string: " 이름을 입력해 주세요.", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray])
 //        nameTextField.becomeFirstResponder()
         nameTextField.backgroundColor = .white
         nameTextField.layer.borderWidth = 1
@@ -38,7 +38,7 @@ class UserInfoView: UIView {
     lazy var foodTextField: UITextField = {
         let foodTextField: UITextField = UITextField()
         // placeholder 의 color 바꾸기.
-        foodTextField.attributedPlaceholder = NSAttributedString.init(string: " 좋아하는 음식을 입력해 주세요.", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        foodTextField.attributedPlaceholder = NSAttributedString.init(string: " 좋아하는 음식을 입력해 주세요.", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray])
         foodTextField.backgroundColor = .white
         foodTextField.layer.borderWidth = 1
         foodTextField.layer.borderColor = UIColor.white.cgColor
@@ -52,7 +52,7 @@ class UserInfoView: UIView {
     lazy var numberTextField: UITextField = {
         let numberTextField: UITextField = UITextField()
         // placeholder 의 color 바꾸기.
-        numberTextField.attributedPlaceholder = NSAttributedString.init(string: " 0 ~ 100 중 좋아하는 숫자를 입력해 주세요.", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        numberTextField.attributedPlaceholder = NSAttributedString.init(string: " 0 ~ 100 중 좋아하는 숫자를 입력해 주세요.", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray])
         numberTextField.backgroundColor = .white
         numberTextField.layer.borderWidth = 1
         numberTextField.layer.borderColor = UIColor.white.cgColor
@@ -227,14 +227,14 @@ extension UserInfoView: UITextFieldDelegate {
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
               
-        if textField.text?.isEmpty == false {
-                  confirmButton.isEnabled = true
-                  confirmButton.layer.borderColor = UIColor.white.cgColor
-                  
-        } else if textField.text?.isEmpty == true {
-                  confirmButton.isEnabled = false
-                  confirmButton.layer.borderColor = UIColor.gray.cgColor
-              }
+//        if textField.text?.isEmpty == false {
+//                  confirmButton.isEnabled = true
+//                  confirmButton.layer.borderColor = UIColor.white.cgColor
+//
+//        } else if textField.text?.isEmpty == true {
+//                  confirmButton.isEnabled = false
+//                  confirmButton.layer.borderColor = UIColor.gray.cgColor
+//              }
         return true
     }
     
@@ -251,15 +251,14 @@ extension UserInfoView: UITextFieldDelegate {
             return true
         }
         
-        if textField.text?.isEmpty == false {
-            confirmButton.isEnabled = true
-            confirmButton.layer.borderColor = UIColor.white.cgColor
-            
-        } else if textField.text?.isEmpty == true {
-            confirmButton.isEnabled = false
-            confirmButton.layer.borderColor = UIColor.gray.cgColor
-            
-        }
+//        if textField.text?.isEmpty == false {
+//            confirmButton.isEnabled = true
+//            confirmButton.layer.borderColor = UIColor.white.cgColor
+//
+//        } else if textField.text?.isEmpty == true {
+//            confirmButton.isEnabled = false
+//            confirmButton.layer.borderColor = UIColor.gray.cgColor
+//        }
         
         return true
     }
