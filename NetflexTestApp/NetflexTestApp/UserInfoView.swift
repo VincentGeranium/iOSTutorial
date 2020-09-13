@@ -71,40 +71,10 @@ class UserInfoView: UIView {
         confirmButton.setTitleColor(.white, for: .normal)
         confirmButton.setTitleColor(.systemGray, for: .disabled)
         confirmButton.titleLabel?.font = UIFont.init(name: "Avenir Next", size: 20)
+        confirmButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .heavy)
         confirmButton.backgroundColor = .clear
-        confirmButton.layer.borderColor = UIColor.white.cgColor
         confirmButton.layer.borderWidth = 3
         confirmButton.layer.cornerRadius = 8
-        // disabled
-//        confirmButton.setupButton(
-//            button: confirmButton,
-//            title: "확 인",
-//            buttonState: .normal,
-//            titleColor: UIColor.systemGray,
-//            fontName: "Avenir Next",
-//            fontSize: 20,
-//            fontWeight: .heavy,
-//            borderWidth: 3,
-//            borderColor: UIColor.gray.cgColor,
-//            cornerRadius: 8,
-//            backgroundColor: .black,
-//            isEnabled: false
-//        )
-        // normal
-//        confirmButton.setupButton(
-//                   button: confirmButton,
-//                   title: "확 인",
-//                   buttonState: .normal,
-//                   titleColor: .white,
-//                   fontName: "Avenir Next",
-//                   fontSize: 20,
-//                   fontWeight: .heavy,
-//                   borderWidth: 3,
-//                   borderColor: UIColor.white.cgColor,
-//                   cornerRadius: 8,
-//                   backgroundColor: .clear,
-//                   isEnabled: true
-//               )
         return confirmButton
     }()
     
@@ -127,15 +97,20 @@ class UserInfoView: UIView {
         
         if sender.text?.isEmpty == false {
             confirmButton.isEnabled = true
+            confirmButton.layer.borderColor = UIColor.white.cgColor
+            
         } else if sender.text?.isEmpty == true {
             confirmButton.isEnabled = false
-            
-        
+            confirmButton.layer.borderColor = UIColor.gray.cgColor
         }
     }
     
+    
+    
     override init(frame: CGRect) {
         super .init(frame: frame)
+        confirmButton.isEnabled = false
+        confirmButton.layer.borderColor = UIColor.gray.cgColor
         addDelegates()
         addViews()
     }
@@ -243,10 +218,23 @@ extension UserInfoView: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         guard string.isEmpty == false else {
-           
+            
             return true
         }
         
+        return true
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+              
+        if textField.text?.isEmpty == false {
+                  confirmButton.isEnabled = true
+                  confirmButton.layer.borderColor = UIColor.white.cgColor
+                  
+        } else if textField.text?.isEmpty == true {
+                  confirmButton.isEnabled = false
+                  confirmButton.layer.borderColor = UIColor.gray.cgColor
+              }
         return true
     }
     
@@ -262,6 +250,17 @@ extension UserInfoView: UITextFieldDelegate {
             
             return true
         }
+        
+        if textField.text?.isEmpty == false {
+            confirmButton.isEnabled = true
+            confirmButton.layer.borderColor = UIColor.white.cgColor
+            
+        } else if textField.text?.isEmpty == true {
+            confirmButton.isEnabled = false
+            confirmButton.layer.borderColor = UIColor.gray.cgColor
+            
+        }
+        
         return true
     }
     
@@ -270,26 +269,3 @@ extension UserInfoView: UITextFieldDelegate {
     }
     
 }
-
-//guard let name = nameTextField.text,
-//               let number = numberTextField.text,
-//               let food = foodTextField.text else {
-//                   return false
-//           }
-//
-//           if name.isEmpty == false && food.isEmpty == false && number.isEmpty == false {
-//               confirmButton.setupButton(
-//                   button: confirmButton,
-//                   title: "확 인",
-//                   buttonState: .normal,
-//                   titleColor: .white,
-//                   fontName: "Avenir Next",
-//                   fontSize: 20,
-//                   fontWeight: .heavy,
-//                   borderWidth: 3,
-//                   borderColor: UIColor.white.cgColor,
-//                   cornerRadius: 8,
-//                   backgroundColor: .clear,
-//                   isEnabled: true
-//               )
-//           }

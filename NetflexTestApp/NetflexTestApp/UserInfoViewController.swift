@@ -20,7 +20,7 @@ class UserInfoViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        mainView.confirmButton.isEnabled = false
+
     }
 
     override func viewDidLoad() {
