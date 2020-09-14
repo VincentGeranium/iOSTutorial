@@ -93,7 +93,7 @@ class UserInfoView: UIView {
      }()
     
     @objc fileprivate func beginEditing(_ sender: UITextField) {
-        print("editing")
+//        print("editing")
         
         if sender.text?.isEmpty == false {
             confirmButton.isEnabled = true
@@ -226,15 +226,15 @@ extension UserInfoView: UITextFieldDelegate {
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-              
+        
 //        if textField.text?.isEmpty == false {
-//                  confirmButton.isEnabled = true
-//                  confirmButton.layer.borderColor = UIColor.white.cgColor
+//            confirmButton.isEnabled = true
+//            confirmButton.layer.borderColor = UIColor.white.cgColor
 //
 //        } else if textField.text?.isEmpty == true {
-//                  confirmButton.isEnabled = false
-//                  confirmButton.layer.borderColor = UIColor.gray.cgColor
-//              }
+//            confirmButton.isEnabled = false
+//            confirmButton.layer.borderColor = UIColor.gray.cgColor
+//        }
         return true
     }
     
@@ -246,6 +246,17 @@ extension UserInfoView: UITextFieldDelegate {
             numberTextField.becomeFirstResponder()
             return true
         } else if textField == numberTextField {
+//            if CharacterSet(charactersIn: "0123456789").is
+            guard let numbers = numberTextField.text else { return false }
+            
+            let characterNumbers = CharacterSet(charactersIn: numbers)
+            
+            if CharacterSet(charactersIn: "0123456789").isSuperset(of: characterNumbers) {
+                print("숫자")
+            } else {
+                print("글")
+            }
+            
             self.endEditing(true)
             
             return true
@@ -264,7 +275,26 @@ extension UserInfoView: UITextFieldDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
         self.endEditing(true)
+        
+        guard let name = nameTextField.text else { return }
+        guard let number = numberTextField.text else { return }
+        guard let food = foodTextField.text else { return }
+        
+        print("\(name.isEmpty), \(number.isEmpty), \(food.isEmpty)")
+        print(name.isEmpty || number.isEmpty || food.isEmpty)
+        
+        if self.endEditing(true) == true {
+            if (name.isEmpty || number.isEmpty || food.isEmpty) == false {
+                print("not empty")
+                confirmButton.isEnabled = true
+                confirmButton.layer.borderColor = UIColor.white.cgColor
+            } else if (name.isEmpty || number.isEmpty || food.isEmpty) == true {
+                print("empty")
+                confirmButton.isEnabled = false
+                confirmButton.layer.borderColor = UIColor.gray.cgColor
+            }
+        }
     }
-    
 }
