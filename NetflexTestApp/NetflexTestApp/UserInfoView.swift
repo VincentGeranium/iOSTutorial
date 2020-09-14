@@ -109,14 +109,18 @@ class UserInfoView: UIView {
     
     override init(frame: CGRect) {
         super .init(frame: frame)
-        confirmButton.isEnabled = false
-        confirmButton.layer.borderColor = UIColor.gray.cgColor
+        defaultConfirmButton()
         addDelegates()
         addViews()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func defaultConfirmButton() {
+        confirmButton.isEnabled = false
+        confirmButton.layer.borderColor = UIColor.gray.cgColor
     }
     
     private func addDelegates() {
