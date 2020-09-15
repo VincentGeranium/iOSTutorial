@@ -18,6 +18,7 @@
 		2041F7E525068132004783F7 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2041F7E425068132004783F7 /* UserInfoView.swift */; };
 		2041F7E725069BC5004783F7 /* UserInfoViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2041F7E625069BC5004783F7 /* UserInfoViewControllerDelegate.swift */; };
 		2041F7E925069C01004783F7 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2041F7E825069C01004783F7 /* UserInfo.swift */; };
+		2047CF70251111CD00531B34 /* NumberAlertControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2047CF6F251111CD00531B34 /* NumberAlertControllerDelegate.swift */; };
 		207C3475250A352100B9A7BD /* TypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207C3474250A352100B9A7BD /* TypeView.swift */; };
 		207C3477250A502900B9A7BD /* ResultExplainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207C3476250A502900B9A7BD /* ResultExplainView.swift */; };
 		207C3479250A797300B9A7BD /* CelebrityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207C3478250A797300B9A7BD /* CelebrityView.swift */; };
@@ -41,6 +42,7 @@
 		2041F7E425068132004783F7 /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
 		2041F7E625069BC5004783F7 /* UserInfoViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewControllerDelegate.swift; sourceTree = "<group>"; };
 		2041F7E825069C01004783F7 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		2047CF6F251111CD00531B34 /* NumberAlertControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberAlertControllerDelegate.swift; sourceTree = "<group>"; };
 		207C3474250A352100B9A7BD /* TypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeView.swift; sourceTree = "<group>"; };
 		207C3476250A502900B9A7BD /* ResultExplainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultExplainView.swift; sourceTree = "<group>"; };
 		207C3478250A797300B9A7BD /* CelebrityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrityView.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				203156272503D07300828AAE /* MainView.swift */,
 				2041F7E22506810D004783F7 /* UserInfoViewController.swift */,
 				2041F7E425068132004783F7 /* UserInfoView.swift */,
+				2047CF6F251111CD00531B34 /* NumberAlertControllerDelegate.swift */,
 				209F5061250CD69900BF4006 /* ButtonExtension.swift */,
 				2041F7E625069BC5004783F7 /* UserInfoViewControllerDelegate.swift */,
 				2041F7E825069C01004783F7 /* UserInfo.swift */,
@@ -187,6 +190,7 @@
 				207C3477250A502900B9A7BD /* ResultExplainView.swift in Sources */,
 				203156282503D07300828AAE /* MainView.swift in Sources */,
 				2007981A2502C13900F344A7 /* AppDelegate.swift in Sources */,
+				2047CF70251111CD00531B34 /* NumberAlertControllerDelegate.swift in Sources */,
 				2041F7E925069C01004783F7 /* UserInfo.swift in Sources */,
 				2007981C2502C13900F344A7 /* SceneDelegate.swift in Sources */,
 			);

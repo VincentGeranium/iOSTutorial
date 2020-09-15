@@ -10,6 +10,8 @@ import UIKit
 
 class UserInfoView: UIView {
     
+    var numberAlertControllerDelegate: NumberAlertControllerDelegate?
+    
     lazy var titleLabel: UILabel = {
         let titleLabel: UILabel = UILabel()
         titleLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold)
@@ -93,12 +95,16 @@ class UserInfoView: UIView {
      }()
     
     @objc fileprivate func beginEditing(_ sender: UITextField) {
-//        print("editing")
+        guard let number = numberTextField.text else { return }
+        
+        let characterNumbers = CharacterSet(charactersIn: number)
+        
         
         if sender.text?.isEmpty == false {
-            confirmButton.isEnabled = true
-            confirmButton.layer.borderColor = UIColor.white.cgColor
-            
+            if CharacterSet(charactersIn: "0123456789").isSuperset(of: characterNumbers) == true {
+                confirmButton.isEnabled = true
+                confirmButton.layer.borderColor = UIColor.white.cgColor
+            }
         } else if sender.text?.isEmpty == true {
             confirmButton.isEnabled = false
             confirmButton.layer.borderColor = UIColor.gray.cgColor
@@ -214,6 +220,16 @@ class UserInfoView: UIView {
             confirmButton.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -67)
         ])
     }
+    
+    private func returnIsNumber() -> Bool {
+        guard let number = numberTextField.text else { return false }
+        
+        let characterNumbers = CharacterSet(charactersIn: number)
+        
+        let isNumber = CharacterSet(charactersIn: "0123456789").isSuperset(of: characterNumbers)
+        
+        return isNumber
+    }
 }
 
 extension UserInfoView: UITextFieldDelegate {
@@ -258,6 +274,7 @@ extension UserInfoView: UITextFieldDelegate {
             if CharacterSet(charactersIn: "0123456789").isSuperset(of: characterNumbers) {
                 print("숫자")
             } else {
+                numberAlertControllerDelegate?.alertAction(numberAlertController, true)
                 print("글")
             }
             
@@ -265,16 +282,6 @@ extension UserInfoView: UITextFieldDelegate {
             
             return true
         }
-        
-//        if textField.text?.isEmpty == false {
-//            confirmButton.isEnabled = true
-//            confirmButton.layer.borderColor = UIColor.white.cgColor
-//
-//        } else if textField.text?.isEmpty == true {
-//            confirmButton.isEnabled = false
-//            confirmButton.layer.borderColor = UIColor.gray.cgColor
-//        }
-        
         return true
     }
     
@@ -286,18 +293,22 @@ extension UserInfoView: UITextFieldDelegate {
         guard let number = numberTextField.text else { return }
         guard let food = foodTextField.text else { return }
         
-        print("\(name.isEmpty), \(number.isEmpty), \(food.isEmpty)")
-        print(name.isEmpty || number.isEmpty || food.isEmpty)
+        let characterNumbers = CharacterSet(charactersIn: number)
         
         if self.endEditing(true) == true {
             if (name.isEmpty || number.isEmpty || food.isEmpty) == false {
                 print("not empty")
-                confirmButton.isEnabled = true
-                confirmButton.layer.borderColor = UIColor.white.cgColor
+                if CharacterSet(charactersIn: "0123456789").isSuperset(of: characterNumbers) == true {
+                    print("isNumber == true")
+                    confirmButton.isEnabled = true
+                    confirmButton.layer.borderColor = UIColor.white.cgColor
+                }
             } else if (name.isEmpty || number.isEmpty || food.isEmpty) == true {
                 print("empty")
-                confirmButton.isEnabled = false
-                confirmButton.layer.borderColor = UIColor.gray.cgColor
+                
+                    confirmButton.isEnabled = false
+                    confirmButton.layer.borderColor = UIColor.gray.cgColor
+                
             }
         }
     }

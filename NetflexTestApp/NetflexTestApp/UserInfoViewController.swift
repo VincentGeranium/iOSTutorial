@@ -35,7 +35,7 @@ class UserInfoViewController: UIViewController {
     }
     
     private func addDelegates() {
-        
+        mainView.numberAlertControllerDelegate = self
         
     }
     
@@ -76,4 +76,12 @@ class UserInfoViewController: UIViewController {
         
         self.navigationController?.pushViewController(resultVC, animated: true)
     }
+}
+
+extension UserInfoViewController: NumberAlertControllerDelegate {
+    func alertAction(_ alert: UIAlertController, _ bool: Bool) {
+        present(alert, animated: bool, completion: nil)
+    }
+    
+    
 }
