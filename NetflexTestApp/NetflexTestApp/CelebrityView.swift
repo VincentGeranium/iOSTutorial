@@ -66,7 +66,7 @@ class CelebrityView: UIView {
         self.addSubview(celebrityLabel)
         
         NSLayoutConstraint.activate([
-            celebrityLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 0),
+            celebrityLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 10),
             celebrityLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 10),
             celebrityLabel.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -10),
             celebrityLabel.heightAnchor.constraint(equalTo: guide.heightAnchor, multiplier: 1/4)
@@ -84,7 +84,8 @@ class CelebrityView: UIView {
             leftCelebrityNameLabel.topAnchor.constraint(equalTo: celebrityLabel.bottomAnchor, constant: 10),
             leftCelebrityNameLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 10),
             leftCelebrityNameLabel.widthAnchor.constraint(equalTo: guide.widthAnchor, multiplier: 1/2, constant: -10),
-            leftCelebrityNameLabel.heightAnchor.constraint(equalTo: guide.heightAnchor, multiplier: 1/2)
+            leftCelebrityNameLabel.heightAnchor.constraint(equalTo: guide.heightAnchor, multiplier: 1/2),
+            leftCelebrityNameLabel.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -10),
         ])
     }
     
@@ -99,7 +100,8 @@ class CelebrityView: UIView {
             rightCelebrityNameLabel.topAnchor.constraint(equalTo: celebrityLabel.bottomAnchor, constant: 10),
             rightCelebrityNameLabel.leadingAnchor.constraint(equalTo: leftCelebrityNameLabel.trailingAnchor, constant: 5),
             rightCelebrityNameLabel.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -10),
-            rightCelebrityNameLabel.heightAnchor.constraint(equalTo: guide.heightAnchor, multiplier: 1/2)
+            rightCelebrityNameLabel.heightAnchor.constraint(equalTo: guide.heightAnchor, multiplier: 1/2),
+            rightCelebrityNameLabel.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -10),
         ])
     }
     

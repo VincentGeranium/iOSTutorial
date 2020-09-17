@@ -57,6 +57,7 @@ class MainViewController: UIViewController {
     
     @objc func didTappedStartButton(_ sender: UIButton) {
         let userInfoVC = UserInfoViewController()
+        let resultVC = ResultViewController()
         
         self.navigationController?.pushViewController(userInfoVC, animated: true)
     }

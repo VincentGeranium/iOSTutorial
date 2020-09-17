@@ -14,6 +14,7 @@ class ResultCollectionViewCell: UICollectionViewCell {
     
     lazy var videoImageView: UIImageView = {
         let videoImageView = UIImageView()
+        videoImageView.image = UIImage.init(named: "빌어먹을세상따위")
         videoImageView.contentMode = .scaleAspectFill
         videoImageView.backgroundColor = .red
         videoImageView.clipsToBounds = true
@@ -24,6 +25,8 @@ class ResultCollectionViewCell: UICollectionViewCell {
     lazy var videoTitleLabel: UILabel = {
         let videoTitleLabel: UILabel = UILabel()
         videoTitleLabel.backgroundColor = .blue
+        videoTitleLabel.text = "빌어먹을세상따위"
+        videoTitleLabel.font = UIFont(name: "HelveticaNeue-CondensedBold", size: UIFont.systemFontSize)
         videoTitleLabel.layer.cornerRadius = 12
         videoTitleLabel.layer.borderWidth = 1
         videoTitleLabel.layer.borderColor = UIColor.clear.cgColor

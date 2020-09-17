@@ -220,20 +220,9 @@ class UserInfoView: UIView {
             confirmButton.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -67)
         ])
     }
-    
-    private func returnIsNumber() -> Bool {
-        guard let number = numberTextField.text else { return false }
-        
-        let characterNumbers = CharacterSet(charactersIn: number)
-        
-        let isNumber = CharacterSet(charactersIn: "0123456789").isSuperset(of: characterNumbers)
-        
-        return isNumber
-    }
 }
 
 extension UserInfoView: UITextFieldDelegate {
-    
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         

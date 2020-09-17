@@ -14,7 +14,7 @@ class ResultView: UIView {
     private let layout: UICollectionViewFlowLayout = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = .zero
-        layout.minimumLineSpacing = 10
+        layout.minimumLineSpacing = 20
         layout.minimumInteritemSpacing = 0
         layout.scrollDirection = .horizontal
         return layout
@@ -80,7 +80,7 @@ extension ResultView: UICollectionViewDataSource, UICollectionViewDelegateFlowLa
     
     // 지정된 셀의 크기를 반환하는 메서드.
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: resultCollectionView.frame.width / 2.5, height: resultCollectionView.frame.width / 2.5)
+        return CGSize(width: resultCollectionView.frame.width / 3, height: resultCollectionView.frame.width / 3)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
