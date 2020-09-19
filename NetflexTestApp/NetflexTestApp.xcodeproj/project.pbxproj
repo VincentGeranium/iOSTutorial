@@ -23,6 +23,7 @@
 		207C3477250A502900B9A7BD /* ResultExplainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207C3476250A502900B9A7BD /* ResultExplainView.swift */; };
 		207C3479250A797300B9A7BD /* CelebrityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207C3478250A797300B9A7BD /* CelebrityView.swift */; };
 		209F5062250CD69900BF4006 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209F5061250CD69900BF4006 /* ButtonExtension.swift */; };
+		20BB7B0F2513A55F00F3849E /* QuestionvView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BB7B0E2513A55F00F3849E /* QuestionvView.swift */; };
 		20C1647D2507C30E004E8378 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C1647C2507C30E004E8378 /* ResultViewController.swift */; };
 		20C1647F2507DC39004E8378 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C1647E2507DC39004E8378 /* ResultView.swift */; };
 		20C164812507ED3C004E8378 /* ResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C164802507ED3C004E8378 /* ResultCollectionViewCell.swift */; };
@@ -47,6 +48,7 @@
 		207C3476250A502900B9A7BD /* ResultExplainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultExplainView.swift; sourceTree = "<group>"; };
 		207C3478250A797300B9A7BD /* CelebrityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrityView.swift; sourceTree = "<group>"; };
 		209F5061250CD69900BF4006 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
+		20BB7B0E2513A55F00F3849E /* QuestionvView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionvView.swift; sourceTree = "<group>"; };
 		20C1647C2507C30E004E8378 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		20C1647E2507DC39004E8378 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		20C164802507ED3C004E8378 /* ResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				2041F7E625069BC5004783F7 /* UserInfoViewControllerDelegate.swift */,
 				2041F7E825069C01004783F7 /* UserInfo.swift */,
 				203156292503D8A200828AAE /* QuestionViewController.swift */,
+				20BB7B0E2513A55F00F3849E /* QuestionvView.swift */,
 				20C1647C2507C30E004E8378 /* ResultViewController.swift */,
 				20C1647E2507DC39004E8378 /* ResultView.swift */,
 				207C3474250A352100B9A7BD /* TypeView.swift */,
@@ -183,6 +186,7 @@
 				2041F7E725069BC5004783F7 /* UserInfoViewControllerDelegate.swift in Sources */,
 				2031562A2503D8A200828AAE /* QuestionViewController.swift in Sources */,
 				20C1647D2507C30E004E8378 /* ResultViewController.swift in Sources */,
+				20BB7B0F2513A55F00F3849E /* QuestionvView.swift in Sources */,
 				207C3475250A352100B9A7BD /* TypeView.swift in Sources */,
 				20C164812507ED3C004E8378 /* ResultCollectionViewCell.swift in Sources */,
 				209F5062250CD69900BF4006 /* ButtonExtension.swift in Sources */,

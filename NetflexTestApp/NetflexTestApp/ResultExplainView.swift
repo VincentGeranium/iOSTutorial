@@ -14,6 +14,8 @@ class ResultExplainView: UIView {
         let explainTextView: UITextView = UITextView()
         explainTextView.textAlignment = .center
         explainTextView.backgroundColor = .brown
+        explainTextView.layer.cornerRadius = 12
+        explainTextView.clipsToBounds = true
         explainTextView.font = UIFont.boldSystemFont(ofSize: 20)
         explainTextView.text = """
         나는 실패하고, 실패하고 또 실패했다.

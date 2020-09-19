@@ -28,7 +28,7 @@ class UserInfoViewController: UIViewController {
 
         self.view.backgroundColor = .black
         
-        self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.navigationBar.isHidden = true
         
         addDelegates()
         addViews()
