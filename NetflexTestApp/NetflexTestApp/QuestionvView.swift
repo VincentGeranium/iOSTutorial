@@ -18,6 +18,7 @@ class QuestionView: UIView {
         questionTextView.backgroundColor = .brown
         questionTextView.layer.cornerRadius = 12
         questionTextView.clipsToBounds = true
+//        questionTextView.sizeToFit()
         questionTextView.font = UIFont.boldSystemFont(ofSize: 20)
         questionTextView.text = """
         나는 실패하고, 실패하고 또 실패했다.
@@ -55,7 +56,8 @@ class QuestionView: UIView {
             questionTextView.topAnchor.constraint(equalTo: guide.topAnchor, constant: 110),
             questionTextView.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 20),
             questionTextView.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -20),
-            questionTextView.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -160)
+//            questionTextView.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -160),
+            questionTextView.heightAnchor.constraint(equalToConstant: 300),
         ])
         
     }
