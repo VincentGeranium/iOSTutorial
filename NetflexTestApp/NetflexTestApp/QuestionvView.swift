@@ -11,25 +11,44 @@ import UIKit
 
 class QuestionView: UIView {
     
-    lazy var questionTextView: UITextView = {
-        var questionTextView: UITextView = UITextView()
-        questionTextView.textAlignment = .center
-//        questionTextView.vertical
-        questionTextView.backgroundColor = .brown
-        questionTextView.layer.cornerRadius = 12
-        questionTextView.clipsToBounds = true
-//        questionTextView.sizeToFit()
-        questionTextView.font = UIFont.boldSystemFont(ofSize: 20)
-        questionTextView.text = """
-        나는 실패하고, 실패하고 또 실패했다.
-        그것이 내가 성공한 이유다.
-        - 마이클 조던
-        
-        수 백 번의 이상적인 생각보다
-        한 번의 실행이 변화의 시작이다.
-        -Sheryl Sandberg
+    lazy var questionTitle: UILabel = {
+        let questionTitle: UILabel = UILabel()
+        questionTitle.textAlignment = .center
+        questionTitle.font = UIFont.boldSystemFont(ofSize: 25)
+        questionTitle.text = "YES OR NO"
+        questionTitle.backgroundColor = .brown
+        questionTitle.layer.cornerRadius = 12
+        questionTitle.clipsToBounds = true
+        questionTitle.layer.borderColor = UIColor.white.cgColor
+        questionTitle.layer.borderWidth = 1
+        return questionTitle
+    }()
+    
+    lazy var questionLabel: UILabel = {
+        var questionLabel: UILabel = UILabel()
+        questionLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        questionLabel.textAlignment = .center
+        questionLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        questionLabel.numberOfLines = 0
+        questionLabel.backgroundColor = .brown
+        questionLabel.layer.cornerRadius = 12
+        questionLabel.clipsToBounds = true
+        questionLabel.layer.borderColor = UIColor.white.cgColor
+        questionLabel.layer.borderWidth = 1
+        questionLabel.text = """
+        나는 실패하고,\n실패하고 또 실패했다.\n그것이 내가 성공한 이유다.\n- 마이클 조던\n\n수 백 번의 이상적인 생각보다\n한 번의 실행이 변화의 시작이다.\n-Sheryl Sandberg
         """
-        return questionTextView
+        return questionLabel
+    }()
+    
+    lazy var yesButton: UIButton = {
+        let yseButton: UIButton = UIButton()
+        return yseButton
+    }()
+    
+    lazy var noButton: UIButton = {
+        let noButton: UIButton = UIButton()
+        return noButton
     }()
     
     override init(frame: CGRect) {
@@ -42,23 +61,37 @@ class QuestionView: UIView {
     }
     
     private func addViews() {
-        setupQuestionTextView()
+        setupQuestionTitle()
+        setupQuestionLabel()
     }
     
-    private func setupQuestionTextView() {
+    private func setupQuestionTitle() {
+        let guide = self.safeAreaLayoutGuide
+
+        questionTitle.translatesAutoresizingMaskIntoConstraints = false
+
+        self.addSubview(questionTitle)
+
+        NSLayoutConstraint.activate([
+            questionTitle.topAnchor.constraint(equalTo: guide.topAnchor, constant: 20),
+            questionTitle.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 20),
+            questionTitle.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -20),
+            questionTitle.heightAnchor.constraint(equalToConstant: 70),
+        ])
+    }
+    
+    private func setupQuestionLabel() {
         let guide = self.safeAreaLayoutGuide
         
-        questionTextView.translatesAutoresizingMaskIntoConstraints = false
+        questionLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        self.addSubview(questionTextView)
+        self.addSubview(questionLabel)
         
         NSLayoutConstraint.activate([
-            questionTextView.topAnchor.constraint(equalTo: guide.topAnchor, constant: 110),
-            questionTextView.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 20),
-            questionTextView.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -20),
-//            questionTextView.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -160),
-            questionTextView.heightAnchor.constraint(equalToConstant: 300),
+            questionLabel.topAnchor.constraint(equalTo: questionTitle.bottomAnchor, constant: 40),
+            questionLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 20),
+            questionLabel.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -20),
+            questionLabel.heightAnchor.constraint(equalToConstant: 300),
         ])
-        
     }
 }

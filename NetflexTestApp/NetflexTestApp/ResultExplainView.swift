@@ -10,10 +10,12 @@ import UIKit
 
 class ResultExplainView: UIView {
     
-    lazy var explainTextView: UITextView = {
-        let explainTextView: UITextView = UITextView()
+    lazy var explainLabel: UILabel = {
+        let explainTextView: UILabel = UILabel()
         explainTextView.textAlignment = .center
         explainTextView.backgroundColor = .brown
+        explainTextView.lineBreakMode = NSLineBreakMode.byWordWrapping
+        explainTextView.numberOfLines = 0
         explainTextView.layer.cornerRadius = 12
         explainTextView.clipsToBounds = true
         explainTextView.font = UIFont.boldSystemFont(ofSize: 20)
@@ -39,21 +41,21 @@ class ResultExplainView: UIView {
     }
     
     private func addViews() {
-        setupExplainTextView()
+        setupExplainLabel()
     }
     
-    private func setupExplainTextView() {
+    private func setupExplainLabel() {
         let guide = self.safeAreaLayoutGuide
         
-        explainTextView.translatesAutoresizingMaskIntoConstraints = false
+        explainLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        self.addSubview(explainTextView)
+        self.addSubview(explainLabel)
         
         NSLayoutConstraint.activate([
-            explainTextView.topAnchor.constraint(equalTo: guide.topAnchor, constant: 10),
-            explainTextView.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 20),
-            explainTextView.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -20),
-            explainTextView.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -10),
+            explainLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 10),
+            explainLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 20),
+            explainLabel.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -20),
+            explainLabel.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -10),
         ])
     }
     
