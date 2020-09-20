@@ -42,12 +42,36 @@ class QuestionView: UIView {
     }()
     
     lazy var yesButton: UIButton = {
-        let yseButton: UIButton = UIButton()
-        return yseButton
+        let yesButton: UIButton = UIButton()
+        yesButton.setButton(button: yesButton,
+                            title: "YES",
+                            buttonState: .normal,
+                            titleColor: .systemGreen,
+                            fontName: "Avenir Next",
+                            fontSize: 20,
+                            fontWeight: .heavy,
+                            borderWidth: 1.0,
+                            cornerRadius: 12,
+                            backgroundColor: .black,
+                            isEnabled: true,
+                            borderColor: .init(srgbRed: 1, green: 1, blue: 1, alpha: 1))
+        return yesButton
     }()
     
     lazy var noButton: UIButton = {
         let noButton: UIButton = UIButton()
+        noButton.setButton(button: noButton,
+                            title: "NO",
+                            buttonState: .normal,
+                            titleColor: .systemGreen,
+                            fontName: "Avenir Next",
+                            fontSize: 20,
+                            fontWeight: .heavy,
+                            borderWidth: 1.0,
+                            cornerRadius: 12,
+                            backgroundColor: .black,
+                            isEnabled: true,
+                            borderColor: .init(srgbRed: 1, green: 1, blue: 1, alpha: 1))
         return noButton
     }()
     
@@ -63,6 +87,8 @@ class QuestionView: UIView {
     private func addViews() {
         setupQuestionTitle()
         setupQuestionLabel()
+        setupYesButton()
+        setupNoButton()
     }
     
     private func setupQuestionTitle() {
@@ -93,5 +119,47 @@ class QuestionView: UIView {
             questionLabel.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -20),
             questionLabel.heightAnchor.constraint(equalToConstant: 300),
         ])
+    }
+    
+    private func setupYesButton() {
+        let guide = self.safeAreaLayoutGuide
+        
+        yesButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.addSubview(yesButton)
+        
+        NSLayoutConstraint.activate([
+            yesButton.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 40),
+            yesButton.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 20),
+            yesButton.widthAnchor.constraint(equalTo: questionTitle.widthAnchor, multiplier: 1/2, constant: -15),
+            yesButton.heightAnchor.constraint(equalTo: questionTitle.heightAnchor, multiplier: 1),
+        ])
+        
+        yesButton.addTarget(self, action: #selector(didTappedYesButton(_:)), for: .touchUpInside)
+    }
+    
+    @objc fileprivate func didTappedYesButton(_ sender: UIButton) {
+        print("yes btn tapped")
+    }
+    
+    private func setupNoButton() {
+        let guide = self.safeAreaLayoutGuide
+        
+        noButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.addSubview(noButton)
+        
+        NSLayoutConstraint.activate([
+            noButton.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 40),
+            noButton.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -20),
+            noButton.widthAnchor.constraint(equalTo: questionTitle.widthAnchor, multiplier: 1/2, constant: -15),
+            noButton.heightAnchor.constraint(equalTo: questionTitle.heightAnchor, multiplier: 1),
+        ])
+        
+        noButton.addTarget(self, action: #selector(didTappedNoButton(_:)), for: .touchUpInside)
+    }
+    
+    @objc fileprivate func didTappedNoButton(_ sender: UIButton) {
+        print("no btn tapped")
     }
 }
