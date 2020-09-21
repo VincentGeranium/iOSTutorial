@@ -15,7 +15,7 @@ class QuestionViewController: UIViewController {
         questionView.backgroundColor = .systemGray
         return questionView
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,6 +24,12 @@ class QuestionViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
         
         addViews()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // 뷰의 height 값 가져오기.
+        print(questionView.frame.height)
     }
     
     private func addViews() {
@@ -44,5 +50,5 @@ class QuestionViewController: UIViewController {
             questionView.bottomAnchor.constraint(equalTo: guide.bottomAnchor)
         ])
     }
-
+    
 }

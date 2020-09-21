@@ -93,13 +93,15 @@ class QuestionView: UIView {
     
     private func setupQuestionTitle() {
         let guide = self.safeAreaLayoutGuide
+        
+        
 
         questionTitle.translatesAutoresizingMaskIntoConstraints = false
 
         self.addSubview(questionTitle)
 
         NSLayoutConstraint.activate([
-            questionTitle.topAnchor.constraint(equalTo: guide.topAnchor, constant: 20),
+            questionTitle.topAnchor.constraint(equalTo: guide.topAnchor, constant: 40),
             questionTitle.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 20),
             questionTitle.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -20),
             questionTitle.heightAnchor.constraint(equalToConstant: 70),
