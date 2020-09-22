@@ -11,7 +11,9 @@ import UIKit
 
 class QuestionView: UIView {
     
-    var questionText = QuestionData.firstQuestion.questionText
+    var questionvViewButtonActionDelegate: QuestionvViewButtonActionDelegate?
+    
+//    var questionText = QuestionData.firstQuestion.questionText
     
     lazy var questionTitle: UILabel = {
         let questionTitle: UILabel = UILabel()
@@ -139,8 +141,7 @@ class QuestionView: UIView {
     }
     
     @objc fileprivate func didTappedYesButton(_ sender: UIButton) {
-        print("yes btn tapped")
-        print(questionText)
+        questionvViewButtonActionDelegate?.whichButtonTapped(sender, true)
     }
     
     private func setupNoButton() {
@@ -161,15 +162,6 @@ class QuestionView: UIView {
     }
     
     @objc fileprivate func didTappedNoButton(_ sender: UIButton) {
-        print("no btn tapped")
-        if questionLabel.text == firstQuestion {
-            questionLabel.text = secondQuestion
-        } else if questionLabel.text == secondQuestion {
-            questionLabel.text = fifthQestion
-        } else if questionLabel.text == fifthQestion {
-            questionLabel.text = sixthQuestion
-        } else if questionLabel.text == sixthQuestion {
-            print("E")
-        }
+        questionvViewButtonActionDelegate?.whichButtonTapped(sender, false)
     }
 }

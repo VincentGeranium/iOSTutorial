@@ -23,6 +23,8 @@ class QuestionViewController: UIViewController {
         
         self.navigationController?.navigationBar.isHidden = false
         
+        questionView.questionvViewButtonActionDelegate = self
+        
         addViews()
     }
     
@@ -50,5 +52,91 @@ class QuestionViewController: UIViewController {
             questionView.bottomAnchor.constraint(equalTo: guide.bottomAnchor)
         ])
     }
-    
+}
+
+extension QuestionViewController: QuestionvViewButtonActionDelegate {
+    func whichButtonTapped(_ button: UIButton, _ bool: Bool) {
+        if questionView.questionLabel.text == firstQuestion {
+            switch button {
+            case questionView.yesButton:
+                return questionView.questionLabel.text = fourthQuestion
+            case questionView.noButton:
+                return questionView.questionLabel.text = secondQuestion
+            default:
+                return questionView.questionLabel.text = "Error"
+            }
+        } else if questionView.questionLabel.text == secondQuestion {
+            switch button {
+            case questionView.yesButton:
+                return questionView.questionLabel.text = thirdQuestion
+            case questionView.noButton:
+                return questionView.questionLabel.text = fifthQestion
+            default:
+                return questionView.questionLabel.text = "Error"
+            }
+        } else if questionView.questionLabel.text == thirdQuestion {
+            switch button {
+            case questionView.yesButton:
+                return questionView.questionLabel.text = "Type F"
+            case questionView.noButton:
+                return questionView.questionLabel.text = "Type E"
+            default:
+                return questionView.questionLabel.text = "Error"
+            }
+        } else if questionView.questionLabel.text == fourthQuestion {
+            switch button {
+            case questionView.yesButton:
+                return questionView.questionLabel.text = fifthQestion
+            case questionView.noButton:
+                return questionView.questionLabel.text = seventhQuestion
+            default:
+                return questionView.questionLabel.text = "Error"
+            }
+        } else if questionView.questionLabel.text == fifthQestion {
+            switch button {
+            case questionView.yesButton:
+                return questionView.questionLabel.text = thirdQuestion
+            case questionView.noButton:
+                return  questionView.questionLabel.text = sixthQuestion
+            default:
+                return questionView.questionLabel.text = "Error"
+            }
+        } else if questionView.questionLabel.text == sixthQuestion {
+            switch button {
+            case questionView.yesButton:
+                return questionView.questionLabel.text = eighthQuestion
+            case questionView.noButton:
+                return  questionView.questionLabel.text = "Type E"
+            default:
+                return questionView.questionLabel.text = "Error"
+            }
+        } else if questionView.questionLabel.text == seventhQuestion {
+            switch button {
+            case questionView.yesButton:
+                return questionView.questionLabel.text = ninthQuestion
+            case questionView.noButton:
+                return questionView.questionLabel.text = eighthQuestion
+            default:
+                return questionView.questionLabel.text = "Error"
+            }
+        } else if questionView.questionLabel.text == eighthQuestion {
+            switch button {
+            case questionView.yesButton:
+                return questionView.questionLabel.text = "Type A"
+            case questionView.noButton:
+                return questionView.questionLabel.text = "Type B"
+            default:
+                return questionView.questionLabel.text = "Error"
+            }
+        } else if questionView.questionLabel.text == ninthQuestion {
+            switch button {
+            case questionView.yesButton:
+                return questionView.questionLabel.text = "Type C"
+            case questionView.noButton:
+                return questionView.questionLabel.text = "Type D"
+            default:
+                return questionView.questionLabel.text = "Error"
+            }
+        }
+    }
 }
