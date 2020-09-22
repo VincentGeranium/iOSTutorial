@@ -74,7 +74,7 @@ class UserInfoViewController: UIViewController {
         let questionVC = QuestionViewController()
         let resultVC = ResultViewController()
         
-        self.navigationController?.pushViewController(resultVC, animated: true)
+        self.navigationController?.pushViewController(questionVC, animated: true)
     }
 }
 

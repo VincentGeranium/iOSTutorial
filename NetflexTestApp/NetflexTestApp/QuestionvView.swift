@@ -11,6 +11,8 @@ import UIKit
 
 class QuestionView: UIView {
     
+    var questionText = QuestionData.firstQuestion.questionText
+    
     lazy var questionTitle: UILabel = {
         let questionTitle: UILabel = UILabel()
         questionTitle.textAlignment = .center
@@ -35,9 +37,7 @@ class QuestionView: UIView {
         questionLabel.clipsToBounds = true
         questionLabel.layer.borderColor = UIColor.white.cgColor
         questionLabel.layer.borderWidth = 1
-        questionLabel.text = """
-        나는 실패하고,\n실패하고 또 실패했다.\n그것이 내가 성공한 이유다.\n- 마이클 조던\n\n수 백 번의 이상적인 생각보다\n한 번의 실행이 변화의 시작이다.\n-Sheryl Sandberg
-        """
+        questionLabel.text = firstQuestion
         return questionLabel
     }()
     
@@ -94,8 +94,6 @@ class QuestionView: UIView {
     private func setupQuestionTitle() {
         let guide = self.safeAreaLayoutGuide
         
-        
-
         questionTitle.translatesAutoresizingMaskIntoConstraints = false
 
         self.addSubview(questionTitle)
@@ -142,6 +140,7 @@ class QuestionView: UIView {
     
     @objc fileprivate func didTappedYesButton(_ sender: UIButton) {
         print("yes btn tapped")
+        print(questionText)
     }
     
     private func setupNoButton() {
@@ -163,5 +162,14 @@ class QuestionView: UIView {
     
     @objc fileprivate func didTappedNoButton(_ sender: UIButton) {
         print("no btn tapped")
+        if questionLabel.text == firstQuestion {
+            questionLabel.text = secondQuestion
+        } else if questionLabel.text == secondQuestion {
+            questionLabel.text = fifthQestion
+        } else if questionLabel.text == fifthQestion {
+            questionLabel.text = sixthQuestion
+        } else if questionLabel.text == sixthQuestion {
+            print("E")
+        }
     }
 }
