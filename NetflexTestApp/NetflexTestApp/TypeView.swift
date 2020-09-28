@@ -11,6 +11,10 @@ import UIKit
 class TypeView: UIView {
     let randomNumber: UInt32 = arc4random() % 10
     
+    let userInputNumber: String = ""
+    
+//    let typeA: TypeA = TypeA()
+    
     lazy var typeTitleLabel: UILabel = {
         let typeTitleLabel: UILabel = UILabel()
         typeTitleLabel.layer.cornerRadius = 12
@@ -18,7 +22,7 @@ class TypeView: UIView {
         typeTitleLabel.textAlignment = .center
         typeTitleLabel.backgroundColor = .gray
         typeTitleLabel.font = UIFont.boldSystemFont(ofSize: 30)
-        typeTitleLabel.text = "A타입"
+        typeTitleLabel.text = ""
         return typeTitleLabel
     }()
     
@@ -33,7 +37,7 @@ class TypeView: UIView {
         return typeNameLabel
     }()
     
-   lazy var luckNumberLabel: UILabel = {
+    lazy var luckNumberLabel: UILabel = {
         // 유저가 입력한 숫자에 randomNumber 더해서 넣어주는 레이블
         let luckNumberLabel: UILabel = UILabel()
         luckNumberLabel.layer.cornerRadius = 12
@@ -41,7 +45,7 @@ class TypeView: UIView {
         luckNumberLabel.backgroundColor = .gray
         luckNumberLabel.font = UIFont.boldSystemFont(ofSize: 30)
         luckNumberLabel.textAlignment = .center
-        luckNumberLabel.text = "\(100 + randomNumber)"
+        luckNumberLabel.text = "\(UInt32(userInputNumber)! + randomNumber)"
         return luckNumberLabel
     }()
     

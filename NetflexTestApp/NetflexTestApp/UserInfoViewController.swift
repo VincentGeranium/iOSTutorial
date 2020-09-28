@@ -12,10 +12,10 @@ class UserInfoViewController: UIViewController {
     
     var userInfoDelegate: UserInfoViewControllerDelegate?
     
-    lazy var mainView: UserInfoView = {
-        let mainView: UserInfoView = UserInfoView()
-        mainView.confirmButton.addTarget(self, action: #selector(didTappedConfirmButton(_:)), for: .touchUpInside)
-        return mainView
+    lazy var userInfoView: UserInfoView = {
+        let userInfoView: UserInfoView = UserInfoView()
+        userInfoView.confirmButton.addTarget(self, action: #selector(didTappedConfirmButton(_:)), for: .touchUpInside)
+        return userInfoView
     }()
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,7 +35,7 @@ class UserInfoViewController: UIViewController {
     }
     
     private func addDelegates() {
-        mainView.numberAlertControllerDelegate = self
+        userInfoView.numberAlertControllerDelegate = self
         
     }
     
@@ -47,22 +47,22 @@ class UserInfoViewController: UIViewController {
     private func setupUserInfoView() {
         let guide = self.view.safeAreaLayoutGuide
         
-        mainView.translatesAutoresizingMaskIntoConstraints = false
+        userInfoView.translatesAutoresizingMaskIntoConstraints = false
         
-        self.view.addSubview(mainView)
+        self.view.addSubview(userInfoView)
         
         NSLayoutConstraint.activate([
-            mainView.topAnchor.constraint(equalTo: guide.topAnchor),
-            mainView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
-            mainView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
-            mainView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
+            userInfoView.topAnchor.constraint(equalTo: guide.topAnchor),
+            userInfoView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
+            userInfoView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
+            userInfoView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
         ])
     }
     
     @objc private func didTappedConfirmButton(_ sender: UIButton) {
-        guard let name = mainView.nameTextField.text else { return }
-        guard let number = mainView.numberTextField.text else { return }
-        guard let food = mainView.foodTextField.text else { return }
+        guard let name = userInfoView.nameTextField.text else { return }
+        guard let number = userInfoView.numberTextField.text else { return }
+        guard let food = userInfoView.foodTextField.text else { return }
         
         let userInfo: UserInfo = UserInfo(name: name, number: number, food: food)
         

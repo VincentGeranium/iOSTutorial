@@ -29,6 +29,7 @@
 		20C1647D2507C30E004E8378 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C1647C2507C30E004E8378 /* ResultViewController.swift */; };
 		20C1647F2507DC39004E8378 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C1647E2507DC39004E8378 /* ResultView.swift */; };
 		20C164812507ED3C004E8378 /* ResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C164802507ED3C004E8378 /* ResultCollectionViewCell.swift */; };
+		20F85B0A251BBAE800AA7B70 /* TypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F85B09251BBAE800AA7B70 /* TypeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		20C1647C2507C30E004E8378 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		20C1647E2507DC39004E8378 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		20C164802507ED3C004E8378 /* ResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCollectionViewCell.swift; sourceTree = "<group>"; };
+		20F85B09251BBAE800AA7B70 /* TypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				2017AD77251A31BA00D67385 /* QuestionData.swift */,
 				20C1647C2507C30E004E8378 /* ResultViewController.swift */,
 				20C1647E2507DC39004E8378 /* ResultView.swift */,
+				20F85B09251BBAE800AA7B70 /* TypeModel.swift */,
 				207C3474250A352100B9A7BD /* TypeView.swift */,
 				207C3476250A502900B9A7BD /* ResultExplainView.swift */,
 				207C3478250A797300B9A7BD /* CelebrityView.swift */,
@@ -191,6 +194,7 @@
 				2041F7E32506810D004783F7 /* UserInfoViewController.swift in Sources */,
 				2041F7E725069BC5004783F7 /* UserInfoViewControllerDelegate.swift in Sources */,
 				2031562A2503D8A200828AAE /* QuestionViewController.swift in Sources */,
+				20F85B0A251BBAE800AA7B70 /* TypeModel.swift in Sources */,
 				20C1647D2507C30E004E8378 /* ResultViewController.swift in Sources */,
 				20BB7B0F2513A55F00F3849E /* QuestionvView.swift in Sources */,
 				207C3475250A352100B9A7BD /* TypeView.swift in Sources */,
