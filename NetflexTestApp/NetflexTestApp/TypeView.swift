@@ -45,7 +45,7 @@ class TypeView: UIView {
         luckNumberLabel.backgroundColor = .gray
         luckNumberLabel.font = UIFont.boldSystemFont(ofSize: 30)
         luckNumberLabel.textAlignment = .center
-        luckNumberLabel.text = "\(UInt32(userInputNumber)! + randomNumber)"
+        luckNumberLabel.text = "\(100 + randomNumber)"
         return luckNumberLabel
     }()
     

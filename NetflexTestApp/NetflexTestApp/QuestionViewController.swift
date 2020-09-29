@@ -10,6 +10,8 @@ import UIKit
 
 class QuestionViewController: UIViewController {
     
+    let resultVC = ResultViewController()
+    
     lazy var questionView: QuestionView = {
         let questionView: QuestionView = QuestionView()
         questionView.backgroundColor = .systemGray
@@ -77,9 +79,11 @@ extension QuestionViewController: QuestionvViewButtonActionDelegate {
         } else if questionView.questionLabel.text == thirdQuestion {
             switch button {
             case questionView.yesButton:
-                return questionView.questionLabel.text = "Type F"
+                print("Type F")
+                self.navigationController?.pushViewController(resultVC, animated: true)
             case questionView.noButton:
-                return questionView.questionLabel.text = "Type E"
+                print("Type E")
+                self.navigationController?.pushViewController(resultVC, animated: true)
             default:
                 return questionView.questionLabel.text = "Error"
             }
@@ -106,7 +110,8 @@ extension QuestionViewController: QuestionvViewButtonActionDelegate {
             case questionView.yesButton:
                 return questionView.questionLabel.text = eighthQuestion
             case questionView.noButton:
-                return  questionView.questionLabel.text = "Type E"
+                print("Type E")
+                self.navigationController?.pushViewController(resultVC, animated: true)
             default:
                 return questionView.questionLabel.text = "Error"
             }
@@ -122,18 +127,22 @@ extension QuestionViewController: QuestionvViewButtonActionDelegate {
         } else if questionView.questionLabel.text == eighthQuestion {
             switch button {
             case questionView.yesButton:
-                return questionView.questionLabel.text = "Type A"
+                print("Type A")
+                self.navigationController?.pushViewController(resultVC, animated: true)
             case questionView.noButton:
-                return questionView.questionLabel.text = "Type B"
+                print("Type B")
+                self.navigationController?.pushViewController(resultVC, animated: true)
             default:
                 return questionView.questionLabel.text = "Error"
             }
         } else if questionView.questionLabel.text == ninthQuestion {
             switch button {
             case questionView.yesButton:
-                return questionView.questionLabel.text = "Type C"
+                print("Type C")
+                self.navigationController?.pushViewController(resultVC, animated: true)
             case questionView.noButton:
-                return questionView.questionLabel.text = "Type D"
+                print("Type D")
+                self.navigationController?.pushViewController(resultVC, animated: true)
             default:
                 return questionView.questionLabel.text = "Error"
             }
