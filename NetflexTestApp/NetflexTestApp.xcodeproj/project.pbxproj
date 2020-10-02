@@ -30,6 +30,7 @@
 		20C1647F2507DC39004E8378 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C1647E2507DC39004E8378 /* ResultView.swift */; };
 		20C164812507ED3C004E8378 /* ResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C164802507ED3C004E8378 /* ResultCollectionViewCell.swift */; };
 		20F85B0A251BBAE800AA7B70 /* TypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F85B09251BBAE800AA7B70 /* TypeModel.swift */; };
+		20FD314825279360006322A1 /* ResultDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FD314725279360006322A1 /* ResultDataDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		20C1647E2507DC39004E8378 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		20C164802507ED3C004E8378 /* ResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCollectionViewCell.swift; sourceTree = "<group>"; };
 		20F85B09251BBAE800AA7B70 /* TypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeModel.swift; sourceTree = "<group>"; };
+		20FD314725279360006322A1 /* ResultDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDataDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				209F5061250CD69900BF4006 /* ButtonExtension.swift */,
 				2041F7E825069C01004783F7 /* UserInfo.swift */,
 				203156292503D8A200828AAE /* QuestionViewController.swift */,
+				20FD314725279360006322A1 /* ResultDataDelegate.swift */,
 				20BB7B0E2513A55F00F3849E /* QuestionvView.swift */,
 				201A1A73251A5D87002D4CA8 /* QuestionvViewButtonActionDelegate.swift */,
 				2017AD77251A31BA00D67385 /* QuestionData.swift */,
@@ -201,6 +204,7 @@
 				20C164812507ED3C004E8378 /* ResultCollectionViewCell.swift in Sources */,
 				209F5062250CD69900BF4006 /* ButtonExtension.swift in Sources */,
 				207C3479250A797300B9A7BD /* CelebrityView.swift in Sources */,
+				20FD314825279360006322A1 /* ResultDataDelegate.swift in Sources */,
 				201A1A74251A5D87002D4CA8 /* QuestionvViewButtonActionDelegate.swift in Sources */,
 				207C3477250A502900B9A7BD /* ResultExplainView.swift in Sources */,
 				203156282503D07300828AAE /* MainView.swift in Sources */,

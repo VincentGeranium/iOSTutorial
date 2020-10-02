@@ -9,6 +9,9 @@
 import UIKit
 
 class ResultViewController: UIViewController {
+    
+//    let questionVC = QuestionViewController()
+    
     fileprivate let typeView: TypeView = {
         let typeView: TypeView = TypeView()
         typeView.backgroundColor = .blue
@@ -39,6 +42,8 @@ class ResultViewController: UIViewController {
         self.view.backgroundColor = .black
         
         self.navigationController?.navigationBar.isHidden = false
+        
+//        questionVC.resultDataDelegate = self
         
         addViews()
 
@@ -111,5 +116,20 @@ class ResultViewController: UIViewController {
             celebrityView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
             celebrityView.bottomAnchor.constraint(equalTo: collectionView.topAnchor, constant: 0),
         ])
+    }
+}
+
+extension ResultViewController: ResultDataDelegate {
+    func resultType(_ typeName: String) {
+        print("🎾🎾🎾 : \(typeName)")
+        let typeAmodel: TypeA = TypeA()
+        let typeBmodel: TypeB = TypeB()
+
+        switch typeName {
+        case "Type F":
+            self.typeView.typeTitleLabel.text = typeAmodel.typeAtitle
+        default:
+            print("Error")
+        }
     }
 }
