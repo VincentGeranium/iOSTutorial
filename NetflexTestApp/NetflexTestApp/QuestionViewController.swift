@@ -10,8 +10,6 @@ import UIKit
 
 class QuestionViewController: UIViewController {
     
-    var resultDataDelegate: ResultDataDelegate?
-    
     let resultVC = ResultViewController()
     
     lazy var questionView: QuestionView = {
@@ -82,13 +80,18 @@ extension QuestionViewController: QuestionvViewButtonActionDelegate {
             switch button {
             case questionView.yesButton:
                 print("Type F")
-                let typeName = "Type F"
-                resultDataDelegate?.resultType(typeName)
+                
+                let name = Notification.Name.init(typeFnotificationKey)
+                NotificationCenter.default.post(name: name, object: nil)
+                
                 self.navigationController?.pushViewController(resultVC, animated: true)
+                
             case questionView.noButton:
                 print("Type E")
-                let typeName = "Type E"
-                resultDataDelegate?.resultType(typeName)
+                
+                let name = Notification.Name.init(typeEnotificationKey)
+                NotificationCenter.default.post(name: name, object: nil)
+                
                 self.navigationController?.pushViewController(resultVC, animated: true)
             default:
                 return questionView.questionLabel.text = "Error"
@@ -117,8 +120,10 @@ extension QuestionViewController: QuestionvViewButtonActionDelegate {
                 return questionView.questionLabel.text = eighthQuestion
             case questionView.noButton:
                 print("Type E")
-                let typeName = "Type E"
-                resultDataDelegate?.resultType(typeName)
+                
+                let name = Notification.Name.init(typeEnotificationKey)
+                NotificationCenter.default.post(name: name, object: nil)
+                
                 self.navigationController?.pushViewController(resultVC, animated: true)
             default:
                 return questionView.questionLabel.text = "Error"
@@ -136,13 +141,17 @@ extension QuestionViewController: QuestionvViewButtonActionDelegate {
             switch button {
             case questionView.yesButton:
                 print("Type A")
-                let typeName = "Type A"
-                resultDataDelegate?.resultType(typeName)
+                
+                let name = Notification.Name.init(typeAnotificationKey)
+                NotificationCenter.default.post(name: name, object: nil)
+                
                 self.navigationController?.pushViewController(resultVC, animated: true)
             case questionView.noButton:
                 print("Type B")
-                let typeName = "Type B"
-                resultDataDelegate?.resultType(typeName)
+                
+                let name = Notification.Name.init(typeBnotificationKey)
+                NotificationCenter.default.post(name: name, object: nil)
+                
                 self.navigationController?.pushViewController(resultVC, animated: true)
             default:
                 return questionView.questionLabel.text = "Error"
@@ -151,13 +160,17 @@ extension QuestionViewController: QuestionvViewButtonActionDelegate {
             switch button {
             case questionView.yesButton:
                 print("Type C")
-                let typeName = "Type C"
-                resultDataDelegate?.resultType(typeName)
+                
+                let name = Notification.Name.init(typeCnotificationKey)
+                NotificationCenter.default.post(name: name, object: nil)
+                
                 self.navigationController?.pushViewController(resultVC, animated: true)
             case questionView.noButton:
                 print("Type D")
-                let typeName = "Type D"
-                resultDataDelegate?.resultType(typeName)
+                
+                let name = Notification.Name.init(typeDnotificationKey)
+                NotificationCenter.default.post(name: name, object: nil)
+                
                 self.navigationController?.pushViewController(resultVC, animated: true)
             default:
                 return questionView.questionLabel.text = "Error"

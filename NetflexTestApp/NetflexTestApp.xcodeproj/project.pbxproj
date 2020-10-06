@@ -21,6 +21,7 @@
 		2041F7E725069BC5004783F7 /* UserInfoViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2041F7E625069BC5004783F7 /* UserInfoViewControllerDelegate.swift */; };
 		2041F7E925069C01004783F7 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2041F7E825069C01004783F7 /* UserInfo.swift */; };
 		2047CF70251111CD00531B34 /* NumberAlertControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2047CF6F251111CD00531B34 /* NumberAlertControllerDelegate.swift */; };
+		2078DFC9252CD5FF000C2FCD /* TypeNotificationKeyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2078DFC8252CD5FF000C2FCD /* TypeNotificationKeyList.swift */; };
 		207C3475250A352100B9A7BD /* TypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207C3474250A352100B9A7BD /* TypeView.swift */; };
 		207C3477250A502900B9A7BD /* ResultExplainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207C3476250A502900B9A7BD /* ResultExplainView.swift */; };
 		207C3479250A797300B9A7BD /* CelebrityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207C3478250A797300B9A7BD /* CelebrityView.swift */; };
@@ -30,7 +31,6 @@
 		20C1647F2507DC39004E8378 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C1647E2507DC39004E8378 /* ResultView.swift */; };
 		20C164812507ED3C004E8378 /* ResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C164802507ED3C004E8378 /* ResultCollectionViewCell.swift */; };
 		20F85B0A251BBAE800AA7B70 /* TypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F85B09251BBAE800AA7B70 /* TypeModel.swift */; };
-		20FD314825279360006322A1 /* ResultDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FD314725279360006322A1 /* ResultDataDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +50,7 @@
 		2041F7E625069BC5004783F7 /* UserInfoViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewControllerDelegate.swift; sourceTree = "<group>"; };
 		2041F7E825069C01004783F7 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		2047CF6F251111CD00531B34 /* NumberAlertControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberAlertControllerDelegate.swift; sourceTree = "<group>"; };
+		2078DFC8252CD5FF000C2FCD /* TypeNotificationKeyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeNotificationKeyList.swift; sourceTree = "<group>"; };
 		207C3474250A352100B9A7BD /* TypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeView.swift; sourceTree = "<group>"; };
 		207C3476250A502900B9A7BD /* ResultExplainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultExplainView.swift; sourceTree = "<group>"; };
 		207C3478250A797300B9A7BD /* CelebrityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrityView.swift; sourceTree = "<group>"; };
@@ -59,7 +60,6 @@
 		20C1647E2507DC39004E8378 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		20C164802507ED3C004E8378 /* ResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCollectionViewCell.swift; sourceTree = "<group>"; };
 		20F85B09251BBAE800AA7B70 /* TypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeModel.swift; sourceTree = "<group>"; };
-		20FD314725279360006322A1 /* ResultDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDataDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,13 +103,13 @@
 				209F5061250CD69900BF4006 /* ButtonExtension.swift */,
 				2041F7E825069C01004783F7 /* UserInfo.swift */,
 				203156292503D8A200828AAE /* QuestionViewController.swift */,
-				20FD314725279360006322A1 /* ResultDataDelegate.swift */,
 				20BB7B0E2513A55F00F3849E /* QuestionvView.swift */,
 				201A1A73251A5D87002D4CA8 /* QuestionvViewButtonActionDelegate.swift */,
 				2017AD77251A31BA00D67385 /* QuestionData.swift */,
 				20C1647C2507C30E004E8378 /* ResultViewController.swift */,
 				20C1647E2507DC39004E8378 /* ResultView.swift */,
 				20F85B09251BBAE800AA7B70 /* TypeModel.swift */,
+				2078DFC8252CD5FF000C2FCD /* TypeNotificationKeyList.swift */,
 				207C3474250A352100B9A7BD /* TypeView.swift */,
 				207C3476250A502900B9A7BD /* ResultExplainView.swift */,
 				207C3478250A797300B9A7BD /* CelebrityView.swift */,
@@ -204,13 +204,13 @@
 				20C164812507ED3C004E8378 /* ResultCollectionViewCell.swift in Sources */,
 				209F5062250CD69900BF4006 /* ButtonExtension.swift in Sources */,
 				207C3479250A797300B9A7BD /* CelebrityView.swift in Sources */,
-				20FD314825279360006322A1 /* ResultDataDelegate.swift in Sources */,
 				201A1A74251A5D87002D4CA8 /* QuestionvViewButtonActionDelegate.swift in Sources */,
 				207C3477250A502900B9A7BD /* ResultExplainView.swift in Sources */,
 				203156282503D07300828AAE /* MainView.swift in Sources */,
 				2007981A2502C13900F344A7 /* AppDelegate.swift in Sources */,
 				2047CF70251111CD00531B34 /* NumberAlertControllerDelegate.swift in Sources */,
 				2041F7E925069C01004783F7 /* UserInfo.swift in Sources */,
+				2078DFC9252CD5FF000C2FCD /* TypeNotificationKeyList.swift in Sources */,
 				2017AD78251A31BA00D67385 /* QuestionData.swift in Sources */,
 				2007981C2502C13900F344A7 /* SceneDelegate.swift in Sources */,
 			);
