@@ -80,18 +80,13 @@ extension QuestionViewController: QuestionvViewButtonActionDelegate {
             switch button {
             case questionView.yesButton:
                 print("Type F")
-                
-                let name = Notification.Name.init(typeFnotificationKey)
-                NotificationCenter.default.post(name: name, object: nil)
-                
+//                let name = Notification.Name.init(typeFnotificationKey)
+                NotificationCenter.default.post(name: typeFnotificationName, object: nil)
                 self.navigationController?.pushViewController(resultVC, animated: true)
-                
             case questionView.noButton:
                 print("Type E")
-                
                 let name = Notification.Name.init(typeEnotificationKey)
                 NotificationCenter.default.post(name: name, object: nil)
-                
                 self.navigationController?.pushViewController(resultVC, animated: true)
             default:
                 return questionView.questionLabel.text = "Error"
@@ -141,17 +136,13 @@ extension QuestionViewController: QuestionvViewButtonActionDelegate {
             switch button {
             case questionView.yesButton:
                 print("Type A")
-                
                 let name = Notification.Name.init(typeAnotificationKey)
                 NotificationCenter.default.post(name: name, object: nil)
-                
                 self.navigationController?.pushViewController(resultVC, animated: true)
             case questionView.noButton:
                 print("Type B")
-                
                 let name = Notification.Name.init(typeBnotificationKey)
                 NotificationCenter.default.post(name: name, object: nil)
-                
                 self.navigationController?.pushViewController(resultVC, animated: true)
             default:
                 return questionView.questionLabel.text = "Error"

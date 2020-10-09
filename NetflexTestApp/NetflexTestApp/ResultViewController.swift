@@ -16,12 +16,6 @@ class ResultViewController: UIViewController {
         return typeView
     }()
     
-    fileprivate let collectionView: ResultView = {
-        let collectionView: ResultView = ResultView()
-        collectionView.backgroundColor = .yellow
-        return collectionView
-    }()
-    
     fileprivate let resultExplainView: ResultExplainView = {
         let resultExplainView: ResultExplainView = ResultExplainView()
         resultExplainView.backgroundColor = .darkGray
@@ -34,18 +28,72 @@ class ResultViewController: UIViewController {
         return celebrityView
     }()
     
+    fileprivate let collectionView: ResultView = {
+        let collectionView: ResultView = ResultView()
+        collectionView.backgroundColor = .yellow
+        return collectionView
+    }()
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+//        createObservers()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        createObservers()
         
         self.view.backgroundColor = .black
         
         self.navigationController?.navigationBar.isHidden = false
         
         addViews()
-
-
+        
+        
+        
         
     }
+    
+    func createObservers() {
+        // Type A Noti
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTypeTitleLabel(notification:)), name: typeAnotificationName, object: nil)
+        
+    }
+
+    @objc func updateTypeTitleLabel(notification: NSNotification) {
+        switch notification.name {
+        case typeAnotificationName:
+            typeView.typeTitleLabel.text = "Type A"
+        case typeBnotificationName:
+            typeView.typeTitleLabel.text = "Type B"
+        case typeCnotificationName:
+            typeView.typeTitleLabel.text = "Type c"
+        case typeDnotificationName:
+            typeView.typeTitleLabel.text = "Type D"
+        case typeEnotificationName:
+            typeView.typeTitleLabel.text = "Type E"
+        case typeFnotificationName:
+            typeView.typeTitleLabel.text = "Type F"
+        default:
+            print(Error.self)
+        }
+        
+    }
+
+    @objc func updateTypeNameLabel(notification: NSNotification) {
+        
+    }
+
+    @objc func updateLuckNumberLabel(notification: NSNotification) {
+        
+    }
+
     
     private func addViews() {
         setupTypeView()
