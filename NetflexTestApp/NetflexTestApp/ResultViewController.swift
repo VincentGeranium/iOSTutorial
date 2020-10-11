@@ -35,7 +35,8 @@ class ResultViewController: UIViewController {
     }()
     
     deinit {
-        NotificationCenter.default.removeObserver(self)
+        print("deinit")
+//        NotificationCenter.default.removeObserver(self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,12 +62,14 @@ class ResultViewController: UIViewController {
     }
     
     func createObservers() {
+        print("excute createObservers")
         // Type A Noti
         NotificationCenter.default.addObserver(self, selector: #selector(updateTypeTitleLabel(notification:)), name: typeAnotificationName, object: nil)
         
     }
 
     @objc func updateTypeTitleLabel(notification: NSNotification) {
+        print("excute updateTypeTitleLabel")
         switch notification.name {
         case typeAnotificationName:
             typeView.typeTitleLabel.text = "Type A"

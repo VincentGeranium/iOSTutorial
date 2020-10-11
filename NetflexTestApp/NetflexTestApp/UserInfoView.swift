@@ -92,23 +92,32 @@ class UserInfoView: UIView {
          let emptyAlertController: UIAlertController = UIAlertController(title: "비어있는 곳을 확인해 주세요.", message: "모든 곳이 채워져있는지 확인 후 다시 시도해 주세요.", preferredStyle: .alert)
          emptyAlertController.addAction(okAction)
          return emptyAlertController
-     }()
+    }()
     
     @objc fileprivate func beginEditing(_ sender: UITextField) {
+        
+        guard let name = nameTextField.text else { return }
         guard let number = numberTextField.text else { return }
+        guard let food = foodTextField.text else { return }
         
         let characterNumbers = CharacterSet(charactersIn: number)
         
         
-        if sender.text?.isEmpty == false {
+        if (name.isEmpty || number.isEmpty || food.isEmpty) == false {
+            print("not empty")
             if CharacterSet(charactersIn: "0123456789").isSuperset(of: characterNumbers) == true {
+                print("isNumber == true")
                 confirmButton.isEnabled = true
                 confirmButton.layer.borderColor = UIColor.white.cgColor
             }
-        } else if sender.text?.isEmpty == true {
+        } else if (name.isEmpty || number.isEmpty || food.isEmpty) == true {
+            print("empty")
+            
             confirmButton.isEnabled = false
             confirmButton.layer.borderColor = UIColor.gray.cgColor
+            
         }
+        
     }
     
     
@@ -236,14 +245,14 @@ extension UserInfoView: UITextFieldDelegate {
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         
-//        if textField.text?.isEmpty == false {
-//            confirmButton.isEnabled = true
-//            confirmButton.layer.borderColor = UIColor.white.cgColor
-//
-//        } else if textField.text?.isEmpty == true {
-//            confirmButton.isEnabled = false
-//            confirmButton.layer.borderColor = UIColor.gray.cgColor
-//        }
+        if textField.text?.isEmpty == false {
+            confirmButton.isEnabled = true
+            confirmButton.layer.borderColor = UIColor.white.cgColor
+
+        } else if textField.text?.isEmpty == true {
+            confirmButton.isEnabled = false
+            confirmButton.layer.borderColor = UIColor.gray.cgColor
+        }
         return true
     }
     
