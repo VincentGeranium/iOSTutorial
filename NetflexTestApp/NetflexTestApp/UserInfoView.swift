@@ -115,9 +115,7 @@ class UserInfoView: UIView {
             
             confirmButton.isEnabled = false
             confirmButton.layer.borderColor = UIColor.gray.cgColor
-            
         }
-        
     }
     
     
