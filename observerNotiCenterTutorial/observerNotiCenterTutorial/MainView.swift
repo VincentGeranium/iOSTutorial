@@ -12,10 +12,10 @@ class MainView: UIView {
     lazy var mainTitleLabel: UILabel = {
         let mainTitleLabel: UILabel = UILabel()
         mainTitleLabel.textAlignment = .center
-        mainTitleLabel.font = UIFont.systemFont(ofSize: 70, weight: .bold)
+        mainTitleLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
         mainTitleLabel.backgroundColor = .red
         mainTitleLabel.textColor = .yellow
-        mainTitleLabel.text = "MainVC"
+        mainTitleLabel.text = "hulk or dead pool"
         return mainTitleLabel
     }()
     

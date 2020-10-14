@@ -32,10 +32,6 @@ class MainButton: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc private func didTappedButton(_ sender: UIButton) {
-        print("tapped Button")
-    }
-    
     private func addViews() {
         setupButton()
     }
@@ -53,6 +49,24 @@ class MainButton: UIView {
             mainButton.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
             mainButton.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -30),
         ])
+    }
+    
+    
+    @objc private func didTappedButton(_ sender: UIButton) {
+        let mainVC: GetViewController = GetViewController(viewController: MainViewController())
+        let selectionVC: GetViewController = GetViewController(viewController: SelectionViewController())
+        
+        if let mainNavigationController = mainVC.viewController?.navigationController {
+            if let selectionViewController = selectionVC.viewController {
+                mainNavigationController.pushViewController(selectionViewController, animated: true)
+            }
+        }
+        
+ 
+        
+        print("didtapped btn")
+        
+        
     }
     
     

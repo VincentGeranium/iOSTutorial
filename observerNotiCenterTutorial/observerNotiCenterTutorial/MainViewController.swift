@@ -24,7 +24,8 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = .black
-        
+//        self.navigationController?.navigationBar.isHidden = true
+//        self.navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: <#T##Bool#>)
         addViews()
     }
     
@@ -44,7 +45,6 @@ class MainViewController: UIViewController {
             mainView.topAnchor.constraint(equalTo: guide.topAnchor, constant: 20),
             mainView.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 40),
             mainView.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -40),
-//            mainView.heightAnchor.constraint(greaterThanOrEqualTo: self., multiplier: <#T##CGFloat#>)
             mainView.heightAnchor.constraint(equalToConstant: 200),
         ])
     }
@@ -62,6 +62,15 @@ class MainViewController: UIViewController {
             mainButton.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -40),
             mainButton.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -20),
         ])
+        
+//        mainButton.mainButton.addTarget(self, action: #selector(didTappedButton(_:)), for: .touchUpInside)
     }
+//
+//        @objc private func didTappedButton(_ sender: UIButton) {
+//            let selectionVC = SelectionViewController()
+//            let mainViewVC = MainViewController()
+//            self.navigationController?.pushViewController(selectionVC, animated: true)
+//            print("didtapped btn")
+//        }
 }
 
