@@ -11,7 +11,7 @@ import UIKit
 
 class MainButton: UIView {
     
-    lazy var mainButton: UIButton = {
+    var mainButton: UIButton = {
         let mainButton: UIButton = UIButton()
         mainButton.backgroundColor = .blue
         mainButton.layer.cornerRadius = 8.0
@@ -19,7 +19,6 @@ class MainButton: UIView {
         mainButton.layer.borderColor = UIColor.white.cgColor
         mainButton.setTitleColor(.white, for: .normal)
         mainButton.setTitle("choose your team", for: .normal)
-        mainButton.addTarget(self, action: #selector(didTappedButton(_:)), for: .touchUpInside)
         return mainButton
     }()
     
@@ -49,25 +48,15 @@ class MainButton: UIView {
             mainButton.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
             mainButton.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -30),
         ])
+        
+        mainButton.addTarget(self, action: #selector(didTappedButton(_:)), for: .touchUpInside)
     }
     
     
     @objc private func didTappedButton(_ sender: UIButton) {
-        let mainVC: GetViewController = GetViewController(viewController: MainViewController())
-        let selectionVC: GetViewController = GetViewController(viewController: SelectionViewController())
         
-        if let mainNavigationController = mainVC.viewController?.navigationController {
-            if let selectionViewController = selectionVC.viewController {
-                mainNavigationController.pushViewController(selectionViewController, animated: true)
-            }
-        }
-        
- 
-        
-        print("didtapped btn")
-        
-        
+        MainViewController.rootVC.navigationController?.pushViewController(SelectionViewController.selectionVC, animated: true)
+        print("didTappedButton")
     }
-    
-    
 }
+

@@ -16,7 +16,7 @@ class SelectionTitleView: UIView {
         titleLabel.textAlignment = .center
         titleLabel.textColor = .yellow
         titleLabel.font = UIFont.init(name: "Avenir Next", size: 26.0)
-//        titleLabel.font.
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 26)
         titleLabel.backgroundColor = .red
         titleLabel.text = "Choose your team"
         return titleLabel

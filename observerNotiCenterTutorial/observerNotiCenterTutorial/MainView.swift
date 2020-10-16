@@ -9,13 +9,14 @@
 import UIKit
 
 class MainView: UIView {
-    lazy var mainTitleLabel: UILabel = {
+    
+    var mainTitleLabel: UILabel = {
         let mainTitleLabel: UILabel = UILabel()
         mainTitleLabel.textAlignment = .center
         mainTitleLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
         mainTitleLabel.backgroundColor = .red
         mainTitleLabel.textColor = .yellow
-        mainTitleLabel.text = "hulk or dead pool"
+        mainTitleLabel.text = "Green Or Red"
         return mainTitleLabel
     }()
     

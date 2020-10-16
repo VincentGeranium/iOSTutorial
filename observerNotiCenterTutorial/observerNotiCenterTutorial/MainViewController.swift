@@ -9,16 +9,19 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    static let rootVC = MainViewController()
+    
+    let mainButton: MainButton = {
+        let mainButton: MainButton = MainButton()
+        return mainButton
+    }()
     
     let mainView: MainView = {
         let mainView: MainView = MainView()
         return mainView
     }()
     
-    let mainButton: MainButton = {
-        let mainButton: MainButton = MainButton()
-        return mainButton
-    }()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,10 +68,10 @@ class MainViewController: UIViewController {
         
 //        mainButton.mainButton.addTarget(self, action: #selector(didTappedButton(_:)), for: .touchUpInside)
     }
-//
+
 //        @objc private func didTappedButton(_ sender: UIButton) {
 //            let selectionVC = SelectionViewController()
-//            let mainViewVC = MainViewController()
+//
 //            self.navigationController?.pushViewController(selectionVC, animated: true)
 //            print("didtapped btn")
 //        }

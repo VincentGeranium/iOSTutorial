@@ -17,6 +17,10 @@
 		201311D0253613610099279C /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201311CF253613610099279C /* SelectionViewController.swift */; };
 		2085DDC22536CFE800B1B146 /* SelectionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2085DDC12536CFE800B1B146 /* SelectionTitleView.swift */; };
 		2085DDC42536D55F00B1B146 /* ViewTransitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2085DDC32536D55F00B1B146 /* ViewTransitionModel.swift */; };
+		20C122222539CD13005DC1B2 /* GreenTeamSymbolButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C122212539CD13005DC1B2 /* GreenTeamSymbolButtonView.swift */; };
+		20C122272539DA50005DC1B2 /* YourTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C122262539DA50005DC1B2 /* YourTeamViewController.swift */; };
+		20C1222A2539DD91005DC1B2 /* RedTeamSymbolButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C122292539DD91005DC1B2 /* RedTeamSymbolButtonView.swift */; };
+		20C1222F2539F415005DC1B2 /* YourTeamImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C1222E2539F415005DC1B2 /* YourTeamImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		201311CF253613610099279C /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
 		2085DDC12536CFE800B1B146 /* SelectionTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionTitleView.swift; sourceTree = "<group>"; };
 		2085DDC32536D55F00B1B146 /* ViewTransitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTransitionModel.swift; sourceTree = "<group>"; };
+		20C122212539CD13005DC1B2 /* GreenTeamSymbolButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenTeamSymbolButtonView.swift; sourceTree = "<group>"; };
+		20C122262539DA50005DC1B2 /* YourTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourTeamViewController.swift; sourceTree = "<group>"; };
+		20C122292539DD91005DC1B2 /* RedTeamSymbolButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedTeamSymbolButtonView.swift; sourceTree = "<group>"; };
+		20C1222E2539F415005DC1B2 /* YourTeamImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourTeamImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +83,10 @@
 				2085DDC32536D55F00B1B146 /* ViewTransitionModel.swift */,
 				201311CF253613610099279C /* SelectionViewController.swift */,
 				2085DDC12536CFE800B1B146 /* SelectionTitleView.swift */,
+				20C122212539CD13005DC1B2 /* GreenTeamSymbolButtonView.swift */,
+				20C122292539DD91005DC1B2 /* RedTeamSymbolButtonView.swift */,
+				20C122262539DA50005DC1B2 /* YourTeamViewController.swift */,
+				20C1222E2539F415005DC1B2 /* YourTeamImageView.swift */,
 				201311D1253613710099279C /* Controller */,
 				201311D2253613920099279C /* View */,
 			);
@@ -166,10 +178,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2085DDC22536CFE800B1B146 /* SelectionTitleView.swift in Sources */,
+				20C1222A2539DD91005DC1B2 /* RedTeamSymbolButtonView.swift in Sources */,
 				200299E825357D7700FE93FC /* MainViewController.swift in Sources */,
+				20C122272539DA50005DC1B2 /* YourTeamViewController.swift in Sources */,
 				201311D0253613610099279C /* SelectionViewController.swift in Sources */,
 				2085DDC42536D55F00B1B146 /* ViewTransitionModel.swift in Sources */,
+				20C1222F2539F415005DC1B2 /* YourTeamImageView.swift in Sources */,
 				200299FA25357E8E00FE93FC /* MainView.swift in Sources */,
+				20C122222539CD13005DC1B2 /* GreenTeamSymbolButtonView.swift in Sources */,
 				200299E425357D7600FE93FC /* AppDelegate.swift in Sources */,
 				200299E625357D7600FE93FC /* SceneDelegate.swift in Sources */,
 				200299FC253581D300FE93FC /* MainButton.swift in Sources */,
