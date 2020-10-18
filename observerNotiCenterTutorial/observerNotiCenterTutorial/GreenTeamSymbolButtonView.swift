@@ -12,7 +12,7 @@ import UIKit
 class GreenTeamSymbolButtonView: UIView {
     
     
-    let greenNotiName = Notification.Name.init(rawValue: "Green")
+    static let greenNotiName = Notification.Name.init(rawValue: "Green")
     
     lazy var greenTeamButton: UIButton = {
         let greenTeamButton: UIButton = UIButton()
@@ -50,8 +50,7 @@ class GreenTeamSymbolButtonView: UIView {
     }
     
     @objc private func didTappedGreenTeamButton(_ sender: UIButton) {
-        let yourTeamVC = YourTeamViewController()
-        SelectionViewController.selectionVC.present(yourTeamVC, animated: true, completion: nil)
+        
         print("didTappedGreenTeamButton")
     }
     

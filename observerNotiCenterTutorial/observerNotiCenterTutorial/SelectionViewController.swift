@@ -10,8 +10,6 @@ import UIKit
 
 class SelectionViewController: UIViewController {
     
-    static let selectionVC = SelectionViewController()
-    
     let titleView: SelectionTitleView = {
         let titleView: SelectionTitleView = SelectionTitleView()
         
@@ -27,6 +25,11 @@ class SelectionViewController: UIViewController {
         let redTeamSymbolButton: RedTeamSymbolButtonView = RedTeamSymbolButtonView()
         return redTeamSymbolButton
     }()
+    
+    deinit {
+        print("deinit")
+        
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

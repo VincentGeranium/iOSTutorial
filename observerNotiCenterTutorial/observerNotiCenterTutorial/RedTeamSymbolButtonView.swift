@@ -48,8 +48,7 @@ class RedTeamSymbolButtonView: UIView {
     }
     
     @objc private func didTappedRedTeamButton(_ sender: UIButton) {
-        let yourTeamVC = YourTeamViewController()
-        SelectionViewController.selectionVC.present(yourTeamVC, animated: true, completion: nil)
+        
         print("didTappedRedTeamButton")
     }
 

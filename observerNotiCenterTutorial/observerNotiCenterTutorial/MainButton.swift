@@ -54,8 +54,23 @@ class MainButton: UIView {
     
     
     @objc private func didTappedButton(_ sender: UIButton) {
+        let getMainVC = GetViewController(viewController: MainViewController())
+        let getSelectionVC = GetViewController(viewController: SelectionViewController())
+        let getTeamVC = GetViewController(viewController: YourTeamViewController())
         
-        MainViewController.rootVC.navigationController?.pushViewController(SelectionViewController.selectionVC, animated: true)
+        guard let yourTeamVC = getTeamVC.viewController else {
+            return
+        }
+        
+        guard let selectionVC = getSelectionVC.viewController else {
+            return
+        }
+        
+        guard let mainVC = getMainVC.viewController else {
+            return
+        }
+        
+        mainVC.present(yourTeamVC, animated: true, completion: nil)
         print("didTappedButton")
     }
 }

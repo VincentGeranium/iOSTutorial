@@ -9,7 +9,7 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    static let rootVC = MainViewController()
+    
     
     let mainButton: MainButton = {
         let mainButton: MainButton = MainButton()
@@ -27,8 +27,6 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = .black
-//        self.navigationController?.navigationBar.isHidden = true
-//        self.navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: <#T##Bool#>)
         addViews()
     }
     
@@ -66,14 +64,8 @@ class MainViewController: UIViewController {
             mainButton.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -20),
         ])
         
-//        mainButton.mainButton.addTarget(self, action: #selector(didTappedButton(_:)), for: .touchUpInside)
+
     }
 
-//        @objc private func didTappedButton(_ sender: UIButton) {
-//            let selectionVC = SelectionViewController()
-//
-//            self.navigationController?.pushViewController(selectionVC, animated: true)
-//            print("didtapped btn")
-//        }
 }
 
