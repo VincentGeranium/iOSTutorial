@@ -10,6 +10,8 @@ import UIKit
 
 class SelectionViewController: UIViewController {
     
+    static let selectionVC = SelectionViewController()
+    
     let titleView: SelectionTitleView = {
         let titleView: SelectionTitleView = SelectionTitleView()
         
@@ -38,7 +40,7 @@ class SelectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.backgroundColor = .black
         addViews()
     }
     

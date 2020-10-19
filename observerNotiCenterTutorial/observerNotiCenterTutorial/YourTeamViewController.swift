@@ -10,22 +10,50 @@ import UIKit
 
 class YourTeamViewController: UIViewController {
     
+    lazy var yourTeamImageView: YourTeamImageView = {
+        var yourTeamImageView: YourTeamImageView = YourTeamImageView()
+        yourTeamImageView.backgroundColor = .white
+        return yourTeamImageView
+    }()
+    
+//    lazy var yourTeamTitleLabel: UILabel = {
+//        var yourTeamTitleLabel: UILabel = UILabel()
+//
+//        return yourTeamTitleLabel
+//    }()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.view.backgroundColor = .yellow
+        
+        addViews()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func addViews() {
+        setupYourTeamImageView()
+        setupYourTeamTitleLabel()
+        
     }
-    */
+    
+    private func setupYourTeamImageView() {
+        let guide = self.view.safeAreaLayoutGuide
+        
+        yourTeamImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.view.addSubview(yourTeamImageView)
+        
+        NSLayoutConstraint.activate([
+            yourTeamImageView.centerXAnchor.constraint(equalTo: guide.centerXAnchor),
+            yourTeamImageView.centerYAnchor.constraint(equalTo: guide.centerYAnchor, constant: -80),
+            yourTeamImageView.heightAnchor.constraint(equalToConstant: 150),
+            yourTeamImageView.widthAnchor.constraint(equalToConstant: 150),
+        ])
+    }
+    
+    private func setupYourTeamTitleLabel() {
+        
+    }
 
 }

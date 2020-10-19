@@ -63,8 +63,11 @@ class MainViewController: UIViewController {
             mainButton.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -40),
             mainButton.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -20),
         ])
-        
-
+        mainButton.mainButton.addTarget(self, action: #selector(didTappedMainButton(_:)), for: .touchUpInside)
+    }
+    @objc func didTappedMainButton(_ sender: UIButton) {
+        let selectionVC = SelectionViewController()
+        self.present(selectionVC, animated: true, completion: nil)
     }
 
 }
