@@ -49,6 +49,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		201B1948253F457A00BF3FDE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2091A933253DF92900C4D261 /* RedButtonView.swift */,
+				20D9AF8C253F413900A1C8EF /* BlueButtonView.swift */,
+				2091A93B253E1A1800C4D261 /* SelectColorImageView.swift */,
+				2091A94C253EF34F00C4D261 /* SelectColorTitleLabelView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		201B1949253F45A300BF3FDE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2091A93E253E1CC600C4D261 /* CreateObserver.swift */,
+				2091A941253EB19700C4D261 /* NotificationNames.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		2091A909253DF86700C4D261 = {
 			isa = PBXGroup;
 			children = (
@@ -68,17 +88,11 @@
 		2091A914253DF86700C4D261 /* mvcTest */ = {
 			isa = PBXGroup;
 			children = (
+				201B1949253F45A300BF3FDE /* Service */,
+				201B1948253F457A00BF3FDE /* View */,
 				2091A92A253DF86F00C4D261 /* ViewController */,
 				2091A917253DF86700C4D261 /* SceneDelegate.swift */,
 				2091A915253DF86700C4D261 /* AppDelegate.swift */,
-				2091A919253DF86700C4D261 /* ViewController.swift */,
-				2091A933253DF92900C4D261 /* RedButtonView.swift */,
-				20D9AF8C253F413900A1C8EF /* BlueButtonView.swift */,
-				2091A93E253E1CC600C4D261 /* CreateObserver.swift */,
-				2091A941253EB19700C4D261 /* NotificationNames.swift */,
-				2091A936253E0E3200C4D261 /* SelectColorViewController.swift */,
-				2091A93B253E1A1800C4D261 /* SelectColorImageView.swift */,
-				2091A94C253EF34F00C4D261 /* SelectColorTitleLabelView.swift */,
 				2091A91E253DF86700C4D261 /* Assets.xcassets */,
 				2091A920253DF86700C4D261 /* LaunchScreen.storyboard */,
 				2091A923253DF86700C4D261 /* Info.plist */,
@@ -89,6 +103,8 @@
 		2091A92A253DF86F00C4D261 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				2091A919253DF86700C4D261 /* ViewController.swift */,
+				2091A936253E0E3200C4D261 /* SelectColorViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
