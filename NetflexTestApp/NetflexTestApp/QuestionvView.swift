@@ -141,6 +141,7 @@ class QuestionView: UIView {
     }
     
     @objc fileprivate func didTappedYesButton(_ sender: UIButton) {
+        NotificationCenter.default.post(name: typeFnotificationName, object: nil)
         questionvViewButtonActionDelegate?.whichButtonTapped(sender, true)
     }
     
@@ -162,6 +163,7 @@ class QuestionView: UIView {
     }
     
     @objc fileprivate func didTappedNoButton(_ sender: UIButton) {
+        NotificationCenter.default.post(name: typeFnotificationName, object: nil)
         questionvViewButtonActionDelegate?.whichButtonTapped(sender, false)
     }
 }

@@ -10,8 +10,11 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
+    static let resultVC = ResultViewController()
+    
     fileprivate let typeView: TypeView = {
         let typeView: TypeView = TypeView()
+        typeView.typeTitleLabel.text = ""
         typeView.backgroundColor = .blue
         return typeView
     }()
@@ -64,7 +67,7 @@ class ResultViewController: UIViewController {
     func createObservers() {
         print("excute createObservers")
         // Type A Noti
-        NotificationCenter.default.addObserver(self, selector: #selector(updateTypeTitleLabel(notification:)), name: typeAnotificationName, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTypeTitleLabel(notification:)), name: typeFnotificationName, object: nil)
         
     }
 
@@ -82,7 +85,7 @@ class ResultViewController: UIViewController {
         case typeEnotificationName:
             typeView.typeTitleLabel.text = "Type E"
         case typeFnotificationName:
-            typeView.typeTitleLabel.text = "Type F"
+            self.typeView.typeTitleLabel.text = "FF"
         default:
             print(Error.self)
         }

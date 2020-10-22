@@ -22,7 +22,6 @@ class TypeView: UIView {
         typeTitleLabel.textAlignment = .center
         typeTitleLabel.backgroundColor = .gray
         typeTitleLabel.font = UIFont.boldSystemFont(ofSize: 30)
-        typeTitleLabel.text = ""
         return typeTitleLabel
     }()
     

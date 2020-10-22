@@ -10,7 +10,7 @@ import UIKit
 
 class QuestionViewController: UIViewController {
     
-    let resultVC = ResultViewController()
+    let resultVC = ResultViewController.resultVC
     
     lazy var questionView: QuestionView = {
         let questionView: QuestionView = QuestionView()
