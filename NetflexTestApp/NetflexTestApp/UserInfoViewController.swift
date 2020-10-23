@@ -10,6 +10,8 @@ import UIKit
 
 class UserInfoViewController: UIViewController {
     
+    static let userInfoVC: UIViewController = UserInfoViewController()
+    
     var userInfoDelegate: UserInfoViewControllerDelegate?
     
     lazy var userInfoView: UserInfoView = {
@@ -74,7 +76,7 @@ class UserInfoViewController: UIViewController {
         
         userInfoDelegate?.userInfo(userInfo)
         
-        let questionVC = QuestionViewController()
+        let questionVC = QuestionViewController.questionVC
         let resultVC = ResultViewController()
         
         self.navigationController?.pushViewController(questionVC, animated: true)

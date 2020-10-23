@@ -12,9 +12,8 @@ class ResultViewController: UIViewController {
     
     static let resultVC = ResultViewController()
     
-    fileprivate let typeView: TypeView = {
+    let typeView: TypeView = {
         let typeView: TypeView = TypeView()
-        typeView.typeTitleLabel.text = ""
         typeView.backgroundColor = .blue
         return typeView
     }()
@@ -51,7 +50,7 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        createObservers()
+//        createObservers()
         
         self.view.backgroundColor = .black
         
@@ -64,33 +63,33 @@ class ResultViewController: UIViewController {
         
     }
     
-    func createObservers() {
-        print("excute createObservers")
-        // Type A Noti
-        NotificationCenter.default.addObserver(self, selector: #selector(updateTypeTitleLabel(notification:)), name: typeFnotificationName, object: nil)
-        
-    }
-
-    @objc func updateTypeTitleLabel(notification: NSNotification) {
-        print("excute updateTypeTitleLabel")
-        switch notification.name {
-        case typeAnotificationName:
-            typeView.typeTitleLabel.text = "Type A"
-        case typeBnotificationName:
-            typeView.typeTitleLabel.text = "Type B"
-        case typeCnotificationName:
-            typeView.typeTitleLabel.text = "Type c"
-        case typeDnotificationName:
-            typeView.typeTitleLabel.text = "Type D"
-        case typeEnotificationName:
-            typeView.typeTitleLabel.text = "Type E"
-        case typeFnotificationName:
-            self.typeView.typeTitleLabel.text = "FF"
-        default:
-            print(Error.self)
-        }
-        
-    }
+//    func createObservers() {
+//        print("excute createObservers")
+//        // Type A Noti
+//        NotificationCenter.default.addObserver(self, selector: #selector(updateTypeTitleLabel(notification:)), name: typeFnotificationName, object: nil)
+//
+//    }
+//
+//    @objc func updateTypeTitleLabel(notification: NSNotification) {
+//        print("excute updateTypeTitleLabel")
+//        switch notification.name {
+//        case typeAnotificationName:
+//            typeView.typeTitleLabel.text = "Type A"
+//        case typeBnotificationName:
+//            typeView.typeTitleLabel.text = "Type B"
+//        case typeCnotificationName:
+//            typeView.typeTitleLabel.text = "Type c"
+//        case typeDnotificationName:
+//            typeView.typeTitleLabel.text = "Type D"
+//        case typeEnotificationName:
+//            typeView.typeTitleLabel.text = "Type E"
+//        case typeFnotificationName:
+//            ResultViewController.resultVC.typeView.typeTitleLabel.text = "FF"
+//        default:
+//            print(Error.self)
+//        }
+//
+//    }
 
     @objc func updateTypeNameLabel(notification: NSNotification) {
         

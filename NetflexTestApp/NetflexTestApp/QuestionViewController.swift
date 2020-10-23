@@ -10,6 +10,8 @@ import UIKit
 
 class QuestionViewController: UIViewController {
     
+    static let questionVC: UIViewController = QuestionViewController()
+    
     let resultVC = ResultViewController.resultVC
     
     lazy var questionView: QuestionView = {
@@ -81,7 +83,9 @@ extension QuestionViewController: QuestionvViewButtonActionDelegate {
             case questionView.yesButton:
                 print("Type F")
 //                let name = Notification.Name.init(typeFnotificationKey)
-                NotificationCenter.default.post(name: typeFnotificationName, object: nil)
+//                NotificationCenter.default.post(name: typeFnotificationName, object: nil)
+                resultVC.typeView.typeTitleLabel.text = "F"
+                
                 self.navigationController?.pushViewController(resultVC, animated: true)
             case questionView.noButton:
                 print("Type E")
