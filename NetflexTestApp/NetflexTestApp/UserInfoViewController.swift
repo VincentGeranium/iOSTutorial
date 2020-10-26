@@ -69,10 +69,7 @@ class UserInfoViewController: UIViewController {
         let userInfo: UserInfo = UserInfo(name: name, number: number, food: food)
         
         
-//        print("\(userInfo.name), \(userInfo.number), \(userInfo.food)")
-        print(type(of: number))
-        
-        
+        print("\(userInfo.name), \(userInfo.number), \(userInfo.food)")
         
         userInfoDelegate?.userInfo(userInfo)
         

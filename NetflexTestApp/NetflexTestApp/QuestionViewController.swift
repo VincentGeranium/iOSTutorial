@@ -10,6 +10,8 @@ import UIKit
 
 class QuestionViewController: UIViewController {
     
+    let randomNumber: UInt32 = arc4random() % 10
+    
     static let questionVC: UIViewController = QuestionViewController()
     
     let resultVC = ResultViewController.resultVC
@@ -81,10 +83,16 @@ extension QuestionViewController: QuestionvViewButtonActionDelegate {
         } else if questionView.questionLabel.text == thirdQuestion {
             switch button {
             case questionView.yesButton:
-                print("Type F")
-//                let name = Notification.Name.init(typeFnotificationKey)
-//                NotificationCenter.default.post(name: typeFnotificationName, object: nil)
+//                guard let userNumberString = userInfo?.number else {
+//                    return
+//                }
+//
+//                guard let userNumberInt = Int(userNumberString) else {
+//                    return
+//                }
+                
                 resultVC.typeView.typeTitleLabel.text = "F"
+                
                 
                 self.navigationController?.pushViewController(resultVC, animated: true)
             case questionView.noButton:

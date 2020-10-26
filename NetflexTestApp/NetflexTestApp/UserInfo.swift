@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 struct UserInfo {
-    let name: String
-    let number: String
-    let food: String
+    var name: String
+    var number: String
+    var food: String
 }

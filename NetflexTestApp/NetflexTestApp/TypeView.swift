@@ -9,7 +9,9 @@
 import UIKit
 
 class TypeView: UIView {
-    let randomNumber: UInt32 = arc4random() % 10
+//    let randomNumber: UInt32 = arc4random() % 10
+    
+    var userInfoDelegate: UserInfoViewControllerDelegate?
     
     let userInputNumber: String = ""
     
@@ -32,7 +34,7 @@ class TypeView: UIView {
         typeNameLabel.textAlignment = .center
         typeNameLabel.backgroundColor = .gray
         typeNameLabel.font = UIFont.boldSystemFont(ofSize: 30)
-        typeNameLabel.text = "행동가형"
+//        typeNameLabel.text = "행동가형"
         return typeNameLabel
     }()
     
@@ -44,7 +46,7 @@ class TypeView: UIView {
         luckNumberLabel.backgroundColor = .gray
         luckNumberLabel.font = UIFont.boldSystemFont(ofSize: 30)
         luckNumberLabel.textAlignment = .center
-        luckNumberLabel.text = "\(100 + randomNumber)"
+//        luckNumberLabel.text = "\(100 + randomNumber)"
         return luckNumberLabel
     }()
     
@@ -62,7 +64,7 @@ class TypeView: UIView {
     
     override init(frame: CGRect) {
         super .init(frame: frame)
-        print(randomNumber)
+//        print(randomNumber)
         addViews()
     }
     

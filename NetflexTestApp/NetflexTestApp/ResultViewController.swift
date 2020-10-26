@@ -8,7 +8,12 @@
 
 import UIKit
 
-class ResultViewController: UIViewController {
+class ResultViewController: UIViewController, UserInfoViewControllerDelegate {
+    
+    func userInfo(_ userInfo: UserInfo) {
+        ResultViewController.resultVC.typeView.luckNumberLabel.text = userInfo.number
+        self.typeView.typeNameLabel.text = userInfo.food
+    }
     
     static let resultVC = ResultViewController()
     
@@ -43,7 +48,6 @@ class ResultViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
 //        createObservers()
     }
     
@@ -55,6 +59,8 @@ class ResultViewController: UIViewController {
         self.view.backgroundColor = .black
         
         self.navigationController?.navigationBar.isHidden = false
+        
+        ResultViewController.resultVC.typeView.userInfoDelegate = self
         
         addViews()
         
