@@ -31,6 +31,7 @@ class QuestionViewController: UIViewController {
         
         questionView.questionvViewButtonActionDelegate = self
         
+        
         addViews()
     }
     
@@ -61,6 +62,7 @@ class QuestionViewController: UIViewController {
 }
 
 extension QuestionViewController: QuestionvViewButtonActionDelegate {
+    
     func whichButtonTapped(_ button: UIButton, _ bool: Bool) {
         if questionView.questionLabel.text == firstQuestion {
             switch button {
@@ -83,16 +85,13 @@ extension QuestionViewController: QuestionvViewButtonActionDelegate {
         } else if questionView.questionLabel.text == thirdQuestion {
             switch button {
             case questionView.yesButton:
-//                guard let userNumberString = userInfo?.number else {
-//                    return
-//                }
-//
-//                guard let userNumberInt = Int(userNumberString) else {
-//                    return
-//                }
+                
+                let stringRandomNumber = String(randomNumber)
                 
                 resultVC.typeView.typeTitleLabel.text = "F"
-                
+                resultVC.typeView.luckNumberLabel.text = stringRandomNumber
+                resultVC.typeView.typeNameLabel.text = "행동가형"
+                resultVC.resultExplainView.explainLabel.text = ""
                 
                 self.navigationController?.pushViewController(resultVC, animated: true)
             case questionView.noButton:

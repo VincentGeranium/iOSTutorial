@@ -8,12 +8,7 @@
 
 import UIKit
 
-class ResultViewController: UIViewController, UserInfoViewControllerDelegate {
-    
-    func userInfo(_ userInfo: UserInfo) {
-        ResultViewController.resultVC.typeView.luckNumberLabel.text = userInfo.number
-        self.typeView.typeNameLabel.text = userInfo.food
-    }
+class ResultViewController: UIViewController {
     
     static let resultVC = ResultViewController()
     
@@ -23,7 +18,7 @@ class ResultViewController: UIViewController, UserInfoViewControllerDelegate {
         return typeView
     }()
     
-    fileprivate let resultExplainView: ResultExplainView = {
+    let resultExplainView: ResultExplainView = {
         let resultExplainView: ResultExplainView = ResultExplainView()
         resultExplainView.backgroundColor = .darkGray
         return resultExplainView
@@ -60,7 +55,6 @@ class ResultViewController: UIViewController, UserInfoViewControllerDelegate {
         
         self.navigationController?.navigationBar.isHidden = false
         
-        ResultViewController.resultVC.typeView.userInfoDelegate = self
         
         addViews()
         

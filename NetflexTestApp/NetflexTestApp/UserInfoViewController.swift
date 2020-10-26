@@ -12,6 +12,8 @@ class UserInfoViewController: UIViewController {
     
     static let userInfoVC: UIViewController = UserInfoViewController()
     
+    public var userInfo: UserInfo?
+    
     var userInfoDelegate: UserInfoViewControllerDelegate?
     
     lazy var userInfoView: UserInfoView = {
@@ -66,12 +68,14 @@ class UserInfoViewController: UIViewController {
         guard let number = userInfoView.numberTextField.text else { return }
         guard let food = userInfoView.foodTextField.text else { return }
         
-        let userInfo: UserInfo = UserInfo(name: name, number: number, food: food)
+//        let userInfo: UserInfo = UserInfo(name: name, number: number, food: food)
+        
+        userInfo = UserInfo(name: name, number: number, food: food)
         
         
-        print("\(userInfo.name), \(userInfo.number), \(userInfo.food)")
+        print("\(userInfo?.name), \(userInfo?.number), \(userInfo?.food)")
         
-        userInfoDelegate?.userInfo(userInfo)
+//        userInfoDelegate?.userInfo(userInfo)
         
         let questionVC = QuestionViewController.questionVC
         let resultVC = ResultViewController()
