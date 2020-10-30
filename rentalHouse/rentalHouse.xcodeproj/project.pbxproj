@@ -3,99 +3,91 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		207FBB6D254725E100C24650 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207FBB6C254725E100C24650 /* ListTableViewCell.swift */; };
-		209318E62549498C00A7E753 /* CoronaNowData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209318E52549498C00A7E753 /* CoronaNowData.swift */; };
-		209318E925494FC300A7E753 /* GetCoronaNowData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209318E825494FC300A7E753 /* GetCoronaNowData.swift */; };
-		20E92EEC2541ECA900D9D411 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E92EEB2541ECA900D9D411 /* AppDelegate.swift */; };
-		20E92EEE2541ECA900D9D411 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E92EED2541ECA900D9D411 /* SceneDelegate.swift */; };
-		20E92EF02541ECA900D9D411 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E92EEF2541ECA900D9D411 /* MainViewController.swift */; };
-		20E92EF32541ECA900D9D411 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E92EF12541ECA900D9D411 /* Main.storyboard */; };
-		20E92EF52541ECAA00D9D411 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20E92EF42541ECAA00D9D411 /* Assets.xcassets */; };
-		20E92EF82541ECAA00D9D411 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E92EF62541ECAA00D9D411 /* LaunchScreen.storyboard */; };
-		DB365177D4F72FFDF3271A01 /* Pods_CoronaProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45E62F815FAFF57B5135AD6D /* Pods_CoronaProject.framework */; };
+		20AE1C7D254BE8340045E624 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AE1C7C254BE8340045E624 /* AppDelegate.swift */; };
+		20AE1C7F254BE8340045E624 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AE1C7E254BE8340045E624 /* SceneDelegate.swift */; };
+		20AE1C81254BE8340045E624 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AE1C80254BE8340045E624 /* ViewController.swift */; };
+		20AE1C84254BE8340045E624 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20AE1C82254BE8340045E624 /* Main.storyboard */; };
+		20AE1C86254BE8350045E624 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20AE1C85254BE8350045E624 /* Assets.xcassets */; };
+		20AE1C89254BE8350045E624 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20AE1C87254BE8350045E624 /* LaunchScreen.storyboard */; };
+		FC5C104931CF06DEA131DEF1 /* Pods_rentalHouse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D9C75ABC84EC2CFE763D9A /* Pods_rentalHouse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		207FBB6C254725E100C24650 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
-		209318E52549498C00A7E753 /* CoronaNowData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaNowData.swift; sourceTree = "<group>"; };
-		209318E825494FC300A7E753 /* GetCoronaNowData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCoronaNowData.swift; sourceTree = "<group>"; };
-		20E92EE82541ECA900D9D411 /* CoronaProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoronaProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		20E92EEB2541ECA900D9D411 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		20E92EED2541ECA900D9D411 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		20E92EEF2541ECA900D9D411 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		20E92EF22541ECA900D9D411 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		20E92EF42541ECAA00D9D411 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		20E92EF72541ECAA00D9D411 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		20E92EF92541ECAA00D9D411 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		45E62F815FAFF57B5135AD6D /* Pods_CoronaProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoronaProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6BE04716077559B072A9BD3A /* Pods-CoronaProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaProject.debug.xcconfig"; path = "Target Support Files/Pods-CoronaProject/Pods-CoronaProject.debug.xcconfig"; sourceTree = "<group>"; };
-		A0C82624C26E135E924FEB24 /* Pods-CoronaProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaProject.release.xcconfig"; path = "Target Support Files/Pods-CoronaProject/Pods-CoronaProject.release.xcconfig"; sourceTree = "<group>"; };
+		20AE1C79254BE8340045E624 /* rentalHouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rentalHouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		20AE1C7C254BE8340045E624 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		20AE1C7E254BE8340045E624 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		20AE1C80254BE8340045E624 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		20AE1C83254BE8340045E624 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		20AE1C85254BE8350045E624 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		20AE1C88254BE8350045E624 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		20AE1C8A254BE8350045E624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2AAE369CF42FC74221BD5735 /* Pods-rentalHouse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rentalHouse.debug.xcconfig"; path = "Target Support Files/Pods-rentalHouse/Pods-rentalHouse.debug.xcconfig"; sourceTree = "<group>"; };
+		D209BEBC2EFA9AE15B5BB657 /* Pods-rentalHouse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rentalHouse.release.xcconfig"; path = "Target Support Files/Pods-rentalHouse/Pods-rentalHouse.release.xcconfig"; sourceTree = "<group>"; };
+		E8D9C75ABC84EC2CFE763D9A /* Pods_rentalHouse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rentalHouse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		20E92EE52541ECA900D9D411 /* Frameworks */ = {
+		20AE1C76254BE8340045E624 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB365177D4F72FFDF3271A01 /* Pods_CoronaProject.framework in Frameworks */,
+				FC5C104931CF06DEA131DEF1 /* Pods_rentalHouse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		20E92EDF2541ECA900D9D411 = {
+		20AE1C70254BE8340045E624 = {
 			isa = PBXGroup;
 			children = (
-				20E92EEA2541ECA900D9D411 /* CoronaProject */,
-				20E92EE92541ECA900D9D411 /* Products */,
-				508A52802F33210F42835625 /* Pods */,
-				F415F69DB76DBDDD53424A66 /* Frameworks */,
+				20AE1C7B254BE8340045E624 /* rentalHouse */,
+				20AE1C7A254BE8340045E624 /* Products */,
+				39D7EFF5538B640E3088A53B /* Pods */,
+				BA87F0E096B7B673200C030B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		20E92EE92541ECA900D9D411 /* Products */ = {
+		20AE1C7A254BE8340045E624 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				20E92EE82541ECA900D9D411 /* CoronaProject.app */,
+				20AE1C79254BE8340045E624 /* rentalHouse.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		20E92EEA2541ECA900D9D411 /* CoronaProject */ = {
+		20AE1C7B254BE8340045E624 /* rentalHouse */ = {
 			isa = PBXGroup;
 			children = (
-				20E92EEB2541ECA900D9D411 /* AppDelegate.swift */,
-				20E92EED2541ECA900D9D411 /* SceneDelegate.swift */,
-				20E92EEF2541ECA900D9D411 /* MainViewController.swift */,
-				209318E52549498C00A7E753 /* CoronaNowData.swift */,
-				209318E825494FC300A7E753 /* GetCoronaNowData.swift */,
-				207FBB6C254725E100C24650 /* ListTableViewCell.swift */,
-				20E92EF12541ECA900D9D411 /* Main.storyboard */,
-				20E92EF42541ECAA00D9D411 /* Assets.xcassets */,
-				20E92EF62541ECAA00D9D411 /* LaunchScreen.storyboard */,
-				20E92EF92541ECAA00D9D411 /* Info.plist */,
+				20AE1C7C254BE8340045E624 /* AppDelegate.swift */,
+				20AE1C7E254BE8340045E624 /* SceneDelegate.swift */,
+				20AE1C80254BE8340045E624 /* ViewController.swift */,
+				20AE1C82254BE8340045E624 /* Main.storyboard */,
+				20AE1C85254BE8350045E624 /* Assets.xcassets */,
+				20AE1C87254BE8350045E624 /* LaunchScreen.storyboard */,
+				20AE1C8A254BE8350045E624 /* Info.plist */,
 			);
-			path = CoronaProject;
+			path = rentalHouse;
 			sourceTree = "<group>";
 		};
-		508A52802F33210F42835625 /* Pods */ = {
+		39D7EFF5538B640E3088A53B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6BE04716077559B072A9BD3A /* Pods-CoronaProject.debug.xcconfig */,
-				A0C82624C26E135E924FEB24 /* Pods-CoronaProject.release.xcconfig */,
+				2AAE369CF42FC74221BD5735 /* Pods-rentalHouse.debug.xcconfig */,
+				D209BEBC2EFA9AE15B5BB657 /* Pods-rentalHouse.release.xcconfig */,
 			);
+			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		F415F69DB76DBDDD53424A66 /* Frameworks */ = {
+		BA87F0E096B7B673200C030B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				45E62F815FAFF57B5135AD6D /* Pods_CoronaProject.framework */,
+				E8D9C75ABC84EC2CFE763D9A /* Pods_rentalHouse.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -103,40 +95,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		20E92EE72541ECA900D9D411 /* CoronaProject */ = {
+		20AE1C78254BE8340045E624 /* rentalHouse */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 20E92EFC2541ECAA00D9D411 /* Build configuration list for PBXNativeTarget "CoronaProject" */;
+			buildConfigurationList = 20AE1C8D254BE8350045E624 /* Build configuration list for PBXNativeTarget "rentalHouse" */;
 			buildPhases = (
-				C21E0F627035938AC651344C /* [CP] Check Pods Manifest.lock */,
-				20E92EE42541ECA900D9D411 /* Sources */,
-				20E92EE52541ECA900D9D411 /* Frameworks */,
-				20E92EE62541ECA900D9D411 /* Resources */,
-				698FBA59156DB0F0F6ECEE4C /* [CP] Embed Pods Frameworks */,
+				953A6837887ADD2D5FF7FFDB /* [CP] Check Pods Manifest.lock */,
+				20AE1C75254BE8340045E624 /* Sources */,
+				20AE1C76254BE8340045E624 /* Frameworks */,
+				20AE1C77254BE8340045E624 /* Resources */,
+				7A41EA22CA47026B10DB576D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = CoronaProject;
-			productName = CoronaProject;
-			productReference = 20E92EE82541ECA900D9D411 /* CoronaProject.app */;
+			name = rentalHouse;
+			productName = rentalHouse;
+			productReference = 20AE1C79254BE8340045E624 /* rentalHouse.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		20E92EE02541ECA900D9D411 /* Project object */ = {
+		20AE1C71254BE8340045E624 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
-					20E92EE72541ECA900D9D411 = {
+					20AE1C78254BE8340045E624 = {
 						CreatedOnToolsVersion = 12.0.1;
 					};
 				};
 			};
-			buildConfigurationList = 20E92EE32541ECA900D9D411 /* Build configuration list for PBXProject "CoronaProject" */;
+			buildConfigurationList = 20AE1C74254BE8340045E624 /* Build configuration list for PBXProject "rentalHouse" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -144,48 +136,48 @@
 				en,
 				Base,
 			);
-			mainGroup = 20E92EDF2541ECA900D9D411;
-			productRefGroup = 20E92EE92541ECA900D9D411 /* Products */;
+			mainGroup = 20AE1C70254BE8340045E624;
+			productRefGroup = 20AE1C7A254BE8340045E624 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				20E92EE72541ECA900D9D411 /* CoronaProject */,
+				20AE1C78254BE8340045E624 /* rentalHouse */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		20E92EE62541ECA900D9D411 /* Resources */ = {
+		20AE1C77254BE8340045E624 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20E92EF82541ECAA00D9D411 /* LaunchScreen.storyboard in Resources */,
-				20E92EF52541ECAA00D9D411 /* Assets.xcassets in Resources */,
-				20E92EF32541ECA900D9D411 /* Main.storyboard in Resources */,
+				20AE1C89254BE8350045E624 /* LaunchScreen.storyboard in Resources */,
+				20AE1C86254BE8350045E624 /* Assets.xcassets in Resources */,
+				20AE1C84254BE8340045E624 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		698FBA59156DB0F0F6ECEE4C /* [CP] Embed Pods Frameworks */ = {
+		7A41EA22CA47026B10DB576D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CoronaProject/Pods-CoronaProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-rentalHouse/Pods-rentalHouse-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CoronaProject/Pods-CoronaProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-rentalHouse/Pods-rentalHouse-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoronaProject/Pods-CoronaProject-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-rentalHouse/Pods-rentalHouse-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C21E0F627035938AC651344C /* [CP] Check Pods Manifest.lock */ = {
+		953A6837887ADD2D5FF7FFDB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -200,7 +192,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CoronaProject-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-rentalHouse-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -210,34 +202,31 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		20E92EE42541ECA900D9D411 /* Sources */ = {
+		20AE1C75254BE8340045E624 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20E92EF02541ECA900D9D411 /* MainViewController.swift in Sources */,
-				209318E925494FC300A7E753 /* GetCoronaNowData.swift in Sources */,
-				209318E62549498C00A7E753 /* CoronaNowData.swift in Sources */,
-				207FBB6D254725E100C24650 /* ListTableViewCell.swift in Sources */,
-				20E92EEC2541ECA900D9D411 /* AppDelegate.swift in Sources */,
-				20E92EEE2541ECA900D9D411 /* SceneDelegate.swift in Sources */,
+				20AE1C81254BE8340045E624 /* ViewController.swift in Sources */,
+				20AE1C7D254BE8340045E624 /* AppDelegate.swift in Sources */,
+				20AE1C7F254BE8340045E624 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		20E92EF12541ECA900D9D411 /* Main.storyboard */ = {
+		20AE1C82254BE8340045E624 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				20E92EF22541ECA900D9D411 /* Base */,
+				20AE1C83254BE8340045E624 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		20E92EF62541ECAA00D9D411 /* LaunchScreen.storyboard */ = {
+		20AE1C87254BE8350045E624 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				20E92EF72541ECAA00D9D411 /* Base */,
+				20AE1C88254BE8350045E624 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -245,7 +234,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		20E92EFA2541ECAA00D9D411 /* Debug */ = {
+		20AE1C8B254BE8350045E624 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -306,7 +295,7 @@
 			};
 			name = Debug;
 		};
-		20E92EFB2541ECAA00D9D411 /* Release */ = {
+		20AE1C8C254BE8350045E624 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -361,40 +350,40 @@
 			};
 			name = Release;
 		};
-		20E92EFD2541ECAA00D9D411 /* Debug */ = {
+		20AE1C8E254BE8350045E624 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6BE04716077559B072A9BD3A /* Pods-CoronaProject.debug.xcconfig */;
+			baseConfigurationReference = 2AAE369CF42FC74221BD5735 /* Pods-rentalHouse.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64WAG22Y2J;
-				INFOPLIST_FILE = CoronaProject/Info.plist;
+				INFOPLIST_FILE = rentalHouse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.VincentGeranium.CoronaProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.VincentGeranium.rentalHouse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		20E92EFE2541ECAA00D9D411 /* Release */ = {
+		20AE1C8F254BE8350045E624 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0C82624C26E135E924FEB24 /* Pods-CoronaProject.release.xcconfig */;
+			baseConfigurationReference = D209BEBC2EFA9AE15B5BB657 /* Pods-rentalHouse.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64WAG22Y2J;
-				INFOPLIST_FILE = CoronaProject/Info.plist;
+				INFOPLIST_FILE = rentalHouse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.VincentGeranium.CoronaProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.VincentGeranium.rentalHouse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -404,25 +393,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		20E92EE32541ECA900D9D411 /* Build configuration list for PBXProject "CoronaProject" */ = {
+		20AE1C74254BE8340045E624 /* Build configuration list for PBXProject "rentalHouse" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				20E92EFA2541ECAA00D9D411 /* Debug */,
-				20E92EFB2541ECAA00D9D411 /* Release */,
+				20AE1C8B254BE8350045E624 /* Debug */,
+				20AE1C8C254BE8350045E624 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		20E92EFC2541ECAA00D9D411 /* Build configuration list for PBXNativeTarget "CoronaProject" */ = {
+		20AE1C8D254BE8350045E624 /* Build configuration list for PBXNativeTarget "rentalHouse" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				20E92EFD2541ECAA00D9D411 /* Debug */,
-				20E92EFE2541ECAA00D9D411 /* Release */,
+				20AE1C8E254BE8350045E624 /* Debug */,
+				20AE1C8F254BE8350045E624 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 20E92EE02541ECA900D9D411 /* Project object */;
+	rootObject = 20AE1C71254BE8340045E624 /* Project object */;
 }
