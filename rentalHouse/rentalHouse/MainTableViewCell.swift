@@ -16,7 +16,7 @@ class MainTableViewCell: UITableViewCell {
         blockNameLabel.backgroundColor = .red
         blockNameLabel.textAlignment = .center
         blockNameLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold)
-        blockNameLabel.text = "test"
+        blockNameLabel.text = ""
         return blockNameLabel
     }()
     

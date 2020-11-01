@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var movieData: [MovieDataStruct] = []
     
     lazy var mainTableView: UITableView = {
         let mainTableView: UITableView = UITableView()
@@ -18,7 +19,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .systemGreen
-        
+        movieData = getData()
         addDelegates()
         addViews()
     }
@@ -53,13 +54,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return movieData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = mainTableView.dequeueReusableCell(withIdentifier: MainTableViewCell.cellReuseIdentifier, for: indexPath) as? MainTableViewCell else {
             return UITableViewCell()
         }
+        let data = self.movieData[indexPath.row]
+        cell.blockNameLabel.text = data.audiAcc
+        
         return cell
     }
     
