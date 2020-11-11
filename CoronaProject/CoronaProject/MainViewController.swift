@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MainViewController: UIViewController {
 
@@ -29,7 +30,8 @@ class MainViewController: UIViewController {
 //        getAllCoronaNowData()
         addDelegates()
         addViews()
-        xmlParsing()
+//        xmlParsing()
+        xmlParsingUsedAlamofire()
         
     }
     
@@ -56,6 +58,51 @@ class MainViewController: UIViewController {
             listTableView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
             listTableView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
         ])
+    }
+    
+    private func xmlParsingUsedAlamofire() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMdd"
+        
+        let currentDateString = formatter.string(from: Date())
+        
+        let headers: HTTPHeaders = [
+            "Content-Type" : "application/xml",
+        ]
+        
+        
+        
+        struct Param: Encodable {
+            let pageNo: String
+            let numOfRows: String
+            let startCreateDt: String
+            let endCreateDt: String
+        }
+        
+        let url = "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?serviceKey=Dmng3ElRum8OIdUuU1Z0NuvDIsfOSvxTO03Tk5gCfwBxbs9UodOlvevA%2FA7%2FgRimX1m1vE1eXoq7BtC4dwaM9A%3D%3D"
+        
+        let param: Param = Param(pageNo: "1", numOfRows: "10", startCreateDt: currentDateString, endCreateDt: currentDateString)
+        
+        AF.request(url,
+                   method: .get,
+                   parameters: param,
+                   headers: headers)
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/xml"])
+            .responseData { (responseData) in
+                switch responseData.result {
+                case .success:
+                    print("Success")
+                case .failure(let error):
+                    print(error)
+                }
+                debugPrint(responseData)
+            }
+        
+       
+        
+        
+        
     }
     
     private func xmlParsing() {
