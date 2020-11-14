@@ -12,14 +12,18 @@ class ViewController: UIViewController {
     lazy var label: UILabel = {
         let label: UILabel = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 10)
+        label.backgroundColor = .systemGray
         label.textAlignment = .center
         label.textColor = .black
-        label.text = "asd"
+        label.layer.masksToBounds = true
+        label.numberOfLines = 0
         label.layer.borderWidth = 1.0
         label.layer.borderColor = UIColor.black.cgColor
         label.layer.cornerRadius = 10
         return label
     }()
+    
+    
     
     var xmlParser = XMLParser()
     var stringXMLData: String = ""
@@ -27,36 +31,20 @@ class ViewController: UIViewController {
     var passData: Bool = false
     var passName: Bool = false
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
         
-        let url:String="http://api.androidhive.info/pizza/?format=xml"
-        let urlToSend: URL = URL(string: url)!
-        // Parse the XML
-        xmlParser = XMLParser(contentsOf: urlToSend)!
-        xmlParser.delegate = self
-        
-        let success:Bool = xmlParser.parse()
-        
-        if success {
-            print("parse success!")
-            
-            print(stringXMLData)
-            
-            label.text=stringXMLData
-            
-        } else {
-            print("parse failure!")
-        }
-        
-//        setupXMLParsing()
-//
-//        xmlParser.delegate = self
-        
+        /// my code
+                
+        setupXMLParsing()
+
         setLabel()
     }
     
@@ -84,6 +72,8 @@ class ViewController: UIViewController {
         
         xmlParser = parsingXML
         
+        xmlParser.delegate = self
+        
         let xmlParsingResult: Bool = xmlParser.parse()
         
         if xmlParsingResult {
@@ -97,7 +87,6 @@ class ViewController: UIViewController {
             
         }
     }
-    
 }
 
 
