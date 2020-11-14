@@ -94,8 +94,6 @@ extension ViewController: XMLParserDelegate {
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         
-        print("🔴 : Active first line of Extension Parser methods")
-        
         currentElement = elementName
         
         if (elementName == "id" || elementName == "name" || elementName == "cost" || elementName == "description") {
@@ -107,8 +105,6 @@ extension ViewController: XMLParserDelegate {
     }
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        
-        print("🔴🔴 : Active second line of Extension Parser methods")
         
         currentElement = ""
         
@@ -123,10 +119,11 @@ extension ViewController: XMLParserDelegate {
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         if passName == true {
             stringXMLData = stringXMLData + "\n\n" + string
+            print("🎾🎾🎾 parameter string when passName == true : \(string)")
         }
         
         if passData == true {
-            print(string)
+//            print("🎾🎾🎾 parameter string when passData == true : \(string)")
         }
     }
     
