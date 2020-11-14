@@ -45,4 +45,11 @@
   - 1. Protocol 학습.
   - 2. Delegate 학습.
   
+### 6. [XML Parsing](https://github.com/VincentGeranium/iOS_Projects/blob/master/swiftXMLparsingTutorial/swiftXMLparsingTutorial/ViewController.swift)
+  - 본 프로젝트는 [ashishkakkad8의 github](https://github.com/ashishkakkad8/SwiftXMLParsingDemo/tree/master/SwiftXMLParsingDemo)의 SwiftXMLParsingDemo을 클론한 프로젝트 입니다.
+  - XML Parsing 학습을 위해 만든 프로젝트 입니다.
+  - XMLParser와 XMLParserDelegate을 이용하여 XML Parsing에 대하여 학습.
+  - 1. XMLParser 학습.
+  - 2. XMLParserDelegate와 parser methods 학습.  
+  
 - - -
