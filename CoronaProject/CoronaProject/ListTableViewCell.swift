@@ -13,9 +13,9 @@ class ListTableViewCell: UITableViewCell {
     
     lazy var gubunLabel: UILabel = {
         let gubunLabel: UILabel = UILabel()
-        gubunLabel.text = "TEST"
         gubunLabel.textAlignment = .center
         gubunLabel.textColor = .black
+        gubunLabel.layer.masksToBounds = true
         gubunLabel.layer.borderWidth = 1.0
         gubunLabel.layer.borderColor = UIColor.black.cgColor
         gubunLabel.layer.backgroundColor = UIColor.gray.cgColor

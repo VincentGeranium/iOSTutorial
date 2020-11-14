@@ -14,7 +14,11 @@ class MainViewController: UIViewController {
     
     var coronaNowDataList: [CoronaNowData] = []
     
-    var isGetData = false
+    var gubunArray: [String] = []
+    
+    var isGetGubun = false
+    
+    var isGetItems = false
     
     private let listTableView: UITableView = {
         let listTableView: UITableView = UITableView()
@@ -30,8 +34,8 @@ class MainViewController: UIViewController {
 //        getAllCoronaNowData()
         addDelegates()
         addViews()
-//        xmlParsing()
-        xmlParsingUsedAlamofire()
+        setupXMLParsing()
+        
         
     }
     
@@ -60,54 +64,14 @@ class MainViewController: UIViewController {
         ])
     }
     
-    private func xmlParsingUsedAlamofire() {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyyMMdd"
+    private func setupXMLParsing() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd"
         
-        let currentDateString = formatter.string(from: Date())
+        let currentDate = dateFormatter.string(from: Date())
+        print(currentDate)
         
-        let headers: HTTPHeaders = [
-            "Content-Type" : "application/xml"
-        ]
-        
-        
-        
-        struct Param: Encodable {
-            let pageNo: String
-            let numOfRows: String
-            let startCreateDt: String
-            let endCreateDt: String
-        }
-        
-        let url = "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?serviceKey=Dmng3ElRum8OIdUuU1Z0NuvDIsfOSvxTO03Tk5gCfwBxbs9UodOlvevA%2FA7%2FgRimX1m1vE1eXoq7BtC4dwaM9A%3D%3D"
-        
-        let param: Param = Param(pageNo: "1", numOfRows: "10", startCreateDt: currentDateString, endCreateDt: currentDateString)
-        
-        AF.request(url,
-                   method: .get,
-                   parameters: param,
-                   headers: headers)
-            .validate(statusCode: 200..<300)
-            .validate(contentType: ["application/xml"])
-            .responseData { (responseData) in
-                switch responseData.result {
-                case .success:
-                    print("Success")
-                case .failure(let error):
-                    print(error)
-                }
-                debugPrint(responseData)
-                
-            }
-        
-       
-        
-        
-        
-    }
-    
-    private func xmlParsing() {
-        let coronaDataURL = "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?serviceKey=Dmng3ElRum8OIdUuU1Z0NuvDIsfOSvxTO03Tk5gCfwBxbs9UodOlvevA%2FA7%2FgRimX1m1vE1eXoq7BtC4dwaM9A%3D%3D&pageNo=1&numOfRows=10&startCreateDt=20201028&endCreateDt=20201028"
+        let coronaDataURL = "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?serviceKey=Dmng3ElRum8OIdUuU1Z0NuvDIsfOSvxTO03Tk5gCfwBxbs9UodOlvevA%2FA7%2FgRimX1m1vE1eXoq7BtC4dwaM9A%3D%3D&pageNo=1&numOfRows=10&startCreateDt=\(currentDate)&endCreateDt=\(currentDate)"
         
         guard let url = URLComponents(string: coronaDataURL)?.url else { return }
         
@@ -123,29 +87,39 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLParserDelegate {
+    
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
-        if elementName == "item" {
-            isGetData = true
-            tempCoronaNowData = CoronaNowData()
+        
+        if (elementName == "createDt" || elementName == "deathCnt" || elementName == "defCnt" || elementName == "gubun" || elementName == "incDec" || elementName == "isolClearCnt" || elementName == "isolIngCnt" || elementName == "overFlowCnt" || elementName == "stdDay") {
+            
+            if elementName == "gubun" {
+                isGetGubun = true
+            }
+            isGetItems = true
         }
         
     }
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        if elementName == "item" {
-            guard let tempCoronaNowData = tempCoronaNowData else { return }
-            isGetData = false
-            coronaNowDataList.append(tempCoronaNowData)
-//            print(coronaNowDataList)
-        } else if elementName == "numOfRows" {
-            parser.abortParsing()
+        
+        if (elementName == "createDt" || elementName == "deathCnt" || elementName == "defCnt" || elementName == "gubun" || elementName == "incDec" || elementName == "isolClearCnt" || elementName == "isolIngCnt" || elementName == "overFlowCnt" || elementName == "stdDay") {
+            
+            if elementName == "gubun" {
+                isGetGubun = false
+            }
+            isGetItems = false
         }
+        
     }
     
     func parser(_ parser: XMLParser, foundCharacters string: String) {
-        if isGetData == true {
-            let parsingString = string
-            print(parsingString)
+        if isGetItems == true {
+//            print("Sucess Get Item")
+        }
+        
+        if isGetGubun == true {
+            print(string)
+            gubunArray.append(string)
         }
     }
     
@@ -155,13 +129,16 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return gubunArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.cellIdentifier) else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.cellIdentifier) as? ListTableViewCell else {
             return UITableViewCell()
         }
+        
+        let gubunTitle = self.gubunArray[indexPath.row]
+        cell.gubunLabel.text = gubunTitle
         
         return cell
     }
