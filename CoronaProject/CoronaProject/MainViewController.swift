@@ -67,7 +67,7 @@ class MainViewController: UIViewController {
         let currentDateString = formatter.string(from: Date())
         
         let headers: HTTPHeaders = [
-            "Content-Type" : "application/xml",
+            "Content-Type" : "application/xml"
         ]
         
         
@@ -97,6 +97,7 @@ class MainViewController: UIViewController {
                     print(error)
                 }
                 debugPrint(responseData)
+                
             }
         
        
