@@ -20,20 +20,30 @@ class MainViewController: UIViewController {
     
     var isGetItems = false
     
+    var paramDate = ""
+    
     private let listTableView: UITableView = {
         let listTableView: UITableView = UITableView()
         listTableView.register(ListTableViewCell.self, forCellReuseIdentifier: ListTableViewCell.cellIdentifier)
         
         return listTableView
     }()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = .white
 //        getAllCoronaNowData()
+        self.title = "전국 시도명"
         addDelegates()
         addViews()
+        setupDate()
         setupXMLParsing()
         
         
@@ -64,14 +74,79 @@ class MainViewController: UIViewController {
         ])
     }
     
-    private func setupXMLParsing() {
+    private func setupDate() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd"
         
         let currentDate = dateFormatter.string(from: Date())
-        print(currentDate)
+        print("⚪️ currentDate : \(currentDate)")
         
-        let coronaDataURL = "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?serviceKey=Dmng3ElRum8OIdUuU1Z0NuvDIsfOSvxTO03Tk5gCfwBxbs9UodOlvevA%2FA7%2FgRimX1m1vE1eXoq7BtC4dwaM9A%3D%3D&pageNo=1&numOfRows=10&startCreateDt=\(currentDate)&endCreateDt=\(currentDate)"
+        let time = DateFormatter()
+        time.dateFormat = "HHmmsssss"
+        
+        let currentTime = time.string(from: Date())
+        print("⚪️⚪️ currentTime : \(currentTime)")
+        
+        guard let intCurrentTime = Int(currentTime) else { return }
+        print("⚪️⚪️⚪️ intCurrentTime : \(intCurrentTime)")
+        
+        // 시간 계산 로직
+        if 095900000 <= intCurrentTime && intCurrentTime <= 235959000 {
+            
+            paramDate = currentDate
+            
+        } else {
+            guard let intCurrentDate = Int(currentDate) else { return }
+            
+            let intYesterday = intCurrentDate - 1
+            
+            let stringYesterday = String(intYesterday)
+            print("⚪️⚪️⚪️⚪️ stringYesterday : \(stringYesterday)")
+            
+            paramDate = stringYesterday
+            
+            print("⚪️⚪️⚪️⚪️⚪️ 오늘 날짜 - 1")
+        }
+    }
+    
+    private func setupXMLParsing() {
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyyMMdd"
+//
+//        let currentDate = dateFormatter.string(from: Date())
+//        print(currentDate)
+//
+//        var paramDate = ""
+//
+//        let time = DateFormatter()
+//        time.dateFormat = "HHmmsssss"
+//
+//        let currentTime = time.string(from: Date())
+//        print(currentTime)
+//
+//        guard let intCurrentTime = Int(currentTime) else { return }
+//        print(intCurrentTime)
+//
+//        // 시간 계산 로직
+//        if 095900000 <= intCurrentTime && intCurrentTime <= 235959000 {
+//
+//            paramDate = currentDate
+//
+//        } else {
+//            guard let intCurrentDate = Int(currentDate) else { return }
+//
+//            let intYesterday = intCurrentDate - 1
+//
+//            let stringYesterday = String(intYesterday)
+//
+//            paramDate = stringYesterday
+//
+//            print("오늘 날짜 - 1")
+//        }
+        
+        let coronaDataURLTest = "http://api.androidhive.info/pizza/?format=xml"
+        
+        let coronaDataURL = "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?serviceKey=Dmng3ElRum8OIdUuU1Z0NuvDIsfOSvxTO03Tk5gCfwBxbs9UodOlvevA%2FA7%2FgRimX1m1vE1eXoq7BtC4dwaM9A%3D%3D&pageNo=1&numOfRows=10&startCreateDt=\(paramDate)&endCreateDt=\(paramDate)"
         
         guard let url = URLComponents(string: coronaDataURL)?.url else { return }
         
@@ -133,7 +208,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.cellIdentifier) as? ListTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.cellIdentifier, for: indexPath) as? ListTableViewCell else {
             return UITableViewCell()
         }
         
@@ -142,6 +217,15 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
         
         return cell
     }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+////        guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.cellIdentifier, for: indexPath) as? ListTableViewCell else { return }
+//
+////        if indexPath.row == 0 {
+////            let lazarettoVC = LazarettoViewController()
+////            navigationController?.pushViewController(lazarettoVC, animated: true)
+////        }
+//    }
     
     
 }
