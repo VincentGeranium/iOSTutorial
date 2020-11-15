@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		205B9B562561659E00D66267 /* TransferDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B9B552561659E00D66267 /* TransferDataDelegate.swift */; };
 		207FBB6D254725E100C24650 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207FBB6C254725E100C24650 /* ListTableViewCell.swift */; };
 		209318E62549498C00A7E753 /* CoronaNowData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209318E52549498C00A7E753 /* CoronaNowData.swift */; };
 		209318E925494FC300A7E753 /* GetCoronaNowData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209318E825494FC300A7E753 /* GetCoronaNowData.swift */; };
+		20941A0C25610D8100F44215 /* EachCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20941A0B25610D8100F44215 /* EachCityTableViewCell.swift */; };
 		20A5B657256027E80038C80D /* LazarettoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A5B656256027E80038C80D /* LazarettoViewController.swift */; };
 		20E92EEC2541ECA900D9D411 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E92EEB2541ECA900D9D411 /* AppDelegate.swift */; };
 		20E92EEE2541ECA900D9D411 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E92EED2541ECA900D9D411 /* SceneDelegate.swift */; };
@@ -21,9 +23,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		205B9B552561659E00D66267 /* TransferDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferDataDelegate.swift; sourceTree = "<group>"; };
 		207FBB6C254725E100C24650 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		209318E52549498C00A7E753 /* CoronaNowData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaNowData.swift; sourceTree = "<group>"; };
 		209318E825494FC300A7E753 /* GetCoronaNowData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCoronaNowData.swift; sourceTree = "<group>"; };
+		20941A0B25610D8100F44215 /* EachCityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EachCityTableViewCell.swift; sourceTree = "<group>"; };
 		20A5B656256027E80038C80D /* LazarettoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazarettoViewController.swift; sourceTree = "<group>"; };
 		20E92EE82541ECA900D9D411 /* CoronaProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoronaProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20E92EEB2541ECA900D9D411 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +78,9 @@
 				20E92EEB2541ECA900D9D411 /* AppDelegate.swift */,
 				20E92EED2541ECA900D9D411 /* SceneDelegate.swift */,
 				20E92EEF2541ECA900D9D411 /* MainViewController.swift */,
+				205B9B552561659E00D66267 /* TransferDataDelegate.swift */,
 				20A5B656256027E80038C80D /* LazarettoViewController.swift */,
+				20941A0B25610D8100F44215 /* EachCityTableViewCell.swift */,
 				209318E52549498C00A7E753 /* CoronaNowData.swift */,
 				209318E825494FC300A7E753 /* GetCoronaNowData.swift */,
 				207FBB6C254725E100C24650 /* ListTableViewCell.swift */,
@@ -219,7 +225,9 @@
 			files = (
 				20E92EF02541ECA900D9D411 /* MainViewController.swift in Sources */,
 				20A5B657256027E80038C80D /* LazarettoViewController.swift in Sources */,
+				205B9B562561659E00D66267 /* TransferDataDelegate.swift in Sources */,
 				209318E925494FC300A7E753 /* GetCoronaNowData.swift in Sources */,
+				20941A0C25610D8100F44215 /* EachCityTableViewCell.swift in Sources */,
 				209318E62549498C00A7E753 /* CoronaNowData.swift in Sources */,
 				207FBB6D254725E100C24650 /* ListTableViewCell.swift in Sources */,
 				20E92EEC2541ECA900D9D411 /* AppDelegate.swift in Sources */,

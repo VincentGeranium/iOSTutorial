@@ -9,6 +9,7 @@ import UIKit
 import Alamofire
 
 class MainViewController: UIViewController {
+    var transferDataDelegate: TransferDataDelegate?
 
     var tempCoronaNowData: CoronaNowData?
     
@@ -16,9 +17,28 @@ class MainViewController: UIViewController {
     
     var gubunArray: [String] = []
     
+    var deathCntArray: [String] = []
+    
     var isGetGubun = false
     
     var isGetItems = false
+    
+    var isGetincDec = false
+    
+    // 격리 해제 수
+    var isGetisolClearCnt = false
+    
+    // 총 확진자 수
+    var isGetdefCnt = false
+    
+    // 격리중인 환자 수
+    var isGetisolIngCnt = false
+    
+    // 해외유입 확진자 수
+    var isGetoverFlowCnt = false
+    
+    // 누적 사망자 수
+    var isGetdeathCnt = false
     
     var paramDate = ""
     
@@ -110,39 +130,6 @@ class MainViewController: UIViewController {
     }
     
     private func setupXMLParsing() {
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "yyyyMMdd"
-//
-//        let currentDate = dateFormatter.string(from: Date())
-//        print(currentDate)
-//
-//        var paramDate = ""
-//
-//        let time = DateFormatter()
-//        time.dateFormat = "HHmmsssss"
-//
-//        let currentTime = time.string(from: Date())
-//        print(currentTime)
-//
-//        guard let intCurrentTime = Int(currentTime) else { return }
-//        print(intCurrentTime)
-//
-//        // 시간 계산 로직
-//        if 095900000 <= intCurrentTime && intCurrentTime <= 235959000 {
-//
-//            paramDate = currentDate
-//
-//        } else {
-//            guard let intCurrentDate = Int(currentDate) else { return }
-//
-//            let intYesterday = intCurrentDate - 1
-//
-//            let stringYesterday = String(intYesterday)
-//
-//            paramDate = stringYesterday
-//
-//            print("오늘 날짜 - 1")
-//        }
         
         let coronaDataURLTest = "http://api.androidhive.info/pizza/?format=xml"
         
@@ -169,7 +156,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             
             if elementName == "gubun" {
                 isGetGubun = true
+            } else if elementName == "deathCnt" {
+                isGetdeathCnt = true
             }
+            
             isGetItems = true
         }
         
@@ -181,6 +171,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             
             if elementName == "gubun" {
                 isGetGubun = false
+            } else if elementName == "deathCnt" {
+                isGetdeathCnt = false
             }
             isGetItems = false
         }
@@ -193,9 +185,16 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
         }
         
         if isGetGubun == true {
-            print(string)
+//            print(string)
             gubunArray.append(string)
         }
+        
+        if isGetdeathCnt == true {
+//            print(string)
+            deathCntArray.append(string)
+        }
+        
+
     }
     
     
@@ -218,14 +217,15 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-////        guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.cellIdentifier, for: indexPath) as? ListTableViewCell else { return }
-//
-////        if indexPath.row == 0 {
-////            let lazarettoVC = LazarettoViewController()
-////            navigationController?.pushViewController(lazarettoVC, animated: true)
-////        }
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.cellIdentifier, for: indexPath) as? ListTableViewCell else { return }
+
+        if indexPath.row == 0 {
+            let lazarettoVC = LazarettoViewController()
+            lazarettoVC.deathCntData = deathCntArray[0]
+            navigationController?.pushViewController(lazarettoVC, animated: true)
+        }
+    }
     
     
 }

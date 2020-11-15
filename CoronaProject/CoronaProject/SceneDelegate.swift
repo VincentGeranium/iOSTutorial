@@ -19,6 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let rootVC = MainViewController()
+        let lazarettoVC = LazarettoViewController()
         let navigationController = UINavigationController.init(rootViewController: rootVC)
         
         window = UIWindow.init(frame: windowScene.coordinateSpace.bounds)
