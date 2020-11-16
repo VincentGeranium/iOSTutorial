@@ -281,8 +281,16 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
 //        guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.cellIdentifier, for: indexPath) as? ListTableViewCell else { return }
 
         if indexPath.row == 0 {
-            let lazarettoVC = LazarettoViewController()
+            let lazarettoVC = CommonViewController()
+            
+            lazarettoVC.gubuntData = gubunArray[0]
             lazarettoVC.deathCntData = deathCntArray[0]
+            lazarettoVC.incDecData = incDecArray[0]
+            lazarettoVC.isolClearCntData = isolClearCntArray[0]
+            lazarettoVC.defCntData = defCntArray[0]
+            lazarettoVC.isolIngCntData = isolIngCntArray[0]
+            lazarettoVC.overFlowCntData = overFlowCntArray[0]
+            
             navigationController?.pushViewController(lazarettoVC, animated: true)
         }
     }

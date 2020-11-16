@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LazarettoViewController: UIViewController {
+class CommonViewController: UIViewController {
     
     private let eachCityTableView: UITableView = {
         var eachCityTableView: UITableView = UITableView()
@@ -16,7 +16,19 @@ class LazarettoViewController: UIViewController {
         return eachCityTableView
     }()
     
+    var gubuntData = ""
+    
     var deathCntData = ""
+    
+    var incDecData = ""
+    
+    var isolClearCntData = ""
+    
+    var defCntData = ""
+    
+    var isolIngCntData = ""
+    
+    var overFlowCntData = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +66,7 @@ class LazarettoViewController: UIViewController {
     
 }
 
-extension LazarettoViewController: UITableViewDelegate, UITableViewDataSource {
+extension CommonViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
@@ -73,7 +85,15 @@ extension LazarettoViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: EachCityTableViewCell.cellIdentifier, for: indexPath) as? EachCityTableViewCell else {
             return UITableViewCell()
         }
+        
+        cell.gubunLabel.text = gubuntData
         cell.deathCntLabel.text = deathCntData
+        cell.incDecLabel.text = incDecData
+        cell.isolClearCntLabel.text = isolClearCntData
+        cell.defCntLabel.text = defCntData
+        cell.isolIngCntLabel.text = isolIngCntData
+        cell.overFlowCntLabel.text = overFlowCntData
+        
         return cell
     }
     
