@@ -19,26 +19,38 @@ class MainViewController: UIViewController {
     
     var deathCntArray: [String] = []
     
-    var isGetGubun = false
+    var incDecArray: [String] = []
+    
+    var isolClearCntArray: [String] = []
+    
+    var defCntArray: [String] = []
+    
+    var isolIngCntArray: [String] = []
+    
+    var overFlowCntArray: [String] = []
     
     var isGetItems = false
     
-    var isGetincDec = false
-    
-    // 격리 해제 수
-    var isGetisolClearCnt = false
-    
-    // 총 확진자 수
-    var isGetdefCnt = false
-    
-    // 격리중인 환자 수
-    var isGetisolIngCnt = false
-    
-    // 해외유입 확진자 수
-    var isGetoverFlowCnt = false
+    // 시도명
+    var isGetGubun = false
     
     // 누적 사망자 수
-    var isGetdeathCnt = false
+    var isGetDeathCnt = false
+    
+    // 신규확진자수
+    var isGetIncDec = false
+    
+    // 격리 해제 수
+    var isGetIsolClearCnt = false
+    
+    // 총 확진자 수
+    var isGetDefCnt = false
+    
+    // 격리중인 환자 수
+    var isGetIsolIngCnt = false
+    
+    // 해외유입 확진자 수
+    var isGetOverFlowCnt = false
     
     var paramDate = ""
     
@@ -59,8 +71,9 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = .white
-//        getAllCoronaNowData()
+        
         self.title = "전국 시도명"
+        
         addDelegates()
         addViews()
         setupDate()
@@ -98,6 +111,9 @@ class MainViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd"
         
+        let yesterdayFormat = dateFormatter.string(from: Date.yesterday)
+        print("😍😍😍 \(yesterdayFormat)")
+        
         let currentDate = dateFormatter.string(from: Date())
         print("⚪️ currentDate : \(currentDate)")
         
@@ -115,17 +131,12 @@ class MainViewController: UIViewController {
             
             paramDate = currentDate
             
+            print("⚪️⚪️⚪️⚪️⚪️ 오늘 날짜")
+            
         } else {
-            guard let intCurrentDate = Int(currentDate) else { return }
+            paramDate = yesterdayFormat
             
-            let intYesterday = intCurrentDate - 1
-            
-            let stringYesterday = String(intYesterday)
-            print("⚪️⚪️⚪️⚪️ stringYesterday : \(stringYesterday)")
-            
-            paramDate = stringYesterday
-            
-            print("⚪️⚪️⚪️⚪️⚪️ 오늘 날짜 - 1")
+            print("⚪️⚪️⚪️⚪️⚪️ 어제 날짜")
         }
     }
     
@@ -152,49 +163,98 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         
-        if (elementName == "createDt" || elementName == "deathCnt" || elementName == "defCnt" || elementName == "gubun" || elementName == "incDec" || elementName == "isolClearCnt" || elementName == "isolIngCnt" || elementName == "overFlowCnt" || elementName == "stdDay") {
+        if (elementName == "deathCnt" || elementName == "defCnt" || elementName == "gubun" || elementName == "incDec" || elementName == "isolClearCnt" || elementName == "isolIngCnt" || elementName == "overFlowCnt") {
             
-            if elementName == "gubun" {
+            switch elementName {
+            case "gubun":
                 isGetGubun = true
-            } else if elementName == "deathCnt" {
-                isGetdeathCnt = true
+                
+            case "deathCnt":
+                isGetDeathCnt = true
+                
+            case "defCnt":
+                isGetDefCnt = true
+                
+            case "incDec":
+                isGetIncDec = true
+                
+            case "isolClearCnt":
+                isGetIsolClearCnt = true
+                
+            case "isolIngCnt":
+                isGetIsolIngCnt = true
+                
+            case "overFlowCnt":
+                isGetOverFlowCnt = true
+            default:
+                debugPrint(debugDescription)
             }
-            
-            isGetItems = true
+
         }
         
     }
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         
-        if (elementName == "createDt" || elementName == "deathCnt" || elementName == "defCnt" || elementName == "gubun" || elementName == "incDec" || elementName == "isolClearCnt" || elementName == "isolIngCnt" || elementName == "overFlowCnt" || elementName == "stdDay") {
+        if (elementName == "deathCnt" || elementName == "defCnt" || elementName == "gubun" || elementName == "incDec" || elementName == "isolClearCnt" || elementName == "isolIngCnt" || elementName == "overFlowCnt") {
             
-            if elementName == "gubun" {
+            switch elementName {
+            case "gubun":
                 isGetGubun = false
-            } else if elementName == "deathCnt" {
-                isGetdeathCnt = false
+                
+            case "deathCnt":
+                isGetDeathCnt = false
+                
+            case "defCnt":
+                isGetDefCnt = false
+                
+            case "incDec":
+                isGetIncDec = false
+                
+            case "isolClearCnt":
+                isGetIsolClearCnt = false
+                
+            case "isolIngCnt":
+                isGetIsolIngCnt = false
+                
+            case "overFlowCnt":
+                isGetOverFlowCnt = false
+                
+            default:
+                debugPrint(debugDescription)
             }
-            isGetItems = false
+
         }
         
     }
     
     func parser(_ parser: XMLParser, foundCharacters string: String) {
-        if isGetItems == true {
-//            print("Sucess Get Item")
-        }
         
-        if isGetGubun == true {
-//            print(string)
+        switch true {
+        case isGetGubun:
             gubunArray.append(string)
-        }
-        
-        if isGetdeathCnt == true {
-//            print(string)
+            
+        case isGetDeathCnt:
             deathCntArray.append(string)
+            
+        case isGetDefCnt:
+            defCntArray.append(string)
+            
+        case isGetIncDec:
+            incDecArray.append(string)
+            
+        case isGetIsolClearCnt:
+            isolClearCntArray.append(string)
+            
+        case isGetIsolIngCnt:
+            isolIngCntArray.append(string)
+            
+        case isGetOverFlowCnt:
+            overFlowCntArray.append(string)
+            
+        default:
+            return
         }
-        
-
     }
     
     
