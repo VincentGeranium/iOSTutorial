@@ -263,7 +263,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return gubunArray.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -279,6 +281,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.cellIdentifier, for: indexPath) as? ListTableViewCell else { return }
+        
+        // switch로 refactoring 필요.
 
         if indexPath.row == 0 {
             let lazarettoVC = CommonViewController()
@@ -292,6 +296,258 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             lazarettoVC.overFlowCntData = overFlowCntArray[0]
             
             navigationController?.pushViewController(lazarettoVC, animated: true)
+            
+        } else if indexPath.row == 1 {
+            let jejuVC = CommonViewController()
+            
+            jejuVC.gubuntData = gubunArray[1]
+            jejuVC.deathCntData = deathCntArray[1]
+            jejuVC.incDecData = incDecArray[1]
+            jejuVC.isolClearCntData = isolClearCntArray[1]
+            jejuVC.defCntData = defCntArray[1]
+            jejuVC.isolIngCntData = isolIngCntArray[1]
+            jejuVC.overFlowCntData = overFlowCntArray[1]
+            
+            navigationController?.pushViewController(jejuVC, animated: true)
+            
+        } else if indexPath.row == 2 {
+            
+            let gyeongnamVC = CommonViewController()
+            
+            gyeongnamVC.gubuntData = gubunArray[2]
+            gyeongnamVC.deathCntData = deathCntArray[2]
+            gyeongnamVC.incDecData = incDecArray[2]
+            gyeongnamVC.isolClearCntData = isolClearCntArray[2]
+            gyeongnamVC.defCntData = defCntArray[2]
+            gyeongnamVC.isolIngCntData = isolIngCntArray[2]
+            gyeongnamVC.overFlowCntData = overFlowCntArray[2]
+            
+            navigationController?.pushViewController(gyeongnamVC, animated: true)
+            
+        } else if indexPath.row == 3 {
+            
+            let gyeongbukVC = CommonViewController()
+            
+            gyeongbukVC.gubuntData = gubunArray[3]
+            gyeongbukVC.deathCntData = deathCntArray[3]
+            gyeongbukVC.incDecData = incDecArray[3]
+            gyeongbukVC.isolClearCntData = isolClearCntArray[3]
+            gyeongbukVC.defCntData = defCntArray[3]
+            gyeongbukVC.isolIngCntData = isolIngCntArray[3]
+            gyeongbukVC.overFlowCntData = overFlowCntArray[3]
+            
+            navigationController?.pushViewController(gyeongbukVC, animated: true)
+            
+        } else if indexPath.row == 4 {
+            
+            let JeolnamVC = CommonViewController()
+            
+            JeolnamVC.gubuntData = gubunArray[4]
+            JeolnamVC.deathCntData = deathCntArray[4]
+            JeolnamVC.incDecData = incDecArray[4]
+            JeolnamVC.isolClearCntData = isolClearCntArray[4]
+            JeolnamVC.defCntData = defCntArray[4]
+            JeolnamVC.isolIngCntData = isolIngCntArray[4]
+            JeolnamVC.overFlowCntData = overFlowCntArray[4]
+            
+            navigationController?.pushViewController(JeolnamVC, animated: true)
+            
+        } else if indexPath.row == 5 {
+            
+            let JeolbukVC = CommonViewController()
+            
+            JeolbukVC.gubuntData = gubunArray[5]
+            JeolbukVC.deathCntData = deathCntArray[5]
+            JeolbukVC.incDecData = incDecArray[5]
+            JeolbukVC.isolClearCntData = isolClearCntArray[5]
+            JeolbukVC.defCntData = defCntArray[5]
+            JeolbukVC.isolIngCntData = isolIngCntArray[5]
+            JeolbukVC.overFlowCntData = overFlowCntArray[5]
+            
+            navigationController?.pushViewController(JeolbukVC, animated: true)
+            
+        } else if indexPath.row == 6 {
+            
+            let chungnamVC = CommonViewController()
+            
+            chungnamVC.gubuntData = gubunArray[6]
+            chungnamVC.deathCntData = deathCntArray[6]
+            chungnamVC.incDecData = incDecArray[6]
+            chungnamVC.isolClearCntData = isolClearCntArray[6]
+            chungnamVC.defCntData = defCntArray[6]
+            chungnamVC.isolIngCntData = isolIngCntArray[6]
+            chungnamVC.overFlowCntData = overFlowCntArray[6]
+            
+            navigationController?.pushViewController(chungnamVC, animated: true)
+            
+        } else if indexPath.row == 7 {
+            
+            let chungbukVC = CommonViewController()
+            
+            chungbukVC.gubuntData = gubunArray[7]
+            chungbukVC.deathCntData = deathCntArray[7]
+            chungbukVC.incDecData = incDecArray[7]
+            chungbukVC.isolClearCntData = isolClearCntArray[7]
+            chungbukVC.defCntData = defCntArray[7]
+            chungbukVC.isolIngCntData = isolIngCntArray[7]
+            chungbukVC.overFlowCntData = overFlowCntArray[7]
+            
+            navigationController?.pushViewController(chungbukVC, animated: true)
+            
+        } else if indexPath.row == 8 {
+            
+            let gangwonVC = CommonViewController()
+            
+            gangwonVC.gubuntData = gubunArray[8]
+            gangwonVC.deathCntData = deathCntArray[8]
+            gangwonVC.incDecData = incDecArray[8]
+            gangwonVC.isolClearCntData = isolClearCntArray[8]
+            gangwonVC.defCntData = defCntArray[8]
+            gangwonVC.isolIngCntData = isolIngCntArray[8]
+            gangwonVC.overFlowCntData = overFlowCntArray[8]
+            
+            navigationController?.pushViewController(gangwonVC, animated: true)
+            
+        } else if indexPath.row == 9 {
+            
+            let gyeonggiVC = CommonViewController()
+            
+            gyeonggiVC.gubuntData = gubunArray[9]
+            gyeonggiVC.deathCntData = deathCntArray[9]
+            gyeonggiVC.incDecData = incDecArray[9]
+            gyeonggiVC.isolClearCntData = isolClearCntArray[9]
+            gyeonggiVC.defCntData = defCntArray[9]
+            gyeonggiVC.isolIngCntData = isolIngCntArray[9]
+            gyeonggiVC.overFlowCntData = overFlowCntArray[9]
+            
+            navigationController?.pushViewController(gyeonggiVC, animated: true)
+            
+        } else if indexPath.row == 10 {
+            
+            let sejongVC = CommonViewController()
+            
+            sejongVC.gubuntData = gubunArray[10]
+            sejongVC.deathCntData = deathCntArray[10]
+            sejongVC.incDecData = incDecArray[10]
+            sejongVC.isolClearCntData = isolClearCntArray[10]
+            sejongVC.defCntData = defCntArray[10]
+            sejongVC.isolIngCntData = isolIngCntArray[10]
+            sejongVC.overFlowCntData = overFlowCntArray[10]
+            
+            navigationController?.pushViewController(sejongVC, animated: true)
+            
+        } else if indexPath.row == 11 {
+            
+            let ulsanVC = CommonViewController()
+            
+            ulsanVC.gubuntData = gubunArray[11]
+            ulsanVC.deathCntData = deathCntArray[11]
+            ulsanVC.incDecData = incDecArray[11]
+            ulsanVC.isolClearCntData = isolClearCntArray[11]
+            ulsanVC.defCntData = defCntArray[11]
+            ulsanVC.isolIngCntData = isolIngCntArray[11]
+            ulsanVC.overFlowCntData = overFlowCntArray[11]
+            
+            navigationController?.pushViewController(ulsanVC, animated: true)
+            
+        } else if indexPath.row == 12 {
+            /// Love ma hometown
+            let daejeonVC = CommonViewController()
+            
+            daejeonVC.gubuntData = gubunArray[12]
+            daejeonVC.deathCntData = deathCntArray[12]
+            daejeonVC.incDecData = incDecArray[12]
+            daejeonVC.isolClearCntData = isolClearCntArray[12]
+            daejeonVC.defCntData = defCntArray[12]
+            daejeonVC.isolIngCntData = isolIngCntArray[12]
+            daejeonVC.overFlowCntData = overFlowCntArray[12]
+            
+            navigationController?.pushViewController(daejeonVC, animated: true)
+            
+        } else if indexPath.row == 13 {
+            
+            let gwangjuVC = CommonViewController()
+            
+            gwangjuVC.gubuntData = gubunArray[13]
+            gwangjuVC.deathCntData = deathCntArray[13]
+            gwangjuVC.incDecData = incDecArray[13]
+            gwangjuVC.isolClearCntData = isolClearCntArray[13]
+            gwangjuVC.defCntData = defCntArray[13]
+            gwangjuVC.isolIngCntData = isolIngCntArray[13]
+            gwangjuVC.overFlowCntData = overFlowCntArray[13]
+            
+            navigationController?.pushViewController(gwangjuVC, animated: true)
+            
+        } else if indexPath.row == 14 {
+            
+            let incheonVC = CommonViewController()
+            
+            incheonVC.gubuntData = gubunArray[14]
+            incheonVC.deathCntData = deathCntArray[14]
+            incheonVC.incDecData = incDecArray[14]
+            incheonVC.isolClearCntData = isolClearCntArray[14]
+            incheonVC.defCntData = defCntArray[14]
+            incheonVC.isolIngCntData = isolIngCntArray[14]
+            incheonVC.overFlowCntData = overFlowCntArray[14]
+            
+            navigationController?.pushViewController(incheonVC, animated: true)
+            
+        } else if indexPath.row == 15 {
+            
+            let daeguVC = CommonViewController()
+            
+            daeguVC.gubuntData = gubunArray[10]
+            daeguVC.deathCntData = deathCntArray[10]
+            daeguVC.incDecData = incDecArray[10]
+            daeguVC.isolClearCntData = isolClearCntArray[10]
+            daeguVC.defCntData = defCntArray[10]
+            daeguVC.isolIngCntData = isolIngCntArray[10]
+            daeguVC.overFlowCntData = overFlowCntArray[10]
+            
+            navigationController?.pushViewController(daeguVC, animated: true)
+            
+        } else if indexPath.row == 16 {
+            
+            let busanVC = CommonViewController()
+            
+            busanVC.gubuntData = gubunArray[16]
+            busanVC.deathCntData = deathCntArray[16]
+            busanVC.incDecData = incDecArray[16]
+            busanVC.isolClearCntData = isolClearCntArray[16]
+            busanVC.defCntData = defCntArray[16]
+            busanVC.isolIngCntData = isolIngCntArray[16]
+            busanVC.overFlowCntData = overFlowCntArray[16]
+            
+            navigationController?.pushViewController(busanVC, animated: true)
+            
+        } else if indexPath.row == 17 {
+            
+            let seoulVC = CommonViewController()
+            
+            seoulVC.gubuntData = gubunArray[17]
+            seoulVC.deathCntData = deathCntArray[17]
+            seoulVC.incDecData = incDecArray[17]
+            seoulVC.isolClearCntData = isolClearCntArray[17]
+            seoulVC.defCntData = defCntArray[17]
+            seoulVC.isolIngCntData = isolIngCntArray[17]
+            seoulVC.overFlowCntData = overFlowCntArray[17]
+            
+            navigationController?.pushViewController(seoulVC, animated: true)
+            
+        } else if indexPath.row == 18 {
+            
+            let totalVC = CommonViewController()
+            
+            totalVC.gubuntData = gubunArray[18]
+            totalVC.deathCntData = deathCntArray[18]
+            totalVC.incDecData = incDecArray[18]
+            totalVC.isolClearCntData = isolClearCntArray[18]
+            totalVC.defCntData = defCntArray[18]
+            totalVC.isolIngCntData = isolIngCntArray[18]
+            totalVC.overFlowCntData = overFlowCntArray[18]
+            
+            navigationController?.pushViewController(totalVC, animated: true)
+            
         }
     }
     
