@@ -23,6 +23,32 @@ class EachCityTableViewCell: UITableViewCell {
         return gubunLabel
     }()
     
+    lazy var createDtLabel: UILabel = {
+        let createDtLabel: UILabel = UILabel()
+        createDtLabel.textAlignment = .center
+        createDtLabel.textColor = .black
+        createDtLabel.layer.masksToBounds = true
+        createDtLabel.numberOfLines = 0
+        createDtLabel.layer.borderWidth = 1.0
+        createDtLabel.layer.borderColor = UIColor.black.cgColor
+        createDtLabel.layer.backgroundColor = UIColor.gray.cgColor
+        createDtLabel.layer.cornerRadius = 8.0
+        return createDtLabel
+    }()
+    
+    lazy var stdDayLabel: UILabel = {
+        let stdDayLabel: UILabel = UILabel()
+        stdDayLabel.textAlignment = .center
+        stdDayLabel.textColor = .black
+        stdDayLabel.layer.masksToBounds = true
+        stdDayLabel.numberOfLines = 0
+        stdDayLabel.layer.borderWidth = 1.0
+        stdDayLabel.layer.borderColor = UIColor.black.cgColor
+        stdDayLabel.layer.backgroundColor = UIColor.gray.cgColor
+        stdDayLabel.layer.cornerRadius = 8.0
+        return stdDayLabel
+    }()
+    
     lazy var deathCntLabel: UILabel = {
         let deathCntLabel: UILabel = UILabel()
         deathCntLabel.textAlignment = .center
@@ -114,12 +140,20 @@ class EachCityTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        if selected == true {
+            self.selectionStyle = .none
+            print("selected true")
+        } else if selected == false {
+            self.selectionStyle = .none
+            print("selected false")
+        }
     }
     
     
     private func addViews() {
         setupGubunLabel()
+        setupCreateDtLabel()
+        setupStdDayLabel()
         setupDeathCntLabel()
         setupIncDecLabel()
         setupIsolClearCntLabel()
@@ -136,10 +170,48 @@ class EachCityTableViewCell: UITableViewCell {
         contentView.addSubview(gubunLabel)
         
         NSLayoutConstraint.activate([
-            gubunLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+//            gubunLabel.centerXAnchor.constraint(equalTo: guide.centerXAnchor),
+//            gubunLabel.centerYAnchor.constraint(equalTo: guide.centerYAnchor),
+            gubunLabel.topAnchor.constraint(equalTo: guide.topAnchor, constant: 35),
             gubunLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             gubunLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            gubunLabel.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.7),
+//            gubunLabel.widthAnchor.constraint(equalToConstant: 70),
+            gubunLabel.heightAnchor.constraint(equalToConstant: 80),
+
+        ])
+    }
+    
+    private func setupCreateDtLabel() {
+        let guide = self.contentView.safeAreaLayoutGuide
+        
+        createDtLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        contentView.addSubview(createDtLabel)
+        
+        NSLayoutConstraint.activate([
+            createDtLabel.topAnchor.constraint(equalTo: gubunLabel.bottomAnchor, constant: 10),
+            createDtLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            createDtLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.5, constant: -25),
+            createDtLabel.heightAnchor.constraint(equalTo: createDtLabel.widthAnchor, multiplier: 0.8),
+//            createDtLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+//            createDtLabel.heightAnchor.constraint(equalToConstant: 80),
+        ])
+    }
+    
+    private func setupStdDayLabel() {
+        let guide = self.contentView.safeAreaLayoutGuide
+        
+        stdDayLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        contentView.addSubview(stdDayLabel)
+        
+        NSLayoutConstraint.activate([
+            stdDayLabel.topAnchor.constraint(equalTo: gubunLabel.bottomAnchor, constant: 10),
+//            stdDayLabel.leadingAnchor.constraint(equalTo: createDtLabel.trailingAnchor, constant: 20),
+            stdDayLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            stdDayLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.5, constant: -25),
+            stdDayLabel.heightAnchor.constraint(equalTo: stdDayLabel.widthAnchor, multiplier: 0.8),
+//            stdDayLabel.heightAnchor.constraint(equalToConstant: 80),
         ])
     }
     
@@ -151,10 +223,11 @@ class EachCityTableViewCell: UITableViewCell {
         contentView.addSubview(deathCntLabel)
         
         NSLayoutConstraint.activate([
-            deathCntLabel.topAnchor.constraint(equalTo: gubunLabel.bottomAnchor, constant: 10),
+            deathCntLabel.topAnchor.constraint(equalTo: createDtLabel.bottomAnchor, constant: 10),
             deathCntLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             deathCntLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            deathCntLabel.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.7),
+//            deathCntLabel.widthAnchor.constraint(equalToConstant: 70),
+            deathCntLabel.heightAnchor.constraint(equalToConstant: 80),
         ])
     }
     
@@ -169,7 +242,8 @@ class EachCityTableViewCell: UITableViewCell {
             incDecLabel.topAnchor.constraint(equalTo: deathCntLabel.bottomAnchor, constant: 10),
             incDecLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             incDecLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            incDecLabel.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.7),
+//            incDecLabel.widthAnchor.constraint(equalToConstant: 70),
+            incDecLabel.heightAnchor.constraint(equalToConstant: 80),
         ])
     }
     
@@ -184,7 +258,8 @@ class EachCityTableViewCell: UITableViewCell {
             isolClearCntLabel.topAnchor.constraint(equalTo: incDecLabel.bottomAnchor, constant: 10),
             isolClearCntLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             isolClearCntLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            isolClearCntLabel.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.7),
+//            isolClearCntLabel.widthAnchor.constraint(equalToConstant: 70),
+            isolClearCntLabel.heightAnchor.constraint(equalToConstant: 80),
         ])
     }
     
@@ -199,7 +274,8 @@ class EachCityTableViewCell: UITableViewCell {
             defCntLabel.topAnchor.constraint(equalTo: isolClearCntLabel.bottomAnchor, constant: 10),
             defCntLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             defCntLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            defCntLabel.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.7),
+//            defCntLabel.widthAnchor.constraint(equalToConstant: 70),
+            defCntLabel.heightAnchor.constraint(equalToConstant: 80),
         ])
     }
     
@@ -214,7 +290,8 @@ class EachCityTableViewCell: UITableViewCell {
             isolIngCntLabel.topAnchor.constraint(equalTo: defCntLabel.bottomAnchor, constant: 10),
             isolIngCntLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             isolIngCntLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            isolIngCntLabel.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.7),
+//            isolIngCntLabel.widthAnchor.constraint(equalToConstant: 70),
+            isolIngCntLabel.heightAnchor.constraint(equalToConstant: 80),
         ])
     }
     
@@ -229,7 +306,8 @@ class EachCityTableViewCell: UITableViewCell {
             overFlowCntLabel.topAnchor.constraint(equalTo: isolIngCntLabel.bottomAnchor, constant: 10),
             overFlowCntLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             overFlowCntLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            overFlowCntLabel.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.7),
+//            overFlowCntLabel.widthAnchor.constraint(equalToConstant: 70),
+            overFlowCntLabel.heightAnchor.constraint(equalToConstant: 80),
         ])
     }
 

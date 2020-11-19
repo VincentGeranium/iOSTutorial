@@ -12,7 +12,8 @@ class CommonViewController: UIViewController {
     private let eachCityTableView: UITableView = {
         var eachCityTableView: UITableView = UITableView()
         eachCityTableView.register(EachCityTableViewCell.self, forCellReuseIdentifier: EachCityTableViewCell.cellIdentifier)
-
+//        eachCityTableView.tableFooterView = UIView()
+        eachCityTableView.separatorStyle = .none
         return eachCityTableView
     }()
     
@@ -30,10 +31,16 @@ class CommonViewController: UIViewController {
     
     var overFlowCntData = ""
     
+    var createDtData = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = .systemBlue
+        
+        self.eachCityTableView.estimatedRowHeight = UITableView.automaticDimension
+        self.eachCityTableView.rowHeight = 900.0
+        
         
         addDelegates()
         addViews()
@@ -68,13 +75,13 @@ class CommonViewController: UIViewController {
 
 extension CommonViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 755
+//    }
     
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UITableView.automaticDimension
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -86,7 +93,13 @@ extension CommonViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.gubunLabel.text = gubuntData
+        if gubuntData == "합계" {
+            cell.gubunLabel.text = gubuntData
+        } else {
+            cell.gubunLabel.text = "\(gubuntData)의 코로나 현황"
+        }
+        
+        cell.createDtLabel.text = "등록일시\n\n\(createDtData)"
         cell.deathCntLabel.text = deathCntData
         cell.incDecLabel.text = incDecData
         cell.isolClearCntLabel.text = isolClearCntData
