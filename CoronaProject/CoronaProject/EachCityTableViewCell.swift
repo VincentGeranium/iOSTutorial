@@ -23,6 +23,19 @@ class EachCityTableViewCell: UITableViewCell {
         return gubunLabel
     }()
     
+    lazy var localOccCntLabel: UILabel = {
+        let localOccCntLabel: UILabel = UILabel()
+        localOccCntLabel.textAlignment = .center
+        localOccCntLabel.textColor = .black
+        localOccCntLabel.layer.masksToBounds = true
+        localOccCntLabel.numberOfLines = 0
+        localOccCntLabel.layer.borderWidth = 1.0
+        localOccCntLabel.layer.borderColor = UIColor.black.cgColor
+        localOccCntLabel.layer.backgroundColor = UIColor.gray.cgColor
+        localOccCntLabel.layer.cornerRadius = 8.0
+        return localOccCntLabel
+    }()
+    
     lazy var createDtLabel: UILabel = {
         let createDtLabel: UILabel = UILabel()
         createDtLabel.textAlignment = .center
@@ -154,11 +167,12 @@ class EachCityTableViewCell: UITableViewCell {
         setupGubunLabel()
         setupCreateDtLabel()
         setupStdDayLabel()
-        setupDeathCntLabel()
-        setupIncDecLabel()
-        setupIsolClearCntLabel()
         setupDefCntLabel()
+        setupIncDecLabel()
         setupIsolIngCntLabel()
+        setupIsolClearCntLabel()
+        setupDeathCntLabel()
+        setupLocalOccCntLabel()
         setupOverFlowCntLabel()
     }
     
@@ -215,19 +229,19 @@ class EachCityTableViewCell: UITableViewCell {
         ])
     }
     
-    private func setupDeathCntLabel() {
+    private func setupDefCntLabel() {
         let guide = self.contentView.safeAreaLayoutGuide
         
-        deathCntLabel.translatesAutoresizingMaskIntoConstraints = false
+        defCntLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        contentView.addSubview(deathCntLabel)
+        contentView.addSubview(defCntLabel)
         
         NSLayoutConstraint.activate([
-            deathCntLabel.topAnchor.constraint(equalTo: createDtLabel.bottomAnchor, constant: 10),
-            deathCntLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            deathCntLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            defCntLabel.topAnchor.constraint(equalTo: createDtLabel.bottomAnchor, constant: 10),
+            defCntLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            defCntLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
 //            deathCntLabel.widthAnchor.constraint(equalToConstant: 70),
-            deathCntLabel.heightAnchor.constraint(equalToConstant: 80),
+            defCntLabel.heightAnchor.constraint(equalToConstant: 80),
         ])
     }
     
@@ -239,43 +253,11 @@ class EachCityTableViewCell: UITableViewCell {
         contentView.addSubview(incDecLabel)
         
         NSLayoutConstraint.activate([
-            incDecLabel.topAnchor.constraint(equalTo: deathCntLabel.bottomAnchor, constant: 10),
+            incDecLabel.topAnchor.constraint(equalTo: defCntLabel.bottomAnchor, constant: 10),
             incDecLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             incDecLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
 //            incDecLabel.widthAnchor.constraint(equalToConstant: 70),
             incDecLabel.heightAnchor.constraint(equalToConstant: 80),
-        ])
-    }
-    
-    private func setupIsolClearCntLabel() {
-        let guide = self.contentView.safeAreaLayoutGuide
-        
-        isolClearCntLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        contentView.addSubview(isolClearCntLabel)
-        
-        NSLayoutConstraint.activate([
-            isolClearCntLabel.topAnchor.constraint(equalTo: incDecLabel.bottomAnchor, constant: 10),
-            isolClearCntLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            isolClearCntLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-//            isolClearCntLabel.widthAnchor.constraint(equalToConstant: 70),
-            isolClearCntLabel.heightAnchor.constraint(equalToConstant: 80),
-        ])
-    }
-    
-    private func setupDefCntLabel() {
-        let guide = self.contentView.safeAreaLayoutGuide
-        
-        defCntLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        contentView.addSubview(defCntLabel)
-        
-        NSLayoutConstraint.activate([
-            defCntLabel.topAnchor.constraint(equalTo: isolClearCntLabel.bottomAnchor, constant: 10),
-            defCntLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            defCntLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-//            defCntLabel.widthAnchor.constraint(equalToConstant: 70),
-            defCntLabel.heightAnchor.constraint(equalToConstant: 80),
         ])
     }
     
@@ -287,11 +269,59 @@ class EachCityTableViewCell: UITableViewCell {
         contentView.addSubview(isolIngCntLabel)
         
         NSLayoutConstraint.activate([
-            isolIngCntLabel.topAnchor.constraint(equalTo: defCntLabel.bottomAnchor, constant: 10),
+            isolIngCntLabel.topAnchor.constraint(equalTo: incDecLabel.bottomAnchor, constant: 10),
             isolIngCntLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             isolIngCntLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-//            isolIngCntLabel.widthAnchor.constraint(equalToConstant: 70),
+//            isolClearCntLabel.widthAnchor.constraint(equalToConstant: 70),
             isolIngCntLabel.heightAnchor.constraint(equalToConstant: 80),
+        ])
+    }
+    
+    private func setupIsolClearCntLabel() {
+        let guide = self.contentView.safeAreaLayoutGuide
+        
+        isolClearCntLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        contentView.addSubview(isolClearCntLabel)
+        
+        NSLayoutConstraint.activate([
+            isolClearCntLabel.topAnchor.constraint(equalTo: isolIngCntLabel.bottomAnchor, constant: 10),
+            isolClearCntLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            isolClearCntLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+//            defCntLabel.widthAnchor.constraint(equalToConstant: 70),
+            isolClearCntLabel.heightAnchor.constraint(equalToConstant: 80),
+        ])
+    }
+    
+    private func setupDeathCntLabel() {
+        let guide = self.contentView.safeAreaLayoutGuide
+        
+        deathCntLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        contentView.addSubview(deathCntLabel)
+        
+        NSLayoutConstraint.activate([
+            deathCntLabel.topAnchor.constraint(equalTo: isolClearCntLabel.bottomAnchor, constant: 10),
+            deathCntLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            deathCntLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+//            isolIngCntLabel.widthAnchor.constraint(equalToConstant: 70),
+            deathCntLabel.heightAnchor.constraint(equalToConstant: 80),
+        ])
+    }
+    
+    private func setupLocalOccCntLabel() {
+        let guide = self.contentView.safeAreaLayoutGuide
+        
+        localOccCntLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        contentView.addSubview(localOccCntLabel)
+        
+        NSLayoutConstraint.activate([
+            localOccCntLabel.topAnchor.constraint(equalTo: deathCntLabel.bottomAnchor, constant: 10),
+            localOccCntLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            localOccCntLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+//            overFlowCntLabel.widthAnchor.constraint(equalToConstant: 70),
+            localOccCntLabel.heightAnchor.constraint(equalToConstant: 80),
         ])
     }
     
@@ -303,7 +333,7 @@ class EachCityTableViewCell: UITableViewCell {
         contentView.addSubview(overFlowCntLabel)
         
         NSLayoutConstraint.activate([
-            overFlowCntLabel.topAnchor.constraint(equalTo: isolIngCntLabel.bottomAnchor, constant: 10),
+            overFlowCntLabel.topAnchor.constraint(equalTo: localOccCntLabel.bottomAnchor, constant: 10),
             overFlowCntLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             overFlowCntLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
 //            overFlowCntLabel.widthAnchor.constraint(equalToConstant: 70),

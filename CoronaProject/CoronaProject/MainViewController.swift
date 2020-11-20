@@ -17,45 +17,56 @@ class MainViewController: UIViewController {
     
     var gubunArray: [String] = []
     
+    var localOccCntArray: [String] = []
+    
     var deathCntArray: [String] = []
     
     var incDecArray: [String] = []
     
     var isolClearCntArray: [String] = []
     
-    var defCntArray: [String] = []
-    
     var isolIngCntArray: [String] = []
+    
+    var defCntArray: [String] = []
     
     var overFlowCntArray: [String] = []
     
     var createDtArray: [String] = []
+    
+    var stdDayArray: [String] = []
     
     var isGetItems = false
     
     // 시도명
     var isGetGubun = false
     
+    // 지역내 환자 발생 수
+    var isLocalOccCnt = false
+    
     // 누적 사망자 수
     var isGetDeathCnt = false
     
-    // 신규확진자수
+    // 신규 확진자 수
     var isGetIncDec = false
     
     // 격리 해제 수
     var isGetIsolClearCnt = false
     
-    // 총 확진자 수
-    var isGetDefCnt = false
-    
     // 격리중인 환자 수
     var isGetIsolIngCnt = false
+    
+    // 총 확진자 수
+    var isGetDefCnt = false
     
     // 해외유입 확진자 수
     var isGetOverFlowCnt = false
     
-    // 등록일시
+    // 통계 데이터 등록일시
     var isGetCreateDt = false
+    
+    // 통계 데이터 기준일시
+    var isGetStdDay = false
+    
     
     var paramDate = ""
     
@@ -168,32 +179,38 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         
-        if (elementName == "deathCnt" || elementName == "defCnt" || elementName == "gubun" || elementName == "incDec" || elementName == "isolClearCnt" || elementName == "isolIngCnt" || elementName == "overFlowCnt" || elementName == "createDt") {
+        if (elementName == "deathCnt" || elementName == "defCnt" || elementName == "gubun" || elementName == "incDec" || elementName == "isolClearCnt" || elementName == "isolIngCnt" || elementName == "overFlowCnt" || elementName == "createDt" || elementName == "stdDay" || elementName == "localOccCnt") {
             
             switch elementName {
             case "gubun":
                 isGetGubun = true
                 
+            case "localOccCnt":
+                isLocalOccCnt = true
+                
             case "deathCnt":
                 isGetDeathCnt = true
                 
-            case "defCnt":
-                isGetDefCnt = true
-                
             case "incDec":
                 isGetIncDec = true
-                
+
             case "isolClearCnt":
                 isGetIsolClearCnt = true
                 
             case "isolIngCnt":
                 isGetIsolIngCnt = true
+
+            case "defCnt":
+                isGetDefCnt = true
                 
             case "overFlowCnt":
                 isGetOverFlowCnt = true
                 
             case "createDt":
                 isGetCreateDt = true
+                
+            case "stdDay":
+                isGetStdDay = true
                 
             default:
                 debugPrint(debugDescription)
@@ -205,17 +222,17 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         
-        if (elementName == "deathCnt" || elementName == "defCnt" || elementName == "gubun" || elementName == "incDec" || elementName == "isolClearCnt" || elementName == "isolIngCnt" || elementName == "overFlowCnt" || elementName == "createDt") {
+        if (elementName == "createDt" || elementName == "deathCnt" || elementName == "defCnt" || elementName == "gubun" || elementName == "incDec" || elementName == "isolClearCnt" || elementName == "isolIngCnt" || elementName == "localOccCnt" || elementName == "overFlowCnt" || elementName == "stdDay") {
             
             switch elementName {
             case "gubun":
                 isGetGubun = false
                 
+            case "localOccCnt":
+                isLocalOccCnt = false
+                
             case "deathCnt":
                 isGetDeathCnt = false
-                
-            case "defCnt":
-                isGetDefCnt = false
                 
             case "incDec":
                 isGetIncDec = false
@@ -226,11 +243,18 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             case "isolIngCnt":
                 isGetIsolIngCnt = false
                 
+            case "defCnt":
+                isGetDefCnt = false
+
             case "overFlowCnt":
                 isGetOverFlowCnt = false
                 
             case "createDt":
                 isGetCreateDt = false
+                
+            case "stdDay":
+                isGetStdDay = false
+                
                 
             default:
                 debugPrint(debugDescription)
@@ -242,12 +266,12 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
     
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         
-        let dateFormatter = DateFormatter()
-        
-        
         switch true {
         case isGetGubun:
             gubunArray.append(string)
+            
+        case isLocalOccCnt:
+            localOccCntArray.append(string)
             
         case isGetDeathCnt:
             deathCntArray.append(string)
@@ -268,8 +292,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             overFlowCntArray.append(string)
             
         case isGetCreateDt:
-
             createDtArray.append(string)
+            
+        case isGetStdDay:
+            print(string)
+            stdDayArray.append(string)
             
         default:
             return
@@ -308,11 +335,13 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             
             lazarettoVC.gubuntData = gubunArray[0]
             lazarettoVC.createDtData = createDtArray[0]
-            lazarettoVC.deathCntData = deathCntArray[0]
-            lazarettoVC.incDecData = incDecArray[0]
-            lazarettoVC.isolClearCntData = isolClearCntArray[0]
+            lazarettoVC.stdDayData = stdDayArray[0]
             lazarettoVC.defCntData = defCntArray[0]
+            lazarettoVC.incDecData = incDecArray[0]
             lazarettoVC.isolIngCntData = isolIngCntArray[0]
+            lazarettoVC.isolClearCntData = isolClearCntArray[0]
+            lazarettoVC.deathCntData = deathCntArray[0]
+            lazarettoVC.localOccCntData = localOccCntArray[0]
             lazarettoVC.overFlowCntData = overFlowCntArray[0]
             lazarettoVC.title = gubunArray[0]
             
