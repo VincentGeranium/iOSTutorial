@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+// not uesd this code
+
 protocol TransferDataDelegate {
     func transferAllData(incDec: String, isolClearCnt: String, defCnt: String, isolIngCnt: String, overFlowCnt: String, deathCnt: String)
 }

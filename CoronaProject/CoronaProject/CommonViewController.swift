@@ -103,7 +103,7 @@ extension CommonViewController: UITableViewDelegate, UITableViewDataSource {
             cell.gubunLabel.text = "\(gubuntData)의 코로나 현황"
         }
         
-        cell.createDtLabel.text = "등록일시\n\n\(createDtData)"
+        cell.createDtDataLabel.text = createDtData
         cell.stdDayLabel.text = stdDayData
         cell.defCntLabel.text = defCntData
         cell.incDecLabel.text = incDecData

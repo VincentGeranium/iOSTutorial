@@ -35,6 +35,10 @@ class MainViewController: UIViewController {
     
     var stdDayArray: [String] = []
     
+    var dateArray: [String] = []
+    
+    var timeArray: [String] = []
+    
     var isGetItems = false
     
     // 시도명
@@ -292,11 +296,16 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             overFlowCntArray.append(string)
             
         case isGetCreateDt:
-            createDtArray.append(string)
-            
+            let filterdDate = string.components(separatedBy: " ").filter { $0.contains("-") }
+            dateArray.append(contentsOf: filterdDate)
+
+            let filterdTime = string.components(separatedBy: ["."," "]).filter { $0.count > 3 && $0.contains(":") }
+            timeArray.append(contentsOf: filterdTime)
+    
         case isGetStdDay:
-            print(string)
+//            print(string)
             stdDayArray.append(string)
+//            print(stdDayArray)
             
         default:
             return
@@ -334,7 +343,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             let lazarettoVC = CommonViewController()
             
             lazarettoVC.gubuntData = gubunArray[0]
-            lazarettoVC.createDtData = createDtArray[0]
+            lazarettoVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
             lazarettoVC.stdDayData = stdDayArray[0]
             lazarettoVC.defCntData = defCntArray[0]
             lazarettoVC.incDecData = incDecArray[0]
@@ -351,7 +360,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             let jejuVC = CommonViewController()
             
             jejuVC.gubuntData = gubunArray[1]
-            jejuVC.createDtData = createDtArray[1]
+            jejuVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
             jejuVC.deathCntData = deathCntArray[1]
             jejuVC.incDecData = incDecArray[1]
             jejuVC.isolClearCntData = isolClearCntArray[1]
@@ -367,7 +376,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             let gyeongnamVC = CommonViewController()
             
             gyeongnamVC.gubuntData = gubunArray[2]
-            gyeongnamVC.createDtData = createDtArray[2]
+            gyeongnamVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
             gyeongnamVC.deathCntData = deathCntArray[2]
             gyeongnamVC.incDecData = incDecArray[2]
             gyeongnamVC.isolClearCntData = isolClearCntArray[2]
@@ -383,7 +392,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             let gyeongbukVC = CommonViewController()
             
             gyeongbukVC.gubuntData = gubunArray[3]
-            gyeongbukVC.createDtData = createDtArray[3]
+            gyeongbukVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
             gyeongbukVC.deathCntData = deathCntArray[3]
             gyeongbukVC.incDecData = incDecArray[3]
             gyeongbukVC.isolClearCntData = isolClearCntArray[3]
@@ -399,7 +408,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             let JeolnamVC = CommonViewController()
             
             JeolnamVC.gubuntData = gubunArray[4]
-            JeolnamVC.createDtData = createDtArray[4]
+            JeolnamVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
             JeolnamVC.deathCntData = deathCntArray[4]
             JeolnamVC.incDecData = incDecArray[4]
             JeolnamVC.isolClearCntData = isolClearCntArray[4]
@@ -415,7 +424,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             let JeolbukVC = CommonViewController()
             
             JeolbukVC.gubuntData = gubunArray[5]
-            JeolbukVC.createDtData = createDtArray[5]
+            JeolbukVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
             JeolbukVC.deathCntData = deathCntArray[5]
             JeolbukVC.incDecData = incDecArray[5]
             JeolbukVC.isolClearCntData = isolClearCntArray[5]
@@ -431,7 +440,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             let chungnamVC = CommonViewController()
             
             chungnamVC.gubuntData = gubunArray[6]
-            chungnamVC.createDtData = createDtArray[6]
+            chungnamVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
             chungnamVC.deathCntData = deathCntArray[6]
             chungnamVC.incDecData = incDecArray[6]
             chungnamVC.isolClearCntData = isolClearCntArray[6]
@@ -447,7 +456,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             let chungbukVC = CommonViewController()
             
             chungbukVC.gubuntData = gubunArray[7]
-            chungbukVC.createDtData = createDtArray[7]
+            chungbukVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
             chungbukVC.deathCntData = deathCntArray[7]
             chungbukVC.incDecData = incDecArray[7]
             chungbukVC.isolClearCntData = isolClearCntArray[7]
@@ -463,7 +472,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             let gangwonVC = CommonViewController()
             
             gangwonVC.gubuntData = gubunArray[8]
-            gangwonVC.createDtData = createDtArray[8]
+            gangwonVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
             gangwonVC.deathCntData = deathCntArray[8]
             gangwonVC.incDecData = incDecArray[8]
             gangwonVC.isolClearCntData = isolClearCntArray[8]
@@ -479,7 +488,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             let gyeonggiVC = CommonViewController()
             
             gyeonggiVC.gubuntData = gubunArray[9]
-            gyeonggiVC.createDtData = createDtArray[9]
+            gyeonggiVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
             gyeonggiVC.deathCntData = deathCntArray[9]
             gyeonggiVC.incDecData = incDecArray[9]
             gyeonggiVC.isolClearCntData = isolClearCntArray[9]
@@ -495,7 +504,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             let sejongVC = CommonViewController()
             
             sejongVC.gubuntData = gubunArray[10]
-            sejongVC.createDtData = createDtArray[10]
+            sejongVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
             sejongVC.deathCntData = deathCntArray[10]
             sejongVC.incDecData = incDecArray[10]
             sejongVC.isolClearCntData = isolClearCntArray[10]
@@ -511,7 +520,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             let ulsanVC = CommonViewController()
             
             ulsanVC.gubuntData = gubunArray[11]
-            ulsanVC.createDtData = createDtArray[11]
+            ulsanVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
             ulsanVC.deathCntData = deathCntArray[11]
             ulsanVC.incDecData = incDecArray[11]
             ulsanVC.isolClearCntData = isolClearCntArray[11]
@@ -527,7 +536,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             let daejeonVC = CommonViewController()
             
             daejeonVC.gubuntData = gubunArray[12]
-            daejeonVC.createDtData = createDtArray[12]
+            daejeonVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
             daejeonVC.deathCntData = deathCntArray[12]
             daejeonVC.incDecData = incDecArray[12]
             daejeonVC.isolClearCntData = isolClearCntArray[12]
@@ -543,7 +552,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             let gwangjuVC = CommonViewController()
             
             gwangjuVC.gubuntData = gubunArray[13]
-            gwangjuVC.createDtData = createDtArray[13]
+            gwangjuVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
             gwangjuVC.deathCntData = deathCntArray[13]
             gwangjuVC.incDecData = incDecArray[13]
             gwangjuVC.isolClearCntData = isolClearCntArray[13]
@@ -559,7 +568,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             let incheonVC = CommonViewController()
             
             incheonVC.gubuntData = gubunArray[14]
-            incheonVC.createDtData = createDtArray[14]
+            incheonVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
             incheonVC.deathCntData = deathCntArray[14]
             incheonVC.incDecData = incDecArray[14]
             incheonVC.isolClearCntData = isolClearCntArray[14]
@@ -575,7 +584,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             let daeguVC = CommonViewController()
             
             daeguVC.gubuntData = gubunArray[indexPath.row]
-            daeguVC.createDtData = createDtArray[indexPath.row]
+            daeguVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
             daeguVC.deathCntData = deathCntArray[indexPath.row]
             daeguVC.incDecData = incDecArray[indexPath.row]
             daeguVC.isolClearCntData = isolClearCntArray[indexPath.row]
@@ -591,7 +600,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             let busanVC = CommonViewController()
             
             busanVC.gubuntData = gubunArray[16]
-            busanVC.createDtData = createDtArray[16]
+            busanVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
             busanVC.deathCntData = deathCntArray[16]
             busanVC.incDecData = incDecArray[16]
             busanVC.isolClearCntData = isolClearCntArray[16]
@@ -607,7 +616,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             let seoulVC = CommonViewController()
             
             seoulVC.gubuntData = gubunArray[17]
-            seoulVC.createDtData = createDtArray[17]
+            seoulVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
             seoulVC.deathCntData = deathCntArray[17]
             seoulVC.incDecData = incDecArray[17]
             seoulVC.isolClearCntData = isolClearCntArray[17]
@@ -623,7 +632,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             let totalVC = CommonViewController()
             
             totalVC.gubuntData = gubunArray[18]
-            totalVC.createDtData = createDtArray[18]
+            totalVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
             totalVC.deathCntData = deathCntArray[18]
             totalVC.incDecData = incDecArray[18]
             totalVC.isolClearCntData = isolClearCntArray[18]

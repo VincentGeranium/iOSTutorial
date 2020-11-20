@@ -49,6 +49,35 @@ class EachCityTableViewCell: UITableViewCell {
         return createDtLabel
     }()
     
+    lazy var createDtTitleLabel: UILabel = {
+        let createDtTitleLabel: UILabel = UILabel()
+        createDtTitleLabel.textAlignment = .center
+        createDtTitleLabel.textColor = .black
+        createDtTitleLabel.font = UIFont.monospacedSystemFont(ofSize: 18, weight: .semibold)
+        createDtTitleLabel.text = "데이터 등록일시"
+        createDtTitleLabel.layer.masksToBounds = true
+        createDtTitleLabel.numberOfLines = 0
+        createDtTitleLabel.layer.borderWidth = 1.0
+        createDtTitleLabel.layer.borderColor = UIColor.black.cgColor
+        createDtTitleLabel.layer.backgroundColor = UIColor.red.cgColor
+        createDtTitleLabel.layer.cornerRadius = 8.0
+        return createDtTitleLabel
+    }()
+    
+    lazy var createDtDataLabel: UILabel = {
+        let createDtDataLabel: UILabel = UILabel()
+        createDtDataLabel.textAlignment = .center
+        createDtDataLabel.textColor = .systemGray
+        createDtDataLabel.font = UIFont.monospacedSystemFont(ofSize: 18, weight: .bold)
+        createDtDataLabel.layer.masksToBounds = true
+        createDtDataLabel.numberOfLines = 0
+        createDtDataLabel.layer.borderWidth = 1.0
+        createDtDataLabel.layer.borderColor = UIColor.black.cgColor
+        createDtDataLabel.layer.backgroundColor = UIColor.red.cgColor
+        createDtDataLabel.layer.cornerRadius = 8.0
+        return createDtDataLabel
+    }()
+    
     lazy var stdDayLabel: UILabel = {
         let stdDayLabel: UILabel = UILabel()
         stdDayLabel.textAlignment = .center
@@ -166,6 +195,8 @@ class EachCityTableViewCell: UITableViewCell {
     private func addViews() {
         setupGubunLabel()
         setupCreateDtLabel()
+        setupCreateDtTitleLabel()
+        setupCreateDtDataLabel()
         setupStdDayLabel()
         setupDefCntLabel()
         setupIncDecLabel()
@@ -206,9 +237,35 @@ class EachCityTableViewCell: UITableViewCell {
             createDtLabel.topAnchor.constraint(equalTo: gubunLabel.bottomAnchor, constant: 10),
             createDtLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             createDtLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.5, constant: -25),
-            createDtLabel.heightAnchor.constraint(equalTo: createDtLabel.widthAnchor, multiplier: 0.8),
+            createDtLabel.heightAnchor.constraint(equalTo: createDtLabel.widthAnchor, multiplier: 0.6),
 //            createDtLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
 //            createDtLabel.heightAnchor.constraint(equalToConstant: 80),
+        ])
+    }
+    
+    private func setupCreateDtTitleLabel() {
+        createDtTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        createDtLabel.addSubview(createDtTitleLabel)
+        
+        NSLayoutConstraint.activate([
+            createDtTitleLabel.centerXAnchor.constraint(equalTo: createDtLabel.centerXAnchor, constant: 0),
+            createDtTitleLabel.topAnchor.constraint(equalTo: createDtLabel.topAnchor, constant: 10),
+            createDtTitleLabel.widthAnchor.constraint(equalTo: createDtLabel.widthAnchor),
+            createDtTitleLabel.heightAnchor.constraint(equalTo: createDtLabel.heightAnchor, multiplier: 0.3),
+        ])
+    }
+    
+    private func setupCreateDtDataLabel() {
+        createDtDataLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        createDtLabel.addSubview(createDtDataLabel)
+        
+        NSLayoutConstraint.activate([
+            createDtDataLabel.centerXAnchor.constraint(equalTo: createDtLabel.centerXAnchor, constant: 0),
+            createDtDataLabel.topAnchor.constraint(equalTo: createDtTitleLabel.bottomAnchor, constant: 10),
+            createDtDataLabel.widthAnchor.constraint(equalTo: createDtLabel.widthAnchor),
+            createDtDataLabel.bottomAnchor.constraint(equalTo: createDtLabel.bottomAnchor, constant: -10),
         ])
     }
     
@@ -224,7 +281,7 @@ class EachCityTableViewCell: UITableViewCell {
 //            stdDayLabel.leadingAnchor.constraint(equalTo: createDtLabel.trailingAnchor, constant: 20),
             stdDayLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             stdDayLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.5, constant: -25),
-            stdDayLabel.heightAnchor.constraint(equalTo: stdDayLabel.widthAnchor, multiplier: 0.8),
+            stdDayLabel.heightAnchor.constraint(equalTo: createDtLabel.heightAnchor)
 //            stdDayLabel.heightAnchor.constraint(equalToConstant: 80),
         ])
     }
