@@ -388,7 +388,7 @@ class EachCityTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-//        self.backgroundColor = .systemGreen
+        self.backgroundColor = .black
         addViews()
     }
     
@@ -406,10 +406,10 @@ class EachCityTableViewCell: UITableViewCell {
 
         if selected == true {
             self.selectionStyle = .none
-            print("selected true")
+//            print("selected true")
         } else if selected == false {
             self.selectionStyle = .none
-            print("selected false")
+//            print("selected false")
         }
     }
     

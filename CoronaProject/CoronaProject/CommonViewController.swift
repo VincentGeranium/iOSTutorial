@@ -43,7 +43,9 @@ class CommonViewController: UIViewController {
         self.view.backgroundColor = .black
         
         self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.tintColor = .white
         
+        self.eachCityTableView.backgroundColor = .black
         self.eachCityTableView.estimatedRowHeight = UITableView.automaticDimension
         self.eachCityTableView.rowHeight = 850
         

@@ -9,7 +9,7 @@ import UIKit
 
 class SecondLaunchScreenViewController: UIViewController {
     
-    let titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let titleLabel: UILabel = UILabel()
         titleLabel.font = UIFont.systemFont(ofSize: 50, weight: UIFont.Weight.bold)
         titleLabel.textColor = .white
@@ -18,14 +18,14 @@ class SecondLaunchScreenViewController: UIViewController {
         return titleLabel
     }()
     
-    let indicatorView: UIActivityIndicatorView = {
+    private let indicatorView: UIActivityIndicatorView = {
         let indicatorView: UIActivityIndicatorView = UIActivityIndicatorView()
         indicatorView.style = .large
         indicatorView.color = .white
         return indicatorView
     }()
     
-    fileprivate var indicatorTask: DispatchWorkItem?
+    private var dispatchWorkItemInstance: DispatchWorkItem?
     
 
     override func viewDidLoad() {
@@ -36,8 +36,8 @@ class SecondLaunchScreenViewController: UIViewController {
         
         
         setupTitleLabel()
-        setupIndicatorView()
-        prepareActivityIndicator()
+//        setupIndicatorView()
+        pushToMainVC()
         
         
     }
@@ -78,12 +78,12 @@ class SecondLaunchScreenViewController: UIViewController {
         self.navigationController?.pushViewController(rootVC, animated: false)
     }
     
-    func prepareActivityIndicator() {
-        indicatorTask?.cancel()
-        indicatorTask = DispatchWorkItem {
+    func pushToMainVC() {
+        dispatchWorkItemInstance?.cancel()
+        dispatchWorkItemInstance = DispatchWorkItem {
             self.pushVC()
         }
-        DispatchQueue.main.asyncAfter(deadline: .now(), execute: indicatorTask!)
+        DispatchQueue.main.asyncAfter(deadline: .now(), execute: dispatchWorkItemInstance!)
     }
     
     

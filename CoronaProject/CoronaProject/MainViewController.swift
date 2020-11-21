@@ -88,14 +88,17 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.listTableView.backgroundColor = .black
         self.view.backgroundColor = .black
         
         self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.barTintColor = .black
         self.navigationItem.setHidesBackButton(true, animated: false)
-        
-        self.listTableView.separatorColor = .black
-        
         self.title = "전국 시.도명"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+
+    
+        self.listTableView.separatorColor = .black
         
         addDelegates()
         addViews()
@@ -135,37 +138,37 @@ class MainViewController: UIViewController {
         dateFormatter.dateFormat = "yyyyMMdd"
         
         let yesterdayFormat = dateFormatter.string(from: Date.yesterday)
-        print("😍😍😍 \(yesterdayFormat)")
+//        print("😍😍😍 \(yesterdayFormat)")
         
         let currentDate = dateFormatter.string(from: Date())
-        print("⚪️ currentDate : \(currentDate)")
+//        print("⚪️ currentDate : \(currentDate)")
         
         let time = DateFormatter()
         time.dateFormat = "HHmmsssss"
         
         let currentTime = time.string(from: Date())
-        print("⚪️⚪️ currentTime : \(currentTime)")
+//        print("⚪️⚪️ currentTime : \(currentTime)")
         
         guard let intCurrentTime = Int(currentTime) else { return }
-        print("⚪️⚪️⚪️ intCurrentTime : \(intCurrentTime)")
+//        print("⚪️⚪️⚪️ intCurrentTime : \(intCurrentTime)")
         
         // 시간 계산 로직
         if 095900000 <= intCurrentTime && intCurrentTime <= 235959000 {
             
             paramDate = currentDate
             
-            print("⚪️⚪️⚪️⚪️⚪️ 오늘 날짜")
+//            print("⚪️⚪️⚪️⚪️⚪️ 오늘 날짜")
             
         } else {
             paramDate = yesterdayFormat
             
-            print("⚪️⚪️⚪️⚪️⚪️ 어제 날짜")
+//            print("⚪️⚪️⚪️⚪️⚪️ 어제 날짜")
         }
     }
     
     private func setupXMLParsing() {
         
-        let coronaDataURLTest = "http://api.androidhive.info/pizza/?format=xml"
+//        let coronaDataURLTest = "http://api.androidhive.info/pizza/?format=xml"
         
         let coronaDataURL = "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?serviceKey=Dmng3ElRum8OIdUuU1Z0NuvDIsfOSvxTO03Tk5gCfwBxbs9UodOlvevA%2FA7%2FgRimX1m1vE1eXoq7BtC4dwaM9A%3D%3D&pageNo=1&numOfRows=10&startCreateDt=\(paramDate)&endCreateDt=\(paramDate)"
         

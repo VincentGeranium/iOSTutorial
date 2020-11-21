@@ -18,10 +18,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let rootVC = MainViewController()
-        let commonVC = CommonViewController()
+//        let rootVC = MainViewController()
+//        let commonVC = CommonViewController()
         let secondVC = SecondLaunchScreenViewController()
+        
         let navigationController = UINavigationController.init(rootViewController: secondVC)
+        
+        navigationController.navigationBar.tintColor = .black
         
         window = UIWindow.init(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
