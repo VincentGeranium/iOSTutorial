@@ -20,7 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let rootVC = MainViewController()
         let commonVC = CommonViewController()
-        let navigationController = UINavigationController.init(rootViewController: rootVC)
+        let secondVC = SecondLaunchScreenViewController()
+        let navigationController = UINavigationController.init(rootViewController: secondVC)
         
         window = UIWindow.init(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene

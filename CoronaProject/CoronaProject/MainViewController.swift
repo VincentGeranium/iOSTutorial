@@ -9,8 +9,6 @@ import UIKit
 import Alamofire
 
 class MainViewController: UIViewController {
-    var transferDataDelegate: TransferDataDelegate?
-
     var tempCoronaNowData: CoronaNowData?
     
     var coronaNowDataList: [CoronaNowData] = []
@@ -62,7 +60,7 @@ class MainViewController: UIViewController {
     // 총 확진자 수
     var isGetDefCnt = false
     
-    // 해외유입 확진자 수
+    // 해외유입 수
     var isGetOverFlowCnt = false
     
     // 통계 데이터 등록일시
@@ -90,9 +88,14 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .black
         
-        self.title = "전국 시도명"
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        
+        self.listTableView.separatorColor = .black
+        
+        self.title = "전국 시.도명"
         
         addDelegates()
         addViews()
@@ -304,9 +307,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
     
         case isGetStdDay:
 //            print(string)
-            stdDayArray.append(string)
+//            stdDayArray.append(string)
 //            print(stdDayArray)
-            
+            fallthrough
         default:
             return
         }
@@ -342,32 +345,34 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
         if indexPath.row == 0 {
             let lazarettoVC = CommonViewController()
             
-            lazarettoVC.gubuntData = gubunArray[0]
+            lazarettoVC.gubuntData = gubunArray[indexPath.row]
             lazarettoVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
-            lazarettoVC.stdDayData = stdDayArray[0]
-            lazarettoVC.defCntData = defCntArray[0]
-            lazarettoVC.incDecData = incDecArray[0]
-            lazarettoVC.isolIngCntData = isolIngCntArray[0]
-            lazarettoVC.isolClearCntData = isolClearCntArray[0]
-            lazarettoVC.deathCntData = deathCntArray[0]
-            lazarettoVC.localOccCntData = localOccCntArray[0]
-            lazarettoVC.overFlowCntData = overFlowCntArray[0]
-            lazarettoVC.title = gubunArray[0]
+            lazarettoVC.stdDayData = "\(dateArray[indexPath.row])\n00:00:00"
+            lazarettoVC.defCntData = defCntArray[indexPath.row]
+            lazarettoVC.incDecData = incDecArray[indexPath.row]
+            lazarettoVC.isolIngCntData = isolIngCntArray[indexPath.row]
+            lazarettoVC.isolClearCntData = isolClearCntArray[indexPath.row]
+            lazarettoVC.deathCntData = deathCntArray[indexPath.row]
+            lazarettoVC.localOccCntData = localOccCntArray[indexPath.row]
+            lazarettoVC.overFlowCntData = overFlowCntArray[indexPath.row]
+            lazarettoVC.title = gubunArray[indexPath.row]
             
             navigationController?.pushViewController(lazarettoVC, animated: true)
             
         } else if indexPath.row == 1 {
             let jejuVC = CommonViewController()
             
-            jejuVC.gubuntData = gubunArray[1]
+            jejuVC.gubuntData = gubunArray[indexPath.row]
             jejuVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
-            jejuVC.deathCntData = deathCntArray[1]
-            jejuVC.incDecData = incDecArray[1]
-            jejuVC.isolClearCntData = isolClearCntArray[1]
-            jejuVC.defCntData = defCntArray[1]
-            jejuVC.isolIngCntData = isolIngCntArray[1]
-            jejuVC.overFlowCntData = overFlowCntArray[1]
-            jejuVC.title = gubunArray[1]
+            jejuVC.stdDayData = "\(dateArray[indexPath.row])\n00:00:00"
+            jejuVC.defCntData = defCntArray[indexPath.row]
+            jejuVC.incDecData = incDecArray[indexPath.row]
+            jejuVC.isolIngCntData = isolIngCntArray[indexPath.row]
+            jejuVC.isolClearCntData = isolClearCntArray[indexPath.row]
+            jejuVC.deathCntData = deathCntArray[indexPath.row]
+            jejuVC.localOccCntData = localOccCntArray[indexPath.row]
+            jejuVC.overFlowCntData = overFlowCntArray[indexPath.row]
+            jejuVC.title = gubunArray[indexPath.row]
             
             navigationController?.pushViewController(jejuVC, animated: true)
             
@@ -375,15 +380,17 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             
             let gyeongnamVC = CommonViewController()
             
-            gyeongnamVC.gubuntData = gubunArray[2]
+            gyeongnamVC.gubuntData = gubunArray[indexPath.row]
             gyeongnamVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
-            gyeongnamVC.deathCntData = deathCntArray[2]
-            gyeongnamVC.incDecData = incDecArray[2]
-            gyeongnamVC.isolClearCntData = isolClearCntArray[2]
-            gyeongnamVC.defCntData = defCntArray[2]
-            gyeongnamVC.isolIngCntData = isolIngCntArray[2]
-            gyeongnamVC.overFlowCntData = overFlowCntArray[2]
-            gyeongnamVC.title = gubunArray[2]
+            gyeongnamVC.stdDayData = "\(dateArray[indexPath.row])\n00:00:00"
+            gyeongnamVC.defCntData = defCntArray[indexPath.row]
+            gyeongnamVC.incDecData = incDecArray[indexPath.row]
+            gyeongnamVC.isolIngCntData = isolIngCntArray[indexPath.row]
+            gyeongnamVC.isolClearCntData = isolClearCntArray[indexPath.row]
+            gyeongnamVC.deathCntData = deathCntArray[indexPath.row]
+            gyeongnamVC.localOccCntData = localOccCntArray[indexPath.row]
+            gyeongnamVC.overFlowCntData = overFlowCntArray[indexPath.row]
+            gyeongnamVC.title = gubunArray[indexPath.row]
             
             navigationController?.pushViewController(gyeongnamVC, animated: true)
             
@@ -391,15 +398,17 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             
             let gyeongbukVC = CommonViewController()
             
-            gyeongbukVC.gubuntData = gubunArray[3]
+            gyeongbukVC.gubuntData = gubunArray[indexPath.row]
             gyeongbukVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
-            gyeongbukVC.deathCntData = deathCntArray[3]
-            gyeongbukVC.incDecData = incDecArray[3]
-            gyeongbukVC.isolClearCntData = isolClearCntArray[3]
-            gyeongbukVC.defCntData = defCntArray[3]
-            gyeongbukVC.isolIngCntData = isolIngCntArray[3]
-            gyeongbukVC.overFlowCntData = overFlowCntArray[3]
-            gyeongbukVC.title = gubunArray[3]
+            gyeongbukVC.stdDayData = "\(dateArray[indexPath.row])\n00:00:00"
+            gyeongbukVC.defCntData = defCntArray[indexPath.row]
+            gyeongbukVC.incDecData = incDecArray[indexPath.row]
+            gyeongbukVC.isolIngCntData = isolIngCntArray[indexPath.row]
+            gyeongbukVC.isolClearCntData = isolClearCntArray[indexPath.row]
+            gyeongbukVC.deathCntData = deathCntArray[indexPath.row]
+            gyeongbukVC.localOccCntData = localOccCntArray[indexPath.row]
+            gyeongbukVC.overFlowCntData = overFlowCntArray[indexPath.row]
+            gyeongbukVC.title = gubunArray[indexPath.row]
             
             navigationController?.pushViewController(gyeongbukVC, animated: true)
             
@@ -407,15 +416,17 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             
             let JeolnamVC = CommonViewController()
             
-            JeolnamVC.gubuntData = gubunArray[4]
+            JeolnamVC.gubuntData = gubunArray[indexPath.row]
             JeolnamVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
-            JeolnamVC.deathCntData = deathCntArray[4]
-            JeolnamVC.incDecData = incDecArray[4]
-            JeolnamVC.isolClearCntData = isolClearCntArray[4]
-            JeolnamVC.defCntData = defCntArray[4]
-            JeolnamVC.isolIngCntData = isolIngCntArray[4]
-            JeolnamVC.overFlowCntData = overFlowCntArray[4]
-            JeolnamVC.title = gubunArray[4]
+            JeolnamVC.stdDayData = "\(dateArray[indexPath.row])\n00:00:00"
+            JeolnamVC.defCntData = defCntArray[indexPath.row]
+            JeolnamVC.incDecData = incDecArray[indexPath.row]
+            JeolnamVC.isolIngCntData = isolIngCntArray[indexPath.row]
+            JeolnamVC.isolClearCntData = isolClearCntArray[indexPath.row]
+            JeolnamVC.deathCntData = deathCntArray[indexPath.row]
+            JeolnamVC.localOccCntData = localOccCntArray[indexPath.row]
+            JeolnamVC.overFlowCntData = overFlowCntArray[indexPath.row]
+            JeolnamVC.title = gubunArray[indexPath.row]
             
             navigationController?.pushViewController(JeolnamVC, animated: true)
             
@@ -423,15 +434,17 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             
             let JeolbukVC = CommonViewController()
             
-            JeolbukVC.gubuntData = gubunArray[5]
+            JeolbukVC.gubuntData = gubunArray[indexPath.row]
             JeolbukVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
-            JeolbukVC.deathCntData = deathCntArray[5]
-            JeolbukVC.incDecData = incDecArray[5]
-            JeolbukVC.isolClearCntData = isolClearCntArray[5]
-            JeolbukVC.defCntData = defCntArray[5]
-            JeolbukVC.isolIngCntData = isolIngCntArray[5]
-            JeolbukVC.overFlowCntData = overFlowCntArray[5]
-            JeolbukVC.title = gubunArray[5]
+            JeolbukVC.stdDayData = "\(dateArray[indexPath.row])\n00:00:00"
+            JeolbukVC.defCntData = defCntArray[indexPath.row]
+            JeolbukVC.incDecData = incDecArray[indexPath.row]
+            JeolbukVC.isolIngCntData = isolIngCntArray[indexPath.row]
+            JeolbukVC.isolClearCntData = isolClearCntArray[indexPath.row]
+            JeolbukVC.deathCntData = deathCntArray[indexPath.row]
+            JeolbukVC.localOccCntData = localOccCntArray[indexPath.row]
+            JeolbukVC.overFlowCntData = overFlowCntArray[indexPath.row]
+            JeolbukVC.title = gubunArray[indexPath.row]
             
             navigationController?.pushViewController(JeolbukVC, animated: true)
             
@@ -439,15 +452,17 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             
             let chungnamVC = CommonViewController()
             
-            chungnamVC.gubuntData = gubunArray[6]
+            chungnamVC.gubuntData = gubunArray[indexPath.row]
             chungnamVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
-            chungnamVC.deathCntData = deathCntArray[6]
-            chungnamVC.incDecData = incDecArray[6]
-            chungnamVC.isolClearCntData = isolClearCntArray[6]
-            chungnamVC.defCntData = defCntArray[6]
-            chungnamVC.isolIngCntData = isolIngCntArray[6]
-            chungnamVC.overFlowCntData = overFlowCntArray[6]
-            chungnamVC.title = gubunArray[6]
+            chungnamVC.stdDayData = "\(dateArray[indexPath.row])\n00:00:00"
+            chungnamVC.defCntData = defCntArray[indexPath.row]
+            chungnamVC.incDecData = incDecArray[indexPath.row]
+            chungnamVC.isolIngCntData = isolIngCntArray[indexPath.row]
+            chungnamVC.isolClearCntData = isolClearCntArray[indexPath.row]
+            chungnamVC.deathCntData = deathCntArray[indexPath.row]
+            chungnamVC.localOccCntData = localOccCntArray[indexPath.row]
+            chungnamVC.overFlowCntData = overFlowCntArray[indexPath.row]
+            chungnamVC.title = gubunArray[indexPath.row]
             
             navigationController?.pushViewController(chungnamVC, animated: true)
             
@@ -455,15 +470,17 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             
             let chungbukVC = CommonViewController()
             
-            chungbukVC.gubuntData = gubunArray[7]
+            chungbukVC.gubuntData = gubunArray[indexPath.row]
             chungbukVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
-            chungbukVC.deathCntData = deathCntArray[7]
-            chungbukVC.incDecData = incDecArray[7]
-            chungbukVC.isolClearCntData = isolClearCntArray[7]
-            chungbukVC.defCntData = defCntArray[7]
-            chungbukVC.isolIngCntData = isolIngCntArray[7]
-            chungbukVC.overFlowCntData = overFlowCntArray[7]
-            chungbukVC.title = gubunArray[7]
+            chungbukVC.stdDayData = "\(dateArray[indexPath.row])\n00:00:00"
+            chungbukVC.defCntData = defCntArray[indexPath.row]
+            chungbukVC.incDecData = incDecArray[indexPath.row]
+            chungbukVC.isolIngCntData = isolIngCntArray[indexPath.row]
+            chungbukVC.isolClearCntData = isolClearCntArray[indexPath.row]
+            chungbukVC.deathCntData = deathCntArray[indexPath.row]
+            chungbukVC.localOccCntData = localOccCntArray[indexPath.row]
+            chungbukVC.overFlowCntData = overFlowCntArray[indexPath.row]
+            chungbukVC.title = gubunArray[indexPath.row]
             
             navigationController?.pushViewController(chungbukVC, animated: true)
             
@@ -471,15 +488,17 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             
             let gangwonVC = CommonViewController()
             
-            gangwonVC.gubuntData = gubunArray[8]
+            gangwonVC.gubuntData = gubunArray[indexPath.row]
             gangwonVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
-            gangwonVC.deathCntData = deathCntArray[8]
-            gangwonVC.incDecData = incDecArray[8]
-            gangwonVC.isolClearCntData = isolClearCntArray[8]
-            gangwonVC.defCntData = defCntArray[8]
-            gangwonVC.isolIngCntData = isolIngCntArray[8]
-            gangwonVC.overFlowCntData = overFlowCntArray[8]
-            gangwonVC.title = gubunArray[8]
+            gangwonVC.stdDayData = "\(dateArray[indexPath.row])\n00:00:00"
+            gangwonVC.defCntData = defCntArray[indexPath.row]
+            gangwonVC.incDecData = incDecArray[indexPath.row]
+            gangwonVC.isolIngCntData = isolIngCntArray[indexPath.row]
+            gangwonVC.isolClearCntData = isolClearCntArray[indexPath.row]
+            gangwonVC.deathCntData = deathCntArray[indexPath.row]
+            gangwonVC.localOccCntData = localOccCntArray[indexPath.row]
+            gangwonVC.overFlowCntData = overFlowCntArray[indexPath.row]
+            gangwonVC.title = gubunArray[indexPath.row]
             
             navigationController?.pushViewController(gangwonVC, animated: true)
             
@@ -487,15 +506,17 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             
             let gyeonggiVC = CommonViewController()
             
-            gyeonggiVC.gubuntData = gubunArray[9]
+            gyeonggiVC.gubuntData = gubunArray[indexPath.row]
             gyeonggiVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
-            gyeonggiVC.deathCntData = deathCntArray[9]
-            gyeonggiVC.incDecData = incDecArray[9]
-            gyeonggiVC.isolClearCntData = isolClearCntArray[9]
-            gyeonggiVC.defCntData = defCntArray[9]
-            gyeonggiVC.isolIngCntData = isolIngCntArray[9]
-            gyeonggiVC.overFlowCntData = overFlowCntArray[9]
-            gyeonggiVC.title = gubunArray[9]
+            gyeonggiVC.stdDayData = "\(dateArray[indexPath.row])\n00:00:00"
+            gyeonggiVC.defCntData = defCntArray[indexPath.row]
+            gyeonggiVC.incDecData = incDecArray[indexPath.row]
+            gyeonggiVC.isolIngCntData = isolIngCntArray[indexPath.row]
+            gyeonggiVC.isolClearCntData = isolClearCntArray[indexPath.row]
+            gyeonggiVC.deathCntData = deathCntArray[indexPath.row]
+            gyeonggiVC.localOccCntData = localOccCntArray[indexPath.row]
+            gyeonggiVC.overFlowCntData = overFlowCntArray[indexPath.row]
+            gyeonggiVC.title = gubunArray[indexPath.row]
             
             navigationController?.pushViewController(gyeonggiVC, animated: true)
             
@@ -503,15 +524,17 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             
             let sejongVC = CommonViewController()
             
-            sejongVC.gubuntData = gubunArray[10]
+            sejongVC.gubuntData = gubunArray[indexPath.row]
             sejongVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
-            sejongVC.deathCntData = deathCntArray[10]
-            sejongVC.incDecData = incDecArray[10]
-            sejongVC.isolClearCntData = isolClearCntArray[10]
-            sejongVC.defCntData = defCntArray[10]
-            sejongVC.isolIngCntData = isolIngCntArray[10]
-            sejongVC.overFlowCntData = overFlowCntArray[10]
-            sejongVC.title = gubunArray[10]
+            sejongVC.stdDayData = "\(dateArray[indexPath.row])\n00:00:00"
+            sejongVC.defCntData = defCntArray[indexPath.row]
+            sejongVC.incDecData = incDecArray[indexPath.row]
+            sejongVC.isolIngCntData = isolIngCntArray[indexPath.row]
+            sejongVC.isolClearCntData = isolClearCntArray[indexPath.row]
+            sejongVC.deathCntData = deathCntArray[indexPath.row]
+            sejongVC.localOccCntData = localOccCntArray[indexPath.row]
+            sejongVC.overFlowCntData = overFlowCntArray[indexPath.row]
+            sejongVC.title = gubunArray[indexPath.row]
             
             navigationController?.pushViewController(sejongVC, animated: true)
             
@@ -519,30 +542,34 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             
             let ulsanVC = CommonViewController()
             
-            ulsanVC.gubuntData = gubunArray[11]
+            ulsanVC.gubuntData = gubunArray[indexPath.row]
             ulsanVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
-            ulsanVC.deathCntData = deathCntArray[11]
-            ulsanVC.incDecData = incDecArray[11]
-            ulsanVC.isolClearCntData = isolClearCntArray[11]
-            ulsanVC.defCntData = defCntArray[11]
-            ulsanVC.isolIngCntData = isolIngCntArray[11]
-            ulsanVC.overFlowCntData = overFlowCntArray[11]
-            ulsanVC.title = gubunArray[11]
+            ulsanVC.stdDayData = "\(dateArray[indexPath.row])\n00:00:00"
+            ulsanVC.defCntData = defCntArray[indexPath.row]
+            ulsanVC.incDecData = incDecArray[indexPath.row]
+            ulsanVC.isolIngCntData = isolIngCntArray[indexPath.row]
+            ulsanVC.isolClearCntData = isolClearCntArray[indexPath.row]
+            ulsanVC.deathCntData = deathCntArray[indexPath.row]
+            ulsanVC.localOccCntData = localOccCntArray[indexPath.row]
+            ulsanVC.overFlowCntData = overFlowCntArray[indexPath.row]
+            ulsanVC.title = gubunArray[indexPath.row]
             
             navigationController?.pushViewController(ulsanVC, animated: true)
             
         } else if indexPath.row == 12 {
-            /// Love ma hometown
+            /// Lovely ma hometown. always peaceful city.
             let daejeonVC = CommonViewController()
             
-            daejeonVC.gubuntData = gubunArray[12]
+            daejeonVC.gubuntData = gubunArray[indexPath.row]
             daejeonVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
-            daejeonVC.deathCntData = deathCntArray[12]
-            daejeonVC.incDecData = incDecArray[12]
-            daejeonVC.isolClearCntData = isolClearCntArray[12]
-            daejeonVC.defCntData = defCntArray[12]
-            daejeonVC.isolIngCntData = isolIngCntArray[12]
-            daejeonVC.overFlowCntData = overFlowCntArray[12]
+            daejeonVC.stdDayData = "\(dateArray[indexPath.row])\n00:00:00"
+            daejeonVC.defCntData = defCntArray[indexPath.row]
+            daejeonVC.incDecData = incDecArray[indexPath.row]
+            daejeonVC.isolIngCntData = isolIngCntArray[indexPath.row]
+            daejeonVC.isolClearCntData = isolClearCntArray[indexPath.row]
+            daejeonVC.deathCntData = deathCntArray[indexPath.row]
+            daejeonVC.localOccCntData = localOccCntArray[indexPath.row]
+            daejeonVC.overFlowCntData = overFlowCntArray[indexPath.row]
             daejeonVC.title = gubunArray[indexPath.row]
             
             navigationController?.pushViewController(daejeonVC, animated: true)
@@ -551,14 +578,16 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             
             let gwangjuVC = CommonViewController()
             
-            gwangjuVC.gubuntData = gubunArray[13]
+            gwangjuVC.gubuntData = gubunArray[indexPath.row]
             gwangjuVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
-            gwangjuVC.deathCntData = deathCntArray[13]
-            gwangjuVC.incDecData = incDecArray[13]
-            gwangjuVC.isolClearCntData = isolClearCntArray[13]
-            gwangjuVC.defCntData = defCntArray[13]
-            gwangjuVC.isolIngCntData = isolIngCntArray[13]
-            gwangjuVC.overFlowCntData = overFlowCntArray[13]
+            gwangjuVC.stdDayData = "\(dateArray[indexPath.row])\n00:00:00"
+            gwangjuVC.defCntData = defCntArray[indexPath.row]
+            gwangjuVC.incDecData = incDecArray[indexPath.row]
+            gwangjuVC.isolIngCntData = isolIngCntArray[indexPath.row]
+            gwangjuVC.isolClearCntData = isolClearCntArray[indexPath.row]
+            gwangjuVC.deathCntData = deathCntArray[indexPath.row]
+            gwangjuVC.localOccCntData = localOccCntArray[indexPath.row]
+            gwangjuVC.overFlowCntData = overFlowCntArray[indexPath.row]
             gwangjuVC.title = gubunArray[indexPath.row]
             
             navigationController?.pushViewController(gwangjuVC, animated: true)
@@ -567,15 +596,17 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             
             let incheonVC = CommonViewController()
             
-            incheonVC.gubuntData = gubunArray[14]
+            incheonVC.gubuntData = gubunArray[indexPath.row]
             incheonVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
-            incheonVC.deathCntData = deathCntArray[14]
-            incheonVC.incDecData = incDecArray[14]
-            incheonVC.isolClearCntData = isolClearCntArray[14]
-            incheonVC.defCntData = defCntArray[14]
-            incheonVC.isolIngCntData = isolIngCntArray[14]
-            incheonVC.overFlowCntData = overFlowCntArray[14]
-            incheonVC.title = gubunArray[14]
+            incheonVC.stdDayData = "\(dateArray[indexPath.row])\n00:00:00"
+            incheonVC.defCntData = defCntArray[indexPath.row]
+            incheonVC.incDecData = incDecArray[indexPath.row]
+            incheonVC.isolIngCntData = isolIngCntArray[indexPath.row]
+            incheonVC.isolClearCntData = isolClearCntArray[indexPath.row]
+            incheonVC.deathCntData = deathCntArray[indexPath.row]
+            incheonVC.localOccCntData = localOccCntArray[indexPath.row]
+            incheonVC.overFlowCntData = overFlowCntArray[indexPath.row]
+            incheonVC.title = gubunArray[indexPath.row]
             
             navigationController?.pushViewController(incheonVC, animated: true)
             
@@ -585,11 +616,13 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             
             daeguVC.gubuntData = gubunArray[indexPath.row]
             daeguVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
-            daeguVC.deathCntData = deathCntArray[indexPath.row]
-            daeguVC.incDecData = incDecArray[indexPath.row]
-            daeguVC.isolClearCntData = isolClearCntArray[indexPath.row]
+            daeguVC.stdDayData = "\(dateArray[indexPath.row])\n00:00:00"
             daeguVC.defCntData = defCntArray[indexPath.row]
+            daeguVC.incDecData = incDecArray[indexPath.row]
             daeguVC.isolIngCntData = isolIngCntArray[indexPath.row]
+            daeguVC.isolClearCntData = isolClearCntArray[indexPath.row]
+            daeguVC.deathCntData = deathCntArray[indexPath.row]
+            daeguVC.localOccCntData = localOccCntArray[indexPath.row]
             daeguVC.overFlowCntData = overFlowCntArray[indexPath.row]
             daeguVC.title = gubunArray[indexPath.row]
             
@@ -599,15 +632,17 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             
             let busanVC = CommonViewController()
             
-            busanVC.gubuntData = gubunArray[16]
+            busanVC.gubuntData = gubunArray[indexPath.row]
             busanVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
-            busanVC.deathCntData = deathCntArray[16]
-            busanVC.incDecData = incDecArray[16]
-            busanVC.isolClearCntData = isolClearCntArray[16]
-            busanVC.defCntData = defCntArray[16]
-            busanVC.isolIngCntData = isolIngCntArray[16]
-            busanVC.overFlowCntData = overFlowCntArray[16]
-            busanVC.title = gubunArray[16]
+            busanVC.stdDayData = "\(dateArray[indexPath.row])\n00:00:00"
+            busanVC.defCntData = defCntArray[indexPath.row]
+            busanVC.incDecData = incDecArray[indexPath.row]
+            busanVC.isolIngCntData = isolIngCntArray[indexPath.row]
+            busanVC.isolClearCntData = isolClearCntArray[indexPath.row]
+            busanVC.deathCntData = deathCntArray[indexPath.row]
+            busanVC.localOccCntData = localOccCntArray[indexPath.row]
+            busanVC.overFlowCntData = overFlowCntArray[indexPath.row]
+            busanVC.title = gubunArray[indexPath.row]
             
             navigationController?.pushViewController(busanVC, animated: true)
             
@@ -615,15 +650,17 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             
             let seoulVC = CommonViewController()
             
-            seoulVC.gubuntData = gubunArray[17]
+            seoulVC.gubuntData = gubunArray[indexPath.row]
             seoulVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
-            seoulVC.deathCntData = deathCntArray[17]
-            seoulVC.incDecData = incDecArray[17]
-            seoulVC.isolClearCntData = isolClearCntArray[17]
-            seoulVC.defCntData = defCntArray[17]
-            seoulVC.isolIngCntData = isolIngCntArray[17]
-            seoulVC.overFlowCntData = overFlowCntArray[17]
-            seoulVC.title = gubunArray[17]
+            seoulVC.stdDayData = "\(dateArray[indexPath.row])\n00:00:00"
+            seoulVC.defCntData = defCntArray[indexPath.row]
+            seoulVC.incDecData = incDecArray[indexPath.row]
+            seoulVC.isolIngCntData = isolIngCntArray[indexPath.row]
+            seoulVC.isolClearCntData = isolClearCntArray[indexPath.row]
+            seoulVC.deathCntData = deathCntArray[indexPath.row]
+            seoulVC.localOccCntData = localOccCntArray[indexPath.row]
+            seoulVC.overFlowCntData = overFlowCntArray[indexPath.row]
+            seoulVC.title = gubunArray[indexPath.row]
             
             navigationController?.pushViewController(seoulVC, animated: true)
             
@@ -631,15 +668,17 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, XMLPar
             
             let totalVC = CommonViewController()
             
-            totalVC.gubuntData = gubunArray[18]
+            totalVC.gubuntData = gubunArray[indexPath.row]
             totalVC.createDtData = "\(dateArray[indexPath.row])\n\(timeArray[indexPath.row])"
-            totalVC.deathCntData = deathCntArray[18]
-            totalVC.incDecData = incDecArray[18]
-            totalVC.isolClearCntData = isolClearCntArray[18]
-            totalVC.defCntData = defCntArray[18]
-            totalVC.isolIngCntData = isolIngCntArray[18]
-            totalVC.overFlowCntData = overFlowCntArray[18]
-            totalVC.title = gubunArray[18]
+            totalVC.stdDayData = "\(dateArray[indexPath.row])\n00:00:00"
+            totalVC.defCntData = defCntArray[indexPath.row]
+            totalVC.incDecData = incDecArray[indexPath.row]
+            totalVC.isolIngCntData = isolIngCntArray[indexPath.row]
+            totalVC.isolClearCntData = isolClearCntArray[indexPath.row]
+            totalVC.deathCntData = deathCntArray[indexPath.row]
+            totalVC.localOccCntData = localOccCntArray[indexPath.row]
+            totalVC.overFlowCntData = overFlowCntArray[indexPath.row]
+            totalVC.title = gubunArray[indexPath.row]
             
             navigationController?.pushViewController(totalVC, animated: true)
             

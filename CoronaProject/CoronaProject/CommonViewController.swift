@@ -40,10 +40,12 @@ class CommonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .systemBlue
+        self.view.backgroundColor = .black
+        
+        self.navigationController?.isNavigationBarHidden = false
         
         self.eachCityTableView.estimatedRowHeight = UITableView.automaticDimension
-        self.eachCityTableView.rowHeight = 920.0
+        self.eachCityTableView.rowHeight = 850
         
         
         addDelegates()
@@ -104,14 +106,14 @@ extension CommonViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         cell.createDtDataLabel.text = createDtData
-        cell.stdDayLabel.text = stdDayData
-        cell.defCntLabel.text = defCntData
-        cell.incDecLabel.text = incDecData
-        cell.isolIngCntLabel.text = isolIngCntData
-        cell.isolClearCntLabel.text = isolClearCntData
-        cell.deathCntLabel.text = deathCntData
-        cell.localOccCntLabel.text = localOccCntData
-        cell.overFlowCntLabel.text = overFlowCntData
+        cell.stdDayDataLabel.text = stdDayData
+        cell.defCntDataLabel.text = defCntData
+        cell.incDecDataLabel.text = incDecData
+        cell.isolIngCntDataLabel.text = isolIngCntData
+        cell.isolClearCntDataLabel.text = isolClearCntData
+        cell.deathCntDataLabel.text = deathCntData
+        cell.localOccCntDataLabel.text = localOccCntData
+        cell.overFlowCntDataLabel.text = overFlowCntData
         
         return cell
     }
