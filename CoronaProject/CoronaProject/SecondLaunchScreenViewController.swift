@@ -36,7 +36,7 @@ class SecondLaunchScreenViewController: UIViewController {
         
         
         setupTitleLabel()
-//        setupIndicatorView()
+        setupIndicatorView()
         pushToMainVC()
         
         

@@ -95,7 +95,7 @@ class MainViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = .black
         self.navigationItem.setHidesBackButton(true, animated: false)
         self.title = "전국 시.도명"
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25, weight: .bold)]
 
     
         self.listTableView.separatorColor = .black
